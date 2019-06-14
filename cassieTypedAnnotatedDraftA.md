@@ -4,15 +4,18 @@
 3. `cd 50.../`
 4. `mkdir analysis`
 	- This will be the directory we use to analyze and process a single variation of the observation
-	- Within this observation ID we will also make 2 (analysis2 & analysis3) more dirs so we have a dir each for DYE\_ELV>20, DYE\_ELV>40, DYE\_ELV>60
+	- Within this observation ID we will also make 2 (analysis2 & analysis3) more dirs so we have a dir each for DYE\_ELV>60, DYE\_ELV>40, DYE\_ELV>20 respectively
 5. `cd analysis`
-6. cp xi1\_3x3 + xi1\_5x5 to analysis dir from event_cl
-	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5no69b_ev.evt .`
+6. cp xi1\_3x3 + xi1\_5x5 to analysis dir from event_cl  
+	- `$ cp ../xis/event_cl/ae50...xi1_0_3x3no69b_ev.evt .`  
+	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5no69b_ev.evt .`  
 	- cp means "copy", then give file copying from and directory copying too
 	- "." is current working directory
-7. Look for bad colum file
-	- `~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmscion_20160128.fits`
-8. `$ pset xisputpixelquality badcolumfile=ae_xi1_npmscion_20160128.fits`
+7. Look for bad colum file [*New Recipe! Steps 1-2](https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html) (Here steps 7-10)   
+	- `~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
+	- Use 6KeV most recent for xis1 as newest 2KeV is older than and doesn't contain necessary GTIs for Night X-Ray Background  (NXB)  
+	- In original procedure, files are merged before cleaning using New Recipe
+8. `$ pset xisputpixelquality badcolumfile=ae_xi1_npmsci6_20160128.fits`
 	- Input badcolum file found in previous step
 9. `$ xisputpixelquality 3x3 file [Enter]`  
 	``output file: 3x3_badcolmn.fits``
@@ -33,12 +36,55 @@
 	- Converting 5x5 to a 3x3, according to Suzaku user guide ch 6?, extracting 3x3 from center of 5x5?
 12. `$ ftmerge`  
 	`3x3_new.fits, xis5x5to3x3.fits`  
-	`output: xis1_events.fits`
+	`output: xis1_events.fits`  
 13. `$ ftmerge`  
 	``xis1_events.fits[GTI], xis5x5to3x3.fits[GTI]``  
 	`output: xis1_events_GTI.fits`  
-14. 
-15. 
+14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  
+
+15. `$ xselect`  
+	`xselect session name: YYMMDD_#`  
+	`set datadir [path to event_cl dir]:`  
+	`read events: xis1_events_GTI.fits`  
+	`select mkf "SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>60"`  
+	- `select mkf` command creates a time filter of GTIs. To actually filter the events, we must use or issue the command `extract events`  
+	- Will do this step and save out a file each for DYE_ELV>20, 40, 60
+
+	`extract events`  
+	`save events [clean_events.fits]`  
+	- In original procedure it lists following steps 1-2 of New Recipe here  
+
+	`filter pha_cutoff 109 547`  
+	`extract image`  
+	`save image [0.4-2.0_image.fits]`  
+	`exit`  
+	`Save?: [y]`  
+16. `DS9 [0.4-2.0_image.fits]`  
+	- Change scale to Log  
+	- Analysis  
+		+ Smooth  
+	- Change color to rainbow  
+	- Edit  
+		+ Select Region  
+		Select regions with high count rate  
+	+ Region  
+		* Select All  
+	+ Properties  
+		* Exclude  
+	+ Save regions  
+		* `ds9.reg`  
+17. `$ xselect`  
+	`set instr xis1`  
+	`set datadir []`  
+	`read events [clean_events.fits]`  
+	`filter region ds9.reg`  
+	`extract all`  
+	`exit`  
+	`Save?: [y]`
+
+
+
+
 
 
 
