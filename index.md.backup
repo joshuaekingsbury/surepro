@@ -101,6 +101,14 @@ xspec
 
 >Website | PDF Download
 
+- <a id="XSEDOC"></a>XSELECT 
+
+>Website | PDF Download
+
+- <a id="XSPDOC"></a>XSPEC 
+
+>Website | PDF Download
+
 ### Research Papers
 
 ```
