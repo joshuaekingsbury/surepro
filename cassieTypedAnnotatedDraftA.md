@@ -22,7 +22,9 @@
 	- ftcopy applies filtering and transformations to the tables
 		+ [In this case, filtering EVENTS by their pixel STATUS](https://heasarc.nasa.gov/docs/suzaku/processing/criteria_xis.html)
 		+ [From xisputpixelquality doc](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/xisputpixelquality.txt)
-			`B19 | 524288 | one pixel apart from the frame/window boundary`
+			```
+			B19 | 524288 | one pixel apart from the frame/window boundary
+			```
 11. 	`$ ftmerge`  
 	`3x3_new.fits, xis5x5to3x3.fits`  
 	`$ xis5x5to3x3`  
