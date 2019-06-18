@@ -46,29 +46,35 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  
 
 15. `$ xselect`  
-	`xselect session name: YYMMDD_#`  
-	`set datadir [path to event_cl dir]:`  
-	`read events: xis1_events_GTI.fits`  
-	`select mkf "SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>60"`  
+	`> Enter session name > YYMMDD_#`  
+	`YYMMDD_#:SUZAKU > set datadir`  
+	`> Enter the Event file dir > [path to event_cl dir]`  
+	`??set instr xis1??`  
+	`YYMMDD_#:SUZAKU > read events`  
+	`> Enter Event file list > xis1_events_GTI.fits`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > select mkf`  
+	`> Boolean expression for filter file selection > SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>60`  
 	- `select mkf` command creates a time filter of GTIs. To actually filter the events, we must use or issue the command `extract events`  
 	- Will do this step and save out a file each for DYE_ELV>20, 40, 60
 
-	`extract events`  
-	`save events [clean_events.fits]`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > extract events`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > save events`  
+	`> Give output file name > clean_events.fits`  
 	- In original procedure it lists following steps 1-2 of New Recipe here  
-
+	`> Use filtered events as input data file ? >[yes] y????????`
 	`filter pha_cutoff 109 547`  
 	`extract image`  
-	`save image [0.4-2.0_image.fits]`  
+	`190617_1:SUZAKU-XIS1-STANDARD > save image`  
+	`0.4-2.0_image.fits`  
 	`exit`  
-	`Save?: [y]`  
-16. `DS9 [0.4-2.0_image.fits]`  
+	`> Save this session? >[y] y`  
+16. `ds9 0.4-2.0_image.fits`  
 	- Change scale to Log  
 	- Analysis  
 		+ Smooth  
 	- Change color to rainbow  
 	- Edit  
-		+ Select Region  
+		+ Region  
 		Select regions with high count rate  
 	+ Region  
 		* Select All  
@@ -79,7 +85,8 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 17. `$ xselect`  
 	`set instr xis1`  
 	`set datadir []`  
-	`read events [clean_events.fits]`  
+	`read events [clean_events.fits]` 
+	`??xis1_filtered_rmsrc??` 
 	`filter region ds9.reg`  
 	`extract all`  
 	`exit`  
