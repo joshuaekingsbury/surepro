@@ -76,6 +76,7 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	- Edit  
 		+ Region  
 		Select regions with high count rate  
+		Double click regions to bring up info to edit like angle for rotation
 	+ Region  
 		* Select All  
 	+ Properties  
