@@ -18,12 +18,12 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	- `~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
 	- Use 6KeV most recent for xis1 as newest 2KeV is older than and doesn't contain necessary GTIs for Night X-Ray Background  (NXB)  
 	- In original procedure, files are merged before cleaning using New Recipe
-8. `$ pset xisputpixelquality badcolumfile=ae_xi1_npmsci6_20160128.fits`
-	- Input badcolum file found in previous step
+8. `$ pset xisputpixelquality badcolumfile=~/YOUR/PATH/FROM/STEP/7`
+	- Input path to badcolum file found in previous step
 9. `$ xisputpixelquality 3x3 file [Enter]`  
-	``output file: 3x3_badcolmn.fits``
+	``output file: 3x3_badcolum.fits``
 	- Repeat this step for 5x5 file
-10. `ftcopy '3x3_badcolum.fits[EVENTS][STATUS=0:524287]' 3x3_new.evt`
+10. `ftcopy 3x3_badcolum.fits[EVENTS][STATUS=0:524287] 3x3_new.fits`
 	- Repeat this step for the 5x5 file output from the previous step
 	- ftcopy applies filtering and transformations to the tables
 		+ [In this case, filtering EVENTS by their pixel STATUS](https://heasarc.nasa.gov/docs/suzaku/processing/criteria_xis.html)
@@ -32,16 +32,16 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 
 11. 
 	`$ xis5x5to3x3`  
-	`input file: 5x5 file`  
+	`input file: 5x5 fits file`  
 	`output file: 5x5to3x3.fits`  
-	`input hk file: ~/suzaku/MBM20/50.../xis/hk/...hk.gz`  
+	`input hk file: ~/suzaku/off-field3/50.../xis/hk/ae509044010xi1_0.hk.gz`  
 	- [An hk file is a "housekeeping" file](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/heasarc.html)
 	- Converting 5x5 to a 3x3, according to Suzaku user guide ch 6?, extracting 3x3 from center of 5x5?
 12. `$ ftmerge`  
-	`3x3_new.fits, xis5x5to3x3.fits`  
+	`3x3_new.fits, 5x5to3x3.fits`  
 	`output: xis1_events.fits`  
 13. `$ ftmerge`  
-	``xis1_events.fits[GTI], xis5x5to3x3.fits[GTI]``  
+	``xis1_events.fits[GTI], 5x5to3x3.fits[GTI]``  
 	`output: xis1_events_GTI.fits`  
 14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  
 
