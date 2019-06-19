@@ -1,4 +1,4 @@
-When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will creat and extract to a directory titled according to the observation ID being extracted.
+When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
 
 
 1. Directory 50.../xis/event_cl
