@@ -40,7 +40,6 @@ Aliases and Functions
 
 # <a id="DRP">Data Retrieval and Placement</a>
 [CALDB Setup Files][caldbsetupfileslink]  
-[CALDB Setup Files (alternate link)][caldbsetupfileslink2]  
 
 [Suzaku Calibaration Files][suzakucaldbfiles]  
 - XRT > Retrieve TAR file  
@@ -154,8 +153,6 @@ xspec
 [suzakucaldbfiles]:https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/suzaku/
 
 [caldbsetupfileslink]:http://heasarc.gsfc.nasa.gov/FTP/caldb/software/tools/caldb_setup_files.tar.Z
-
-[caldbsetupfileslink2]:ftp://cda.cfa.harvard.edu/pub/arcftp/heasarc/caldb/software/tools/caldb_setup_files.tar.Z
 
 [helpformlink]:https://heasarc.gsfc.nasa.gov/cgi-bin/Feedback
 
