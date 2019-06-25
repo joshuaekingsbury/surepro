@@ -92,9 +92,9 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	`extract all`  
 	`exit`  
 	`Save?: [y]`
-18. `$ xisrmfgen 
-	`[name of histogram file]`
-	`[name of output file]: xis_rmf.fits`
+18. `$ xisrmfgen`   
+	`[name of histogram file]`  
+	`[name of output file]: xis_rmf.fits`  
 19. `$ xisexpmapgen
 	`[output file]: xis1_expmap.fits`
 	`[PHA file name]: histogram file`
@@ -138,9 +138,6 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	`[input att file]: ../auxil/ae...att`
 	
 25. spectral anaylsis
-
-
-
 
 
 ---

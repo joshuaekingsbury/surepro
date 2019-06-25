@@ -22,7 +22,7 @@ DS9
 [CALDB](#CALDOC)
 
 
-<p align="right">[^ Table of Contents ^](#TC)
+<p align="right">[^ Table of Contents ^](#TC)</p>
 
 ---
 
@@ -127,8 +127,12 @@ xspec
 ---
 # <a id="RES">Resources</a>
 
-
+[rada][caldbdocpdflink]
 
 <p align="right">[^ Table of Contents ^](#TC)
 
----
+---  
+
+[caldbinstallweblink]:https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/caldb_install.html
+[caldbinstallpdflink]:http://heasarc.gsfc.nasa.gov/FTP/caldb/docs/memos/cal_gen_94_004/cal_gen_94_004.pdf
+[suzakucaldbfiles]:https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/suzaku/
