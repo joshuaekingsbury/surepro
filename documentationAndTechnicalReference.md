@@ -39,7 +39,7 @@ Aliases and Functions
 ---
 
 # <a id="DRP">Data Retrieval and Placement</a>
-[CALDB Setup Files][caldbsetupfileslink2]  
+[CALDB Setup Files][caldbsetupfileslink]  
 [CALDB Setup Files (alternate link)][caldbsetupfileslink2]  
 
 [Suzaku Calibaration Files][suzakucaldbfiles]  
