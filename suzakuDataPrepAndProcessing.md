@@ -93,49 +93,49 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	`exit`  
 	`Save?: [y]`
 18. `$ xisrmfgen 
-	`[name of histogram file]
-	`[name of output file]: xis_rmf.fits
+	`[name of histogram file]`
+	`[name of output file]: xis_rmf.fits`
 19. `$ xisexpmapgen
-	`[output file]: xis1_expmap.fits
-	`[PHA file name]: histogram file
-	`input att file: ../auxil/ae...att
+	`[output file]: xis1_expmap.fits`
+	`[PHA file name]: histogram file`
+	`input att file: ../auxil/ae...att`
 20. `$ pset xissimarfgen badcolumfile=`~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`
 -new recipe - view reference in step 7
 	`$ xissimarfgen
-		-`[instrument name]: xis1
-		-`[source mode]: UNIFORM
-		-`[minimum source radius]: 0.0
-		-`[maximum source radius]: 20
-		-`[# of ARF region]: 1
-		-`[region mode]: SKYREG
-		-`[region file]: ds9.reg
-		-`[output arf file]: xis_arf.fits
-		-`[limit mode]: MIXED
-		-`[# of photons]: 2000000
-		-`[calculation accuracy]: 0.005
-		-`[xis det-coordinates mask image]: expimage.fits
-		-`[input GTI file]: histogram file
-		-input attitude file]: ../auxil/ae..att
-		-`[input rmf file]: xis_rmf.fits
-		-`[energy step file]: medium
+		-`[instrument name]: xis1`
+		-`[source mode]: UNIFORM`
+		-`[minimum source radius]: 0.0`
+		-`[maximum source radius]: 20`
+		-`[# of ARF region]: 1`
+		-`[region mode]: SKYREG`
+		-`[region file]: ds9.reg`
+		-`[output arf file]: xis_arf.fits`
+		-`[limit mode]: MIXED`
+		-`[# of photons]: 2000000`
+		-`[calculation accuracy]: 0.005`
+		-`[xis det-coordinates mask image]: expimage.fits`
+		-`[input GTI file]: histogram file`
+		-input attitude file]: ../auxil/ae..att`
+		-`[input rmf file]: xis_rmf.fits`
+		-`[energy step file]: medium`
 		
 	-This step takes a VERY long time - allow time for it.
 		
 21. `$ pset xisputpixelquality badcolumfile=ae_xi1_npmsci6_20160128.fits`
 	`$ xisputpixelquality ae_xis1_nxbsci_
-	`>ftcopy 'ae_xis1_nxbsci_[EVENTS][STATUS=0:524287]' ae_xis1_nxbsci..rejectnpm.fits
+	`>ftcopy 'ae_xis1_nxbsci_[EVENTS][STATUS=0:524287]' ae_xis1_nxbsci..rejectnpm.fits`
 
 22. `cp *rejectnpm.fits* to current directory
 
 23. `$ pset xisnxbgen nxbevent=*rejectnpm file*
 
 24. `$ xisnxbgen
-	`[outputfile]: en_nxb.fits
-	`[input PHA or event]: histogram file
-	`[region mode]: SKYREG
-	`[region file for output NXB]: ds9.reg
-	`[input orbit file]: ../auxil/ae...orb
-	`[input att file]: ../auxil/ae...att
+	`[outputfile]: en_nxb.fits`
+	`[input PHA or event]: histogram file`
+	`[region mode]: SKYREG`
+	`[region file for output NXB]: ds9.reg`
+	`[input orbit file]: ../auxil/ae...orb`
+	`[input att file]: ../auxil/ae...att`
 	
 25. spectral anaylsis
 
