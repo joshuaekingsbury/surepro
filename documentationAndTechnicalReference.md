@@ -14,14 +14,16 @@
 
 # <a id="SIS">Software Installation and Setup</a>
 
+### DS9
 
-Heasoft
+### Heasoft Pre-Requisites  
+>A) [For Specific Dependencies Click Here] (https://heasarc.gsfc.nasa.gov/lheasoft/ubuntu.html)  
+>B) General additional dependencies covered by running:  `$ sudo apt-get install build-essential`    
 
-https://heasarc.gsfc.nasa.gov/lheasoft/ubuntu.html
+### Heasoft Installation
 
-DS9
-
-[CALDB](#CALDOC)
+### [CALDB](#CALDOC)  
+> [CALDB Setup Files][caldbsetupfileslink]  
 
 
 [^ Table of Contents ^](#TC)
@@ -39,7 +41,6 @@ Aliases and Functions
 ---
 
 # <a id="DRP">Data Retrieval and Placement</a>
-[CALDB Setup Files][caldbsetupfileslink]  
 
 [Suzaku Calibaration Files][suzakucaldbfiles]  
 - XRT > Retrieve TAR file  
@@ -96,11 +97,7 @@ xspec
 >```
 
 
-### Documentation
-
-- <a id="CALDOC"></a>CALDB Setup
-
->[Website][caldbinstallweblink] | [PDF Download][caldbinstallpdflink]
+### Setup Documentation
 
 - <a id="DS9DOC"></a>DS9 (SAOImageDS9)
 
@@ -108,11 +105,27 @@ xspec
 
 - <a id="HEADOC"></a>HEASOFT Setup
 
->[Website][heasoftweblink]
+>[Website][heasoftweblink]  
 
-- <a id="XSEDOC"></a>XSELECT 
+- <a id="CALDOC"></a>CALDB Setup
 
->[Website][xselectdocweblink] | [PDF Download][xselectdocpdflink]
+>[Website][caldbinstallweblink] | [PDF Download][caldbinstallpdflink]
+
+
+
+
+
+### Software and Analysis Documentation  
+
+- Suzaku ABC Guide
+
+>[Website][suzakuabc] | [Part 6: XIS Data Analysis][suzakuabcvi]
+
+
+- <a id="XSEDOC"></a>XSELECT  
+
+>[Website][xselectdocweblink] | [PDF Download][xselectdocpdflink]  
+>Read ["Introduction"](https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/ftools/xselect/node2.html) and ["Generalities"](https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/ftools/xselect/node4.html) sections
 
 - <a id="XSPDOC"></a>XSPEC 
 
@@ -141,6 +154,8 @@ xspec
 
 [HEASARC Assistance][helpformlink]  
 - Contacts for troubleshooting
+
+[A New Recipe for Generating XIS NXB Spectra][xisnxbnewrecipe]  
 
 [^ Table of Contents ^](#TC)
 
@@ -186,3 +201,9 @@ xspec
 [paper2014]:https://doi.org/10.1093/pasj/psu007
 
 [paper2016]:https://iopscience.iop.org/article/10.3847/0004-637X/829/1/9
+
+[suzakuabc]:http://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/abc/
+
+[suzakuabcvi]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/abc/node9.html
+
+[xisnxbnewrecipe]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html
