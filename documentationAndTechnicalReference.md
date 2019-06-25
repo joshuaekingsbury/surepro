@@ -126,7 +126,7 @@ xspec
 
 ---
 # <a id="RES">Resources</a>
-
+http://spiff.rit.edu/classes/phys301/lectures/spec_lines/spec_lines.html
 
 
 <p align="right">[^ Table of Contents ^](#TC)
