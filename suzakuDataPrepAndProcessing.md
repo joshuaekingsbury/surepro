@@ -102,22 +102,22 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 20. `$ pset xissimarfgen badcolumfile=`~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`
 -new recipe - view reference in step 7
 	`$ xissimarfgen
-		>`[instrument name]: xis1
-		>`[source mode]: UNIFORM
-		>`[minimum source radius]: 0.0
-		>`[maximum source radius]: 20
-		>`[# of ARF region]: 1
-		>`[region mode]: SKYREG
-		>`[region file]: ds9.reg
-		>`[output arf file]: xis_arf.fits
-		>`[limit mode]: MIXED
-		>`[# of photons]: 2000000
-		>`[calculation accuracy]: 0.005
-		>`[xis det-coordinates mask image]: expimage.fits
-		>`[input GTI file]: histogram file
-		>`[input attitude file]: ../auxil/ae..att
-		>`[input rmf file]: xis_rmf.fits
-		>`[energy step file]: medium
+		-`[instrument name]: xis1
+		-`[source mode]: UNIFORM
+		-`[minimum source radius]: 0.0
+		-`[maximum source radius]: 20
+		-`[# of ARF region]: 1
+		-`[region mode]: SKYREG
+		-`[region file]: ds9.reg
+		-`[output arf file]: xis_arf.fits
+		-`[limit mode]: MIXED
+		-`[# of photons]: 2000000
+		-`[calculation accuracy]: 0.005
+		-`[xis det-coordinates mask image]: expimage.fits
+		-`[input GTI file]: histogram file
+		-input attitude file]: ../auxil/ae..att
+		-`[input rmf file]: xis_rmf.fits
+		-`[energy step file]: medium
 		
 	-This step takes a VERY long time - allow time for it.
 		
