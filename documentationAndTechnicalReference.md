@@ -64,7 +64,9 @@ xselect
 ---
 # <a id="MOD">Modeling</a>
 
-xspec
+> [XSPEC: Fitting Models to Data](https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node38.html)  
+> [XSPEC: Error](https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node80.html)  
+> [XSPEC: Model](https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node105.html)
 
 [^ Table of Contents ^](#TC)
 
