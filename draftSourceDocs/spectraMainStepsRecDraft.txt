@@ -1,0 +1,1285 @@
+
+joking@JoKing-Space:~$ cd ~/suzaku/off-field3/509044010/analysis
+
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ ls *hist*
+190528_1_hist.xsl  190529_1_hist.xsl
+
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ ls *arf*
+off-field3_arf.fits
+
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ ls *rmf*
+off-field3_rmf.fits
+
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ ls *nxb*
+ae_xi1_nxbsci6_20160128.fits            ae_xis1_nxbsci6_2016_rejectnpm.fits
+ae_xi1_nxbscion_20110602_badcolum.fits  off-field3_nxb.fits
+ae_xi1_nxbscion_20110602.fits
+
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ heainit
+
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ cdbinit
+
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ grppha
+Please enter PHA filename[ ] 190529_1_hist.xsl
+Please enter output filename[ ] off-field3_grp_spec.fits
+ 
+  -------------------------
+  MANDATORY KEYWORDS/VALUES
+  -------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  EXTNAME   - SPECTRUM        Name of this BINTABLE
+  TELESCOP  - SUZAKU          Mission/Satellite name
+  INSTRUME  - XIS1            Instrument/Detector
+  FILTER    - NONE            Instrument filter in use
+  EXPOSURE  - 72271.          Integration time (in secs) of PHA data
+  AREASCAL  - 1.0000          Area scaling factor
+  BACKSCAL  - 0.96880         Background scaling factor
+  BACKFILE  - none            Associated background file
+  CORRSCAL  - 1.0000          Correlation scaling factor
+  CORRFILE  - none            Associated correlation file
+  RESPFILE  - none            Associated redistribution matrix file
+  ANCRFILE  - none            Associated ancillary response file
+  POISSERR  - TRUE            Whether Poissonian errors apply
+  CHANTYPE  - PI              Whether channels have been corrected
+  TLMIN1    - 0               First legal Detector channel
+  DETCHANS  - 4096            No. of legal detector channels
+  NCHAN     - 4096            No. of detector channels in dataset
+  PHAVERSN  - 1.2.0           OGIP FITS version number
+  STAT_ERR  - FALSE           Statistical Error
+  SYS_ERR   - FALSE           Fractional Systematic Error
+  QUALITY   - TRUE            Quality Flag
+  GROUPING  - FALSE           Grouping Flag
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+
+//Must provide
+
+GRPPHA[] chkey RESPFILE off-field3_rmf.fits
+GRPPHA[] chkey ANCRFILE off-field3_arf.fits
+GRPPHA[chkey ANCRFILE off-field3_arf.fits] chkey BACKFILE off-field3_nxb.fits
+GRPPHA[chkey BACKFILE off-field3_nxb.fits] group min 25
+GRPPHA[group min 25] exit
+ ... written the PHA data Extension
+ ...... exiting, changes written to file : off-field3_grp_spec.fits
+ ** grppha 3.0.1 completed successfully
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ ls
+0.4-2.0_image.fits       5x5_badcolum.fits
+190528_1_ascii_out.xsl   5x5_new.fits
+190528_1_display.def     5x5to3x3_new.fits
+190528_1_files.tmp       ae509044010xi1_0_3x3n130b_cl.evt
+190528_1_fits_curve.xsl  ae509044010xi1_0_5x5n130b_cl.evt
+190528_1_fits_in.xsl     ae_xi1_npmsci6_20160128.fits
+190528_1_hist.xsl        ae_xi1_nxbsci6_20160128.fits
+190528_1_image.xsl       ae_xi1_nxbscion_20110602_badcolum.fits
+190528_1_mkf_out.xsl     ae_xi1_nxbscion_20110602.fits
+190528_1_obscat.tmp      ae_xis1_nxbsci6_2016_rejectnpm.fits
+190528_1_obslist.def     ds9.reg
+190528_1_out_event.xsl   file1uK74a-xis_HOT_PIXELS.evt
+190528_1_read_cat.xsl    file5qe79x-xis_PRIMARY.evt
+190528_1_region.xsl      file6XmNsM-xis_EVENTS.evt
+190528_1_xronos_out.xsl  filefimWLt-xis_GTI.evt
+190528_1_xsel.run        fileRZUhq5-xis_EVENTS.evt
+190529_1_ascii_out.xsl   fileUatI94-xis_PRIMARY.evt
+190529_1_display.def     filewxHwGC-xis_GTI.evt
+190529_1_files.tmp       fileX9QNW9-xis_HOT_PIXELS.evt
+190529_1_fits_curve.xsl  off-field3_arf.fits
+190529_1_hist.xsl        off-field3_exp.fits
+190529_1_image.xsl       off-field3_grp_spec.fits
+190529_1_obscat.tmp      off-field3_nxb.fits
+190529_1_obslist.def     off-field3_rmf.fits
+190529_1_out_event.xsl   test_badcolum.fits
+190529_1_read_cat.xsl    typescript
+190529_1_region.xsl      xis1_events.fits
+190529_1_session.xsl     xis1_events_GTI.fits
+190529_1_xronos_out.xsl  xselect.log
+3x3_badcolum.fits        xsel_timefile.asc
+3x3_new.fits
+joking@JoKing-Space:~/suzaku/off-field3/509044010/analysis$ xspec
+
+		XSPEC version: 12.10.1
+	Build Date/Time: Tue May 21 15:51:45 2019
+
+XSPEC12>data off-field3_grp_spec.fits
+
+1 spectrum  in use
+ 
+Spectral Data File: off-field3_grp_spec.fits  Spectrum 1
+Net count rate (cts/s) for Spectrum:1  4.417e-01 +/- 3.573e-03 (50.4 % total)
+ Assigned to Data Group 1 and Plot Group 1
+  Noticed Channels:  1-1358
+  Telescope: SUZAKU Instrument: XIS1  Channel Type: PI
+  Exposure Time: 7.227e+04 sec
+ Using fit statistic: chi
+ Using test statistic: chi
+ Using Background File                off-field3_nxb.fits
+  Background Exposure Time: 6.63e+05 sec
+ Using Response (RMF) File            off-field3_rmf.fits for Source 1
+ Using Auxiliary Response (ARF) File  off-field3_arf.fits
+
+XSPEC12>cpd /xw
+XSPEC12>setplot energy
+XSPEC12>iplot data
+PLT> exit
+
+XSPEC12>ignore 0.0-0.3 12.0-**
+    57 channels (1-57) ignored in spectrum #     1
+   320 channels (1039-1358) ignored in spectrum #     1
+
+XSPEC12>iplot data
+PLT> exit
+
+XSPEC12>ignore 0.0-0.3 7.0-**
+    57 channels (1-57) ignored in spectrum #     1
+   774 channels (585-1358) ignored in spectrum #     1
+
+XSPEC12>iplot data
+PLT> exit
+
+XSPEC12>ignore 0.0-0.3 5.0-**
+    57 channels (1-57) ignored in spectrum #     1
+   858 channels (501-1358) ignored in spectrum #     1
+
+XSPEC12>iplot data
+PLT> exit
+
+XSPEC12>mo apec+wabs*(apec+po)
+
+Input parameter value, delta, min, bot, top, and max values for ...
+
+1:apec:kT>0.1
+
+2:apec:Abundanc>
+
+3:apec:Redshift>
+
+4:apec:norm>1
+
+5:wabs:nH>0.059
+
+6:apec:kT>0.22
+
+7:apec:Abundanc>
+
+8:apec:Redshift>
+
+9:apec:norm>1
+
+10:powerlaw:PhoIndex>1.52
+
+11:powerlaw:norm>1
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   apec       kT         keV      0.100000     +/-  0.0          
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                1.00000      +/-  0.0          
+   5    2   wabs       nH         10^22    5.90000E-02  +/-  0.0          
+   6    3   apec       kT         keV      0.220000     +/-  0.0          
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.00000      +/-  0.0          
+  10    4   powerlaw   PhoIndex            1.52000      +/-  0.0          
+  11    4   powerlaw   norm                1.00000      +/-  0.0          
+________________________________________________________________________
+
+Reading APEC data from 3.0.9
+
+
+**************************************************************
+The wabs model is obsolete and is only included for comparison
+with historical results. The tbabs model should be used for
+the ISM or phabs for general photoelectric absorption.
+**************************************************************
+
+Fit statistic : Chi-Squared =   2.170030e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   2.170030e+09 using 443 PHA bins.
+ Reduced chi-squared =   4.977133e+06 for    436 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>freeze 5
+
+Fit statistic : Chi-Squared =   2.170030e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   2.170030e+09 using 443 PHA bins.
+ Reduced chi-squared =   4.965743e+06 for    437 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>renorm
+
+Fit statistic : Chi-Squared =        1021.32 using 443 PHA bins.
+
+Test statistic : Chi-Squared =        1021.32 using 443 PHA bins.
+ Reduced chi-squared =        2.33712 for    437 degrees of freedom 
+ Null hypothesis probability =   9.443373e-49
+ Current data and model not fit yet.
+
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT        4:norm          6:kT        9:norm   10:PhoIndex       11:norm
+984.129      14698.5      -2     0.0764013    0.00994760      0.239856   0.000835205       1.30038    0.00170274
+561.655      49331.2      -3     0.0810247     0.0186757      0.215072    0.00131926       1.31120    0.00172462
+545.188      3174.38      -2     0.0773274     0.0195087      0.213917    0.00142421       1.32669    0.00175119
+544.474      613.238      -2     0.0738645     0.0229257      0.204423    0.00160136       1.33299    0.00176119
+542.883      2575.8       -2     0.0710891     0.0276283      0.199078    0.00177299       1.33625    0.00176632
+540.911      2282.58      -3     0.0645145     0.0423102      0.183507    0.00230419       1.34476    0.00178006
+537.068      2912.94      -1     0.0640822     0.0454572      0.188037    0.00219130       1.34567    0.00178176
+536.237      303.044      -1     0.0635005     0.0478230      0.189464    0.00215589       1.34492    0.00178002
+535.659      33.0998      -1     0.0629123     0.0501003      0.189821    0.00214927       1.34428    0.00177888
+535.099      41.6937      -1     0.0623327     0.0524282      0.189803    0.00215385       1.34401    0.00177843
+Number of trials exceeded: continue fitting? y
+534.526      70.0411      -1     0.0617670     0.0548637      0.189639    0.00216299       1.34399    0.00177841
+533.938      86.1742      -1     0.0612178     0.0574328      0.189412    0.00217427       1.34414    0.00177864
+533.336      95.4653      -1     0.0606866     0.0601479      0.189153    0.00218682       1.34437    0.00177900
+532.722      101.506      -1     0.0601747     0.0630146      0.188872    0.00220034       1.34467    0.00177945
+532.1        105.936      -1     0.0596832     0.0660341      0.188575    0.00221472       1.34500    0.00177996
+531.475      109.417      -1     0.0592132     0.0692036      0.188265    0.00222992       1.34536    0.00178051
+530.852      112.166      -1     0.0587657     0.0725163      0.187942    0.00224590       1.34575    0.00178110
+530.237      114.205      -1     0.0583415     0.0759607      0.187608    0.00226263       1.34616    0.00178173
+529.636      115.476      -1     0.0579416     0.0795204      0.187265    0.00228003       1.34659    0.00178239
+529.056      115.894      -1     0.0575665     0.0831734      0.186916    0.00229802       1.34704    0.00178308
+Number of trials exceeded: continue fitting? y
+528.505      115.382      -1     0.0572168     0.0868927      0.186563    0.00231647       1.34751    0.00178379
+527.987      113.883      -1     0.0568927     0.0906459      0.186208    0.00233524       1.34799    0.00178452
+527.871      111.38       -2     0.0551048      0.112133      0.184038    0.00244942       1.35096    0.00178914
+524.934      2116.91      -3     0.0542072      0.135984      0.181903    0.00257779       1.35458    0.00179470
+524.891      348.394      -4     0.0540775      0.139398      0.181873    0.00258531       1.35514    0.00179546
+524.88       209.734      -5     0.0539277      0.140751      0.181870    0.00258519       1.35521    0.00179554
+524.868      161.133      -6     0.0536905      0.142951      0.181863    0.00258545       1.35525    0.00179561
+524.861      94.1594      -7     0.0532843      0.146884      0.181846    0.00258619       1.35533    0.00179573
+======================================================================
+ Variances and Principal Axes
+                 1        4        6        9       10       11  
+ 6.5307E-10| -0.0040  -0.0003  -0.0046  -0.0927   0.0010  -0.9957  
+ 8.4953E-09|  0.0609   0.0052   0.0249   0.9935   0.0017  -0.0929  
+ 3.5500E-07| -0.9918  -0.0933   0.0637   0.0595   0.0002  -0.0018  
+ 1.0166E-05|  0.0605   0.0188   0.9969  -0.0291   0.0354  -0.0021  
+ 1.2281E-02|  0.0944  -0.9947   0.0143  -0.0008  -0.0387  -0.0001  
+ 1.2238E-03|  0.0016  -0.0392  -0.0349  -0.0006   0.9986   0.0012  
+----------------------------------------------------------------------
+
+========================================================================
+  Covariance Matrix
+        1           2           3           4           5           6   
+   1.099e-04  -1.153e-03   1.714e-05  -1.013e-06  -4.283e-05  -6.472e-08
+  -1.153e-03   1.215e-02  -1.733e-04   1.028e-05   4.245e-04   6.423e-07
+   1.714e-05  -1.733e-04   1.412e-05  -4.143e-07  -4.905e-05  -8.205e-08
+  -1.013e-06   1.028e-05  -4.143e-07   2.736e-08  -3.709e-07  -4.496e-10
+  -4.283e-05   4.245e-04  -4.905e-05  -3.709e-07   1.239e-03   1.474e-06
+  -6.472e-08   6.423e-07  -8.205e-08  -4.496e-10   1.474e-06   2.525e-09
+------------------------------------------------------------------------
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   apec       kT         keV      5.32843E-02  +/-  1.04814E-02  
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                0.146884     +/-  0.110237     
+   5    2   wabs       nH         10^22    5.90000E-02  frozen
+   6    3   apec       kT         keV      0.181846     +/-  3.75716E-03  
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                2.58619E-03  +/-  1.65416E-04  
+  10    4   powerlaw   PhoIndex            1.35533      +/-  3.51969E-02  
+  11    4   powerlaw   norm                1.79573E-03  +/-  5.02477E-05  
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =         524.86 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         524.86 using 443 PHA bins.
+ Reduced chi-squared =         1.2011 for    437 degrees of freedom 
+ Null hypothesis probability =   2.435056e-03
+
+XSPEC12>iplot data
+PLT> exit
+
+XSPEC12>iplot data resid
+PLT> exit
+
+XSPEC12>mo apec+wabs*(apec+po)+gauss
+
+Input parameter value, delta, min, bot, top, and max values for ...
+
+1:apec:kT>0.1
+
+2:apec:Abundanc>
+
+3:apec:Redshift>
+
+4:apec:norm>1
+
+5:wabs:nH>0.059
+
+6:apec:kT>0.22
+
+7:apec:Abundanc>
+
+8:apec:Redshift>
+
+9:apec:norm>1
+
+10:powerlaw:PhoIndex>1.52
+
+11:powerlaw:norm>1
+
+12:gaussian:LineE>0.525
+
+13:gaussian:Sigma>0.001
+
+14:gaussian:norm>1
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   apec       kT         keV      0.100000     +/-  0.0          
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                1.00000      +/-  0.0          
+   5    2   wabs       nH         10^22    5.90000E-02  +/-  0.0          
+   6    3   apec       kT         keV      0.220000     +/-  0.0          
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.00000      +/-  0.0          
+  10    4   powerlaw   PhoIndex            1.52000      +/-  0.0          
+  11    4   powerlaw   norm                1.00000      +/-  0.0          
+  12    5   gaussian   LineE      keV      0.525000     +/-  0.0          
+  13    5   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  14    5   gaussian   norm                1.00000      +/-  0.0          
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =   3.325779e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   3.325779e+09 using 443 PHA bins.
+ Reduced chi-squared =   7.680782e+06 for    433 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>freeze 5 12 13
+
+Fit statistic : Chi-Squared =   3.325779e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   3.325779e+09 using 443 PHA bins.
+ Reduced chi-squared =   7.627933e+06 for    436 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>renorm
+
+Fit statistic : Chi-Squared =        1694.65 using 443 PHA bins.
+
+Test statistic : Chi-Squared =        1694.65 using 443 PHA bins.
+ Reduced chi-squared =        3.88681 for    436 degrees of freedom 
+ Null hypothesis probability =  1.546793e-147
+ Current data and model not fit yet.
+
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT        4:norm          6:kT        9:norm   10:PhoIndex       11:norm       14:norm
+1403.05      107098       -3     0.0347918     0.0133268      0.238550    0.00114127       1.19988    0.00166570   0.000253229
+1341.29      56861.4       1     0.0406140     0.0416744      0.238486    0.00114726       1.20089    0.00166569   0.000258799
+547.184      55520.7       0     0.0556385      0.115591      0.237753    0.00119750       1.20959    0.00166528   0.000305718
+508.709      22376         0     0.0558004      0.117176      0.235367    0.00129982       1.23824    0.00165275   0.000382911
+495.056      8868.26      -1     0.0556957      0.115327      0.222993    0.00147676       1.27341    0.00167152   0.000410672
+493.454      1967.15      -2     0.0551367      0.123382      0.217020    0.00156970       1.29513    0.00170184   0.000394776
+492.624      556.978      -3     0.0546660      0.133539      0.213171    0.00162912       1.30345    0.00171519   0.000389667
+492.618      772.141      -4     0.0537409      0.151180      0.198422    0.00192172       1.31429    0.00173247   0.000348266
+================================================================================
+ Variances and Principal Axes
+                 1        4        6        9       10       11       14  
+ 6.0591E-10| -0.0145  -0.0005  -0.0029  -0.1562   0.0009  -0.9829  -0.0959  
+ 1.6106E-09|  0.0729   0.0021   0.0004   0.2685   0.0005  -0.1365   0.9508  
+ 5.5272E-09| -0.0639  -0.0021  -0.0179  -0.9467  -0.0014   0.1232   0.2900  
+ 6.5808E-08|  0.9941   0.0440  -0.0140  -0.0825  -0.0000   0.0036  -0.0524  
+ 8.8558E-05| -0.0042  -0.1883  -0.9785   0.0182  -0.0826   0.0004  -0.0038  
+ 8.4649E-04|  0.0446  -0.9632   0.1677  -0.0043   0.2053   0.0002  -0.0002  
+ 1.3102E-03|  0.0098  -0.1869   0.1182  -0.0011  -0.9752  -0.0012   0.0003  
+--------------------------------------------------------------------------------
+
+====================================================================================
+  Covariance Matrix
+        1           2           3           4           5           6           7   
+   1.880e-06  -3.873e-05   8.220e-06  -1.902e-07  -4.756e-06  -7.181e-09  -5.003e-09
+  -3.873e-05   8.342e-04  -1.494e-04   3.509e-06   7.272e-05   1.108e-07   1.377e-07
+   8.220e-06  -1.494e-04   1.269e-04  -2.365e-06  -1.147e-04  -1.865e-07   3.511e-07
+  -1.902e-07   3.509e-06  -2.365e-06   5.233e-08   5.728e-07   1.018e-09  -6.744e-09
+  -4.756e-06   7.272e-05  -1.147e-04   5.728e-07   1.282e-03   1.518e-06  -3.730e-07
+  -7.181e-09   1.108e-07  -1.865e-07   1.018e-09   1.518e-06   2.521e-09  -5.781e-10
+  -5.003e-09   1.377e-07   3.511e-07  -6.744e-09  -3.730e-07  -5.781e-10   3.540e-09
+------------------------------------------------------------------------------------
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   apec       kT         keV      5.37409E-02  +/-  1.37120E-03  
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                0.151180     +/-  2.88819E-02  
+   5    2   wabs       nH         10^22    5.90000E-02  frozen
+   6    3   apec       kT         keV      0.198422     +/-  1.12651E-02  
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.92172E-03  +/-  2.28753E-04  
+  10    4   powerlaw   PhoIndex            1.31429      +/-  3.58095E-02  
+  11    4   powerlaw   norm                1.73247E-03  +/-  5.02094E-05  
+  12    5   gaussian   LineE      keV      0.525000     frozen
+  13    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  14    5   gaussian   norm                3.48266E-04  +/-  5.94948E-05  
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =         492.62 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         492.62 using 443 PHA bins.
+ Reduced chi-squared =         1.1299 for    436 degrees of freedom 
+ Null hypothesis probability =   3.127074e-02
+
+XSPEC12>setplot rebin 5
+XSPEC12>iplot data
+PLT> exit
+
+XSPEC12>iplot data resid
+PLT> exit
+
+XSPEC12>setplot rebin 5 5
+XSPEC12>plot data
+XSPEC12>setplot rebin 10 10
+XSPEC12>plot data
+XSPEC12>setplot rebin 7 7
+XSPEC12>plot data
+XSPEC12>iplot data resid
+PLT> exit
+
+XSPEC12>addcomp 6 gauss
+
+Input parameter value, delta, min, bot, top, and max values for ...
+
+15:gaussian:LineE>0.9
+
+16:gaussian:Sigma>0.001
+
+17:gaussian:norm>1
+
+Fit statistic : Chi-Squared =   4.397942e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   4.397942e+09 using 443 PHA bins.
+ Reduced chi-squared =   1.015691e+07 for    433 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> + gaussian<6> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   apec       kT         keV      5.37409E-02  +/-  1.37120E-03  
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                0.151180     +/-  2.88819E-02  
+   5    2   wabs       nH         10^22    5.90000E-02  frozen
+   6    3   apec       kT         keV      0.198422     +/-  1.12651E-02  
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.92172E-03  +/-  2.28753E-04  
+  10    4   powerlaw   PhoIndex            1.31429      +/-  3.58095E-02  
+  11    4   powerlaw   norm                1.73247E-03  +/-  5.02094E-05  
+  12    5   gaussian   LineE      keV      0.525000     frozen
+  13    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  14    5   gaussian   norm                3.48266E-04  +/-  5.94948E-05  
+  15    6   gaussian   LineE      keV      0.900000     +/-  0.0          
+  16    6   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  17    6   gaussian   norm                1.00000      +/-  0.0          
+
+________________________________________________________________________
+
+XSPEC12>freeze 16
+
+Fit statistic : Chi-Squared =   4.397942e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   4.397942e+09 using 443 PHA bins.
+ Reduced chi-squared =   1.013351e+07 for    434 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>renorm
+
+Fit statistic : Chi-Squared =        7964.95 using 443 PHA bins.
+
+Test statistic : Chi-Squared =        7964.95 using 443 PHA bins.
+ Reduced chi-squared =        18.3524 for    434 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT        4:norm          6:kT        9:norm   10:PhoIndex       11:norm       14:norm      15:LineE       17:norm
+7742.89      343347        2      0.102265   0.000295032      0.437378   4.57424e-06     -0.793859   2.57878e-06   1.41235e-06      0.900001   0.000431041
+7492.61      1.82405e+06   1      0.113628   0.000402974      0.949232   1.36288e-05      -1.07643   3.83883e-06   1.33540e-05      0.900011   0.000430944
+5154.47      2.44161e+06   0      0.161628    0.00104408      0.628602   8.19525e-05      -2.03276   1.04953e-05   0.000102416      0.899993   0.000425711
+3325.19      3.37667e+06   0      0.197627    0.00183212       1.01871   0.000303365      -2.07954   1.32460e-05   0.000290274      0.902938   0.000294577
+2295.39      1.42767e+06  -1      0.181860    0.00234150       1.20743    0.00100943      -1.85525   1.98294e-05   0.000310907      0.887301   0.000137556
+1911.07      531832       -1      0.183815    0.00248702       1.46022    0.00152909      -1.57034   2.82935e-05   0.000238876      0.866609   0.000132378
+1662.34      557455       -2      0.179294    0.00247060       2.17309    0.00280460     0.0929103   9.64512e-05   0.000179680      0.878358   0.000197133
+1569.74      328690       -2      0.176214    0.00244426       2.79341    0.00289732       1.88176   0.000513768   0.000157272      0.883221   0.000147309
+840.933      52670.8       0      0.174121    0.00241112       3.81546    0.00309844      0.824616   0.000687133   0.000149397      0.884041   0.000131309
+814.227      14367.3      -1      0.173394    0.00242475       5.13582    0.00316273      0.904454   0.000698641   0.000134460      0.885844   0.000119948
+Number of trials exceeded: continue fitting? y
+804.259      944.759      -2      0.171256    0.00244687       6.87977    0.00341253       1.05291   0.000749397   0.000110470      0.886892   0.000113102
+750.194      811.772      -2      0.151491    0.00297080       9.76578    0.00342623       1.26927   0.000903995   5.09529e-05      0.883575   0.000123399
+712.323      4380.53      -2      0.134137    0.00393904       22.1542    0.00338059       1.64971    0.00127326   6.82898e-06      0.881390   0.000110780
+666.612      6621.86      -1      0.123127    0.00478602       46.3883    0.00369282       1.63178    0.00136362   1.65423e-06      0.878776   0.000113277
+645.816      3526.62      -1      0.117394    0.00568190       55.9819    0.00387878       1.62556    0.00138233   4.36869e-07      0.876464   0.000116542
+639.231      6320.88      -1      0.114527    0.00629143       60.1712    0.00400461       1.62875    0.00138331   1.36239e-07      0.874395   0.000119358
+638.225      8274.51      -1      0.113075    0.00661914       62.2524    0.00412652       1.63551    0.00138168   6.21439e-08      0.872561   0.000121125
+634.547      9763.76       0      0.112739    0.00661459       63.3960    0.00408788       1.64192    0.00137066   2.73232e-08      0.871637   0.000120725
+633.681      5980.37       0      0.112530    0.00663004       63.7612    0.00408112       1.64438    0.00136588   1.11465e-08      0.870797   0.000121089
+633.319      4935.43       0      0.112376    0.00665142       63.9664    0.00408519       1.64554    0.00136323   3.31052e-09      0.870007   0.000121580
+Number of trials exceeded: continue fitting? y
+633.118      4594.08       0      0.112251    0.00667358       63.9965    0.00409336       1.64625    0.00136138   1.38021e-09      0.869269   0.000122047
+632.968      4487.88       0      0.112143    0.00669465       63.9984    0.00410264       1.64687    0.00135975   4.22490e-10      0.868580   0.000122446
+632.842      4441.8        0      0.112048    0.00671406       63.9994    0.00411233       1.64750    0.00135821   1.84252e-10      0.867929   0.000122790
+632.738      4415.23       0      0.111962    0.00673172       63.9998    0.00412222       1.64814    0.00135670   6.55788e-11      0.867326   0.000123093
+632.651      4397.72       0      0.111886    0.00674769       63.9999    0.00413224       1.64881    0.00135521   6.42707e-12      0.866768   0.000123360
+632.575      4384.59       0      0.111817    0.00676207       64.0000    0.00414234       1.64951    0.00135374   2.74014e-12      0.866243   0.000123594
+632.51       4373.52       0      0.111755    0.00677500       64.0000    0.00415252       1.65024    0.00135226   9.01167e-13      0.865756   0.000123802
+632.455      4363.93       0      0.111699    0.00678660       64.0000    0.00416276       1.65099    0.00135079   4.42436e-13      0.865311   0.000123985
+632.406      4355.61       0      0.111649    0.00679701       64.0000    0.00417306       1.65177    0.00134932   2.13529e-13      0.864900   0.000124144
+632.362      4348.12       0      0.111604    0.00680633       64.0000    0.00418343       1.65257    0.00134785   9.92838e-14      0.864517   0.000124283
+Number of trials exceeded: continue fitting? y
+632.322      4341.24       0      0.111563    0.00681468       64.0000    0.00419386       1.65339    0.00134637   4.22553e-14      0.864164   0.000124407
+632.287      4335.02       0      0.111527    0.00682214       64.0000    0.00420436       1.65423    0.00134489   1.37841e-14      0.863843   0.000124516
+632.254      4329.53       0      0.111493    0.00682881       64.0000    0.00421492       1.65509    0.00134340   6.67602e-15      0.863554   0.000124610
+632.224      4324.77       0      0.111464    0.00683477       64.0000    0.00422555       1.65596    0.00134191   3.12638e-15      0.863294   0.000124691
+632.196      4320.49       0      0.111437    0.00684008       64.0000    0.00423624       1.65686    0.00134041   1.35356e-15      0.863057   0.000124759
+632.169      4316.56       0      0.111412    0.00684482       64.0000    0.00424701       1.65777    0.00133890   4.68063e-16      0.862841   0.000124815
+632.144      4312.83       0      0.111390    0.00684904       64.0000    0.00425784       1.65869    0.00133738   2.56010e-17      0.862643   0.000124862
+632.119      4323.83       0      0.111371    0.00685282       64.0000    0.00426875       1.65963    0.00133585   1.18062e-17      0.862463   0.000124901
+632.095      4297.67       0      0.111353    0.00685613       64.0000    0.00427973       1.66058    0.00133432   4.88630e-18      0.862300   0.000124932
+632.071      4325.61       0      0.111336    0.00685908       64.0000    0.00429079       1.66155    0.00133277   1.45718e-18      0.862153   0.000124957
+Number of trials exceeded: continue fitting? y
+632.048      4478.8        0      0.111321    0.00686170       64.0000    0.00430193       1.66253    0.00133121   6.33785e-19      0.862022   0.000124975
+632.046      4737.52       0      0.111316    0.00686548       64.0000    0.00431316       1.66355    0.00132966   2.11390e-19      0.861905   0.000124973
+632.012      6692.72       0      0.111299    0.00686661       64.0000    0.00432441       1.66452    0.00132806   7.65265e-20      0.861802   0.000124982
+***Warning: Zero alpha-matrix diagonal element for parameter 14
+ Parameter 14 is pegged at 7.65265e-20 due to zero or negative pivot element, likely
+ caused by the fit being insensitive to the parameter.
+631.742      1668.23       0      0.111150    0.00684114       64.0000    0.00433496       1.66459    0.00132609   7.65265e-20      0.861713   0.000125231
+631.451      1488.94      -1      0.110976    0.00684382       64.0000    0.00443432       1.67433    0.00130674   7.65265e-20      0.861566   0.000125373
+628.99       335.048      -2      0.110849    0.00684407       64.0000    0.00560861       1.75832    0.00112410   7.65265e-20      0.861510   0.000124568
+622.993      1380.31      -2      0.110606    0.00679104       64.0000    0.00751500       1.99728   0.000842629   7.65265e-20      0.861803   0.000119913
+609.793      4120.85      -1      0.110245    0.00669098       64.0000    0.00792252       2.30142   0.000808874   7.65265e-20      0.862643   0.000113075
+589.68       1220.63      -1      0.109598    0.00642941       64.0000    0.00867094       2.80000   0.000738588   7.65265e-20      0.864836   0.000100429
+Number of trials exceeded: continue fitting? y
+566.227      2008.55      -1      0.109247    0.00583583       64.0000    0.00934516       3.52528   0.000640856   7.65265e-20      0.869443   9.05200e-05
+555.152      3554.74      -2      0.113071    0.00426009       64.0000    0.00990350       4.33752   0.000470345   7.65265e-20      0.876449   9.45102e-05
+551.476      4783.04      -3      0.118654    0.00354031       64.0000    0.00982459       4.51444   0.000445330   7.65265e-20      0.881614   9.93266e-05
+550.403      3823.69      -4      0.121239    0.00336309       64.0000    0.00985128       4.58501   0.000430831   7.65265e-20      0.885956   0.000100442
+550.015      644.164      -5      0.122124    0.00328105       64.0000    0.00986398       4.62120   0.000423901   7.65265e-20      0.889812   0.000100871
+549.708      279.913      -6      0.122620    0.00323080       64.0000    0.00987027       4.64241   0.000420095   7.65265e-20      0.893316   0.000101009
+549.445      219.762      -7      0.122955    0.00319635       64.0000    0.00987335       4.65604   0.000417875   7.65265e-20      0.896525   0.000100999
+549.226      187.437      -8      0.123204    0.00317072       64.0000    0.00987478       4.66552   0.000416490   7.65265e-20      0.899445   0.000100920
+549.039      155.306      -9      0.123402    0.00315033       64.0000    0.00987531       4.67254   0.000415588   7.65265e-20      0.902137   0.000100787
+548.887      128.328     -10      0.123568    0.00313331       64.0000    0.00987541       4.67806   0.000414955   7.65265e-20      0.904574   0.000100627
+Number of trials exceeded: continue fitting? y
+548.762      104.041     -11      0.123713    0.00311865       64.0000    0.00987529       4.68259   0.000414484   7.65265e-20      0.906767   0.000100455
+548.663      82.956      -12      0.123841    0.00310583       64.0000    0.00987511       4.68641   0.000414110   7.65265e-20      0.908719   0.000100280
+548.585      64.6738     -13      0.123955    0.00309455       64.0000    0.00987491       4.68969   0.000413801   7.65265e-20      0.910434   0.000100110
+548.525      55.9077     -14      0.124058    0.00308459       64.0000    0.00987475       4.69256   0.000413529   7.65265e-20      0.911929   9.99607e-05
+548.479      43.4688     -15      0.124149    0.00307583       64.0000    0.00987462       4.69505   0.000413291   7.65265e-20      0.913225   9.98235e-05
+548.445      31.0923     -16      0.124229    0.00306817       64.0000    0.00987451       4.69720   0.000413092   7.65265e-20      0.914342   9.96944e-05
+548.423      25.3158     -17      0.124300    0.00306153       64.0000    0.00987443       4.69906   0.000412915   7.65265e-20      0.915287   9.95838e-05
+548.407      16.6651     -18      0.124360    0.00305585       64.0000    0.00987436       4.70062   0.000412774   7.65265e-20      0.916103   9.94792e-05
+548.398      10.0404     -19      0.124412    0.00305102       64.0000    0.00987430       4.70192   0.000412660   7.65265e-20      0.916784   9.93854e-05
+548.398      15226.5       1      0.124412    0.00305104       64.0000    0.00987430       4.70193   0.000412662   2.34516e-20      0.916790   9.93855e-05
+==========================================================================================
+ Variances and Principal Axes
+                 1        4        6        9       10       11       14       15       17  
+ 1.8424E-10| -0.0045  -0.0646   0.0000  -0.0305  -0.0001  -0.5958  -0.3963  -0.0001  -0.6949  
+ 2.4353E-10|  0.0046   0.0717  -0.0000   0.0003   0.0001   0.4171   0.5806  -0.0001  -0.6955  
+ 7.5134E-10| -0.0001  -0.0286   0.0000  -0.0428  -0.0002  -0.6789   0.7094   0.0001   0.1820  
+ 2.6555E-08|  0.0106   0.2321   0.0000  -0.9718   0.0007   0.0257  -0.0285  -0.0006   0.0152  
+ 5.8874E-08| -0.0743  -0.9646   0.0000  -0.2299   0.0000   0.0970   0.0419  -0.0008  -0.0068  
+ 3.2647E-05|  0.9950  -0.0747  -0.0000  -0.0069  -0.0261   0.0023  -0.0010  -0.0602  -0.0006  
+ 7.3689E-05| -0.0599   0.0052   0.0000   0.0012   0.0019  -0.0003   0.0001  -0.9982   0.0002  
+ 1.1709E-01| -0.0260   0.0021  -0.0035  -0.0004  -0.9997   0.0002   0.0000  -0.0004  -0.0000  
+ 9.6533E+03|  0.0001  -0.0000  -1.0000  -0.0000   0.0035  -0.0000  -0.0000  -0.0000   0.0000  
+------------------------------------------------------------------------------------------
+
+============================================================================================================
+  Covariance Matrix
+        1           2           3           4           5           6           7           8           9   
+   1.506e-04  -1.189e-05  -6.102e-01  -1.067e-05   5.208e-03  -1.206e-06  -9.974e-08   2.678e-06   4.627e-08
+  -1.189e-05   9.973e-07   4.656e-02   8.134e-07  -4.143e-04   9.037e-08   5.318e-09  -2.568e-07  -3.332e-09
+  -6.102e-01   4.656e-02   9.654e+03   1.866e-01  -3.417e+01   9.969e-03   1.702e-04   1.433e-02  -2.838e-04
+  -1.067e-05   8.134e-07   1.866e-01   3.658e-06  -6.085e-04   1.791e-07   2.717e-09   2.239e-07  -4.822e-09
+   5.208e-03  -4.143e-04  -3.417e+01  -6.085e-04   2.380e-01  -6.028e-05  -2.749e-06  -7.403e-06   2.846e-06
+  -1.206e-06   9.037e-08   9.969e-03   1.791e-07  -6.028e-05   1.683e-08   5.183e-10   2.560e-08  -8.499e-10
+  -9.974e-08   5.318e-09   1.702e-04   2.717e-09  -2.749e-06   5.183e-10   6.896e-10  -5.831e-09   2.566e-12
+   2.678e-06  -2.568e-07   1.433e-02   2.239e-07  -7.403e-06   2.560e-08  -5.831e-09   7.358e-05  -1.439e-08
+   4.627e-08  -3.332e-09  -2.838e-04  -4.822e-09   2.846e-06  -8.499e-10   2.566e-12  -1.439e-08   2.921e-10
+------------------------------------------------------------------------------------------------------------
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> + gaussian<6> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   apec       kT         keV      0.124412     +/-  1.22719E-02  
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                3.05104E-03  +/-  9.98650E-04  
+   5    2   wabs       nH         10^22    5.90000E-02  frozen
+   6    3   apec       kT         keV      64.0000      +/-  98.2533      
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                9.87430E-03  +/-  1.91262E-03  
+  10    4   powerlaw   PhoIndex            4.70193      +/-  0.487846     
+  11    4   powerlaw   norm                4.12662E-04  +/-  1.29733E-04  
+  12    5   gaussian   LineE      keV      0.525000     frozen
+  13    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  14    5   gaussian   norm                2.34516E-20  +/-  2.62602E-05  
+  15    6   gaussian   LineE      keV      0.916790     +/-  8.57773E-03  
+  16    6   gaussian   Sigma      keV      1.00000E-03  frozen
+  17    6   gaussian   norm                9.93855E-05  +/-  1.70900E-05  
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =         548.40 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         548.40 using 443 PHA bins.
+ Reduced chi-squared =         1.2636 for    434 degrees of freedom 
+ Null hypothesis probability =   1.540747e-04
+
+XSPEC12>mo vapec+wabs*(vapec+po)+gauss+gauss+gauss
+
+Input parameter value, delta, min, bot, top, and max values for ...
+
+1:vapec:kT>0.099
+
+2:vapec:He>
+
+3:vapec:C>
+
+4:vapec:N>
+              1      -0.01(      0.01)          0          0       1000       1000
+5:vapec:O>0
+              1      -0.01(      0.01)          0          0       1000       1000
+6:vapec:Ne>
+              1      -0.01(      0.01)          0          0       1000       1000
+7:vapec:Mg>
+              1      -0.01(      0.01)          0          0       1000       1000
+8:vapec:Al>
+              1      -0.01(      0.01)          0          0       1000       1000
+9:vapec:Si>
+              1      -0.01(      0.01)          0          0       1000       1000
+10:vapec:S>
+              1      -0.01(      0.01)          0          0       1000       1000
+11:vapec:Ar>
+              1      -0.01(      0.01)          0          0       1000       1000
+12:vapec:Ca>
+              1      -0.01(      0.01)          0          0       1000       1000
+13:vapec:Fe>
+              1      -0.01(      0.01)          0          0       1000       1000
+14:vapec:Ni>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+15:vapec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+16:vapec:norm>1
+              1      0.001(      0.01)          0          0     100000      1e+06
+17:wabs:nH>0.059
+            6.5       0.01(     0.065)     0.0808     0.0808     68.447     68.447
+18:vapec:kT>0.22
+              1      -0.01(      0.01)          0          0       1000       1000
+19:vapec:He>
+              1      -0.01(      0.01)          0          0       1000       1000
+20:vapec:C>
+              1      -0.01(      0.01)          0          0       1000       1000
+21:vapec:N>
+              1      -0.01(      0.01)          0          0       1000       1000
+22:vapec:O>0
+              1      -0.01(      0.01)          0          0       1000       1000
+23:vapec:Ne>
+              1      -0.01(      0.01)          0          0       1000       1000
+24:vapec:Mg>
+              1      -0.01(      0.01)          0          0       1000       1000
+25:vapec:Al>
+              1      -0.01(      0.01)          0          0       1000       1000
+26:vapec:Si>
+              1      -0.01(      0.01)          0          0       1000       1000
+27:vapec:S>
+              1      -0.01(      0.01)          0          0       1000       1000
+28:vapec:Ar>
+              1      -0.01(      0.01)          0          0       1000       1000
+29:vapec:Ca>
+              1      -0.01(      0.01)          0          0       1000       1000
+30:vapec:Fe>
+              1      -0.01(      0.01)          0          0       1000       1000
+31:vapec:Ni>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+32:vapec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+33:vapec:norm>1
+              1       0.01(      0.01)         -3         -2          9         10
+34:powerlaw:PhoIndex>1.52
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+35:powerlaw:norm>1
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+36:gaussian:LineE>0.575
+            0.1       0.05(     0.001)          0          0         10         20
+37:gaussian:Sigma>0.001
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+38:gaussian:norm>1
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+39:gaussian:LineE>0.653
+            0.1       0.05(     0.001)          0          0         10         20
+40:gaussian:Sigma>0.001
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+41:gaussian:norm>1
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+42:gaussian:LineE>0.525
+            0.1       0.05(     0.001)          0          0         10         20
+43:gaussian:Sigma>0.001
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+44:gaussian:norm>1
+
+========================================================================
+Model vapec<1> + wabs<2>(vapec<3> + powerlaw<4>) + gaussian<5> + gaussian<6> + gaussian<7> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   vapec      kT         keV      9.90000E-02  +/-  0.0          
+   2    1   vapec      He                  1.00000      frozen
+   3    1   vapec      C                   1.00000      frozen
+   4    1   vapec      N                   1.00000      frozen
+   5    1   vapec      O                   0.0          frozen
+   6    1   vapec      Ne                  1.00000      frozen
+   7    1   vapec      Mg                  1.00000      frozen
+   8    1   vapec      Al                  1.00000      frozen
+   9    1   vapec      Si                  1.00000      frozen
+  10    1   vapec      S                   1.00000      frozen
+  11    1   vapec      Ar                  1.00000      frozen
+  12    1   vapec      Ca                  1.00000      frozen
+  13    1   vapec      Fe                  1.00000      frozen
+  14    1   vapec      Ni                  1.00000      frozen
+  15    1   vapec      Redshift            0.0          frozen
+  16    1   vapec      norm                1.00000      +/-  0.0          
+  17    2   wabs       nH         10^22    5.90000E-02  +/-  0.0          
+  18    3   vapec      kT         keV      0.220000     +/-  0.0          
+  19    3   vapec      He                  1.00000      frozen
+  20    3   vapec      C                   1.00000      frozen
+  21    3   vapec      N                   1.00000      frozen
+  22    3   vapec      O                   0.0          frozen
+  23    3   vapec      Ne                  1.00000      frozen
+  24    3   vapec      Mg                  1.00000      frozen
+  25    3   vapec      Al                  1.00000      frozen
+  26    3   vapec      Si                  1.00000      frozen
+  27    3   vapec      S                   1.00000      frozen
+  28    3   vapec      Ar                  1.00000      frozen
+  29    3   vapec      Ca                  1.00000      frozen
+  30    3   vapec      Fe                  1.00000      frozen
+  31    3   vapec      Ni                  1.00000      frozen
+  32    3   vapec      Redshift            0.0          frozen
+  33    3   vapec      norm                1.00000      +/-  0.0          
+  34    4   powerlaw   PhoIndex            1.52000      +/-  0.0          
+  35    4   powerlaw   norm                1.00000      +/-  0.0          
+  36    5   gaussian   LineE      keV      0.575000     +/-  0.0          
+  37    5   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  38    5   gaussian   norm                1.00000      +/-  0.0          
+  39    6   gaussian   LineE      keV      0.653000     +/-  0.0          
+  40    6   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  41    6   gaussian   norm                1.00000      +/-  0.0          
+  42    7   gaussian   LineE      keV      0.525000     +/-  0.0          
+  43    7   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  44    7   gaussian   norm                1.00000      +/-  0.0          
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =   5.113317e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   5.113317e+09 using 443 PHA bins.
+ Reduced chi-squared =   1.197498e+07 for    427 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>freeze 17 37 40 43 42
+
+Fit statistic : Chi-Squared =   5.113317e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   5.113317e+09 using 443 PHA bins.
+ Reduced chi-squared =   1.183638e+07 for    432 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+XSPEC12>renorm
+
+Fit statistic : Chi-Squared =        2654.39 using 443 PHA bins.
+
+Test statistic : Chi-Squared =        2654.39 using 443 PHA bins.
+ Reduced chi-squared =        6.14441 for    432 degrees of freedom 
+ Null hypothesis probability =  2.807274e-315
+ Current data and model not fit yet.
+
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT       16:norm         18:kT       33:norm   34:PhoIndex       35:norm      36:LineE       38:norm      39:LineE       41:norm       44:norm
+1279.11      114278       -3      0.602181   8.62835e-05      0.235910    0.00185820       1.03865    0.00162041      0.557339    0.00125145      0.648785   0.000415284   0.000487809
+720.504      53060.8      -4      0.201896   0.000905838      0.113208     0.0114477       1.25792    0.00168647      0.561035    0.00150557      0.659921   0.000300866   6.52500e-05
+557.791      16298.9      -1      0.188740    0.00251747      0.126816     0.0104439       1.26979    0.00166654      0.562268    0.00131867      0.649245   0.000320477   1.04491e-05
+518.422      10838        -1      0.183714    0.00385295      0.128790    0.00711909       1.26673    0.00165879      0.563179    0.00127463      0.651203   0.000325866   8.96903e-07
+496.369      8826.44      -1      0.180274    0.00495755      0.129904    0.00405609       1.26381    0.00165349      0.563554    0.00125290      0.651146   0.000327769   4.25554e-07
+481.385      7425.35      -1      0.178200    0.00587467      0.132398    0.00144907       1.26230    0.00165065      0.563905    0.00123780      0.651460   0.000328281   3.24170e-08
+479.742      6044.89      -1      0.176870    0.00660464      0.143696   0.000406877       1.26159    0.00164910      0.564185    0.00122640      0.651699   0.000328602   1.18963e-08
+474.473      7370.86       0      0.176855    0.00656967      0.150783   0.000145942       1.26067    0.00164813      0.564914    0.00119659      0.652025   0.000327478   2.06122e-09
+472.851      5262.25       0      0.176869    0.00656778      0.186941   5.69317e-05       1.26026    0.00164779      0.565478    0.00117883      0.652216   0.000326527   9.08338e-11
+471.837      4394.4        0      0.176838    0.00654414      0.225011   1.04965e-05       1.25977    0.00164714      0.565917    0.00116634      0.652332   0.000325026   3.31158e-11
+Number of trials exceeded: continue fitting? y
+471.333      3561.14       0      0.176729    0.00652272      0.442665   2.67813e-06       1.25923    0.00164605      0.566234    0.00115771      0.652380   0.000323497   6.82902e-12
+470.708      4169.55       0      0.176729    0.00651801      0.927185   4.30856e-06       1.25915    0.00164590      0.566309    0.00115468      0.652436   0.000323427   2.26157e-12
+467.968      7745.19       0      0.176469    0.00649184      0.792685   2.61207e-05       1.25808    0.00163981      0.566544    0.00115103      0.652863   0.000323633   8.57446e-13
+463.621      4342.46      -1      0.174421    0.00649726      0.980315   8.34390e-05       1.23529    0.00159326      0.565884    0.00120571      0.655549   0.000333439   4.28210e-13
+461.909      4805.56      -1      0.174078    0.00652056      0.897894   0.000111494       1.21608    0.00155923      0.565693    0.00122408      0.656212   0.000339849   1.96062e-13
+461.457      4098.25      -1      0.173795    0.00652772      0.909833   0.000123100       1.20383    0.00154026      0.565676    0.00123055      0.656564   0.000343317   8.04709e-14
+461.281      4002.64      -1      0.173732    0.00653377      0.914382   0.000129866       1.19654    0.00152885      0.565689    0.00123290      0.656725   0.000345039   2.31671e-14
+461.193      3953.23      -1      0.173727    0.00653715      0.918089   0.000133634       1.19213    0.00152198      0.565703    0.00123380      0.656789   0.000345950   8.96090e-15
+461.148      3912.17      -1      0.173739    0.00653912      0.920856   0.000135782       1.18946    0.00151783      0.565711    0.00123418      0.656812   0.000346456   1.89927e-15
+461.124      3884.76      -1      0.173753    0.00654030      0.922803   0.000137027       1.18784    0.00151532      0.565716    0.00123435      0.656818   0.000346747   1.40181e-16
+Number of trials exceeded: continue fitting? y
+461.112      3868.49      -1      0.173765    0.00654101      0.924121   0.000137755       1.18686    0.00151379      0.565717    0.00123445      0.656817   0.000346918   3.04826e-17
+461.106      3869.05      -1      0.173775    0.00654141      0.924987   0.000138187       1.18626    0.00151286      0.565718    0.00123452      0.656814   0.000347020   3.17637e-18
+==========================================================================================
+ Variances and Principal Axes
+                 1       16       18       33       34       35       36       38       39       41       44  
+ 3.1967E-10| -0.0105  -0.0356   0.0001  -0.7554   0.0004  -0.6466  -0.0003  -0.0217  -0.0004  -0.0911  -0.0333  
+ 9.8868E-10|  0.0021  -0.0116  -0.0001   0.4465   0.0006  -0.3987  -0.0037  -0.1606  -0.0011  -0.7630  -0.1833  
+ 1.1010E-09| -0.0121  -0.0357   0.0002  -0.4726  -0.0012   0.6403  -0.0033  -0.0494  -0.0013  -0.6023   0.0092  
+ 1.4263E-09|  0.0004   0.0759  -0.0000   0.0676   0.0004  -0.1140  -0.0047   0.4066  -0.0014  -0.1986   0.8786  
+ 1.0847E-08| -0.0053  -0.1162   0.0000   0.0084  -0.0001  -0.0004   0.0308   0.8946  -0.0088  -0.0800  -0.4226  
+ 5.6142E-08|  0.0307   0.9884  -0.0005  -0.0436   0.0006   0.0039   0.0132   0.0693  -0.0001  -0.0284  -0.1200  
+ 2.6245E-06| -0.9852   0.0309   0.0114   0.0132  -0.0014  -0.0017   0.0630  -0.0049  -0.1553   0.0063   0.0004  
+ 1.7714E-05|  0.1438  -0.0114  -0.0058  -0.0013   0.0023   0.0002   0.7911  -0.0262  -0.5936  -0.0016   0.0161  
+ 7.2301E-05| -0.0854  -0.0036   0.0185   0.0012   0.0196  -0.0002   0.6073  -0.0103   0.7893  -0.0033   0.0088  
+ 2.3474E-02|  0.0136   0.0002   0.9961   0.0000  -0.0861  -0.0002  -0.0061   0.0001  -0.0150   0.0000  -0.0001  
+ 1.9160E-03|  0.0011  -0.0005   0.0858  -0.0005   0.9961   0.0013  -0.0143   0.0002  -0.0157  -0.0001  -0.0004  
+------------------------------------------------------------------------------------------
+
+====================================================================================================================================
+  Covariance Matrix
+        1           2           3           4           5           6           7           8           9          10          11   
+   7.775e-06  -1.431e-08   3.176e-04  -3.467e-08  -2.544e-05  -4.043e-08  -3.876e-06   3.715e-08  -1.080e-05   3.441e-09  -4.518e-08
+  -1.431e-08   6.233e-08   5.177e-06  -7.143e-10  -1.352e-06  -1.894e-09  -3.305e-07   1.062e-08  -1.622e-07   4.054e-10  -1.168e-08
+   3.176e-04   5.177e-06   2.330e-02   7.493e-07  -1.849e-03  -3.409e-06  -1.444e-04   2.026e-06  -3.518e-04   2.292e-07  -2.256e-06
+  -3.467e-08  -7.143e-10   7.493e-07   1.896e-09  -1.081e-06  -1.898e-09   4.541e-08  -6.303e-10   8.061e-08   1.414e-10   9.430e-10
+  -2.544e-05  -1.352e-06  -1.849e-03  -1.081e-06   2.075e-03   2.784e-06  -1.399e-05   1.410e-07   1.459e-06  -2.626e-07  -4.894e-07
+  -4.043e-08  -1.894e-09  -3.409e-06  -1.898e-09   2.784e-06   4.548e-09  -2.152e-08   2.186e-10   1.416e-09  -4.007e-10  -7.451e-10
+  -3.876e-06  -3.305e-07  -1.444e-04   4.541e-08  -1.399e-05  -2.152e-08   3.903e-05  -8.366e-07   2.889e-05  -1.666e-07   6.336e-07
+   3.715e-08   1.062e-08   2.026e-06  -6.303e-10   1.410e-07   2.186e-10  -8.366e-07   2.935e-08  -3.443e-07   2.284e-09  -1.834e-08
+  -1.080e-05  -1.622e-07  -3.518e-04   8.061e-08   1.459e-06   1.416e-09   2.889e-05  -3.443e-07   5.709e-05  -1.770e-07   3.753e-07
+   3.441e-09   4.054e-10   2.292e-07   1.414e-10  -2.626e-07  -4.007e-10  -1.666e-07   2.284e-09  -1.770e-07   2.142e-09  -2.068e-09
+  -4.518e-08  -1.168e-08  -2.256e-06   9.430e-10  -4.894e-07  -7.451e-10   6.336e-07  -1.834e-08   3.753e-07  -2.068e-09   1.448e-08
+------------------------------------------------------------------------------------------------------------------------------------
+
+========================================================================
+Model vapec<1> + wabs<2>(vapec<3> + powerlaw<4>) + gaussian<5> + gaussian<6> + gaussian<7> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   vapec      kT         keV      0.173775     +/-  2.78842E-03  
+   2    1   vapec      He                  1.00000      frozen
+   3    1   vapec      C                   1.00000      frozen
+   4    1   vapec      N                   1.00000      frozen
+   5    1   vapec      O                   0.0          frozen
+   6    1   vapec      Ne                  1.00000      frozen
+   7    1   vapec      Mg                  1.00000      frozen
+   8    1   vapec      Al                  1.00000      frozen
+   9    1   vapec      Si                  1.00000      frozen
+  10    1   vapec      S                   1.00000      frozen
+  11    1   vapec      Ar                  1.00000      frozen
+  12    1   vapec      Ca                  1.00000      frozen
+  13    1   vapec      Fe                  1.00000      frozen
+  14    1   vapec      Ni                  1.00000      frozen
+  15    1   vapec      Redshift            0.0          frozen
+  16    1   vapec      norm                6.54141E-03  +/-  2.49670E-04  
+  17    2   wabs       nH         10^22    5.90000E-02  frozen
+  18    3   vapec      kT         keV      0.924987     +/-  0.152655     
+  19    3   vapec      He                  1.00000      frozen
+  20    3   vapec      C                   1.00000      frozen
+  21    3   vapec      N                   1.00000      frozen
+  22    3   vapec      O                   0.0          frozen
+  23    3   vapec      Ne                  1.00000      frozen
+  24    3   vapec      Mg                  1.00000      frozen
+  25    3   vapec      Al                  1.00000      frozen
+  26    3   vapec      Si                  1.00000      frozen
+  27    3   vapec      S                   1.00000      frozen
+  28    3   vapec      Ar                  1.00000      frozen
+  29    3   vapec      Ca                  1.00000      frozen
+  30    3   vapec      Fe                  1.00000      frozen
+  31    3   vapec      Ni                  1.00000      frozen
+  32    3   vapec      Redshift            0.0          frozen
+  33    3   vapec      norm                1.38187E-04  +/-  4.35483E-05  
+  34    4   powerlaw   PhoIndex            1.18626      +/-  4.55526E-02  
+  35    4   powerlaw   norm                1.51286E-03  +/-  6.74399E-05  
+  36    5   gaussian   LineE      keV      0.565718     +/-  6.24721E-03  
+  37    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  38    5   gaussian   norm                1.23452E-03  +/-  1.71315E-04  
+  39    6   gaussian   LineE      keV      0.656814     +/-  7.55561E-03  
+  40    6   gaussian   Sigma      keV      1.00000E-03  frozen
+  41    6   gaussian   norm                3.47020E-04  +/-  4.62775E-05  
+  42    7   gaussian   LineE      keV      0.525000     frozen
+  43    7   gaussian   Sigma      keV      1.00000E-03  frozen
+  44    7   gaussian   norm                3.17637E-18  +/-  1.20340E-04  
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =         461.11 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         461.11 using 443 PHA bins.
+ Reduced chi-squared =         1.0674 for    432 degrees of freedom 
+ Null hypothesis probability =   1.607577e-01
+
+XSPEC12>newpar 36 0.575
+
+Fit statistic : Chi-Squared =         473.09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         473.09 using 443 PHA bins.
+ Reduced chi-squared =         1.0951 for    432 degrees of freedom 
+ Null hypothesis probability =   8.404948e-02
+ Current data and model not fit yet.
+
+XSPEC12>freeze 36
+
+Fit statistic : Chi-Squared =         473.09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         473.09 using 443 PHA bins.
+ Reduced chi-squared =         1.0926 for    433 degrees of freedom 
+ Null hypothesis probability =   8.934107e-02
+ Current data and model not fit yet.
+
+XSPEC12>newpar 39 0.653
+
+Fit statistic : Chi-Squared =         476.60 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         476.60 using 443 PHA bins.
+ Reduced chi-squared =         1.1007 for    433 degrees of freedom 
+ Null hypothesis probability =   7.254504e-02
+ Current data and model not fit yet.
+
+XSPEC12>freeze 39
+
+Fit statistic : Chi-Squared =         476.60 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         476.60 using 443 PHA bins.
+ Reduced chi-squared =         1.0982 for    434 degrees of freedom 
+ Null hypothesis probability =   7.727411e-02
+ Current data and model not fit yet.
+
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT       16:norm         18:kT       33:norm   34:PhoIndex       35:norm       38:norm       41:norm       44:norm
+465.172      7943.29      -3      0.175213    0.00646267      0.965437   0.000133213       1.18157    0.00150588    0.00101061   0.000317253   8.02089e-05
+465.17       140.294      -4      0.175221    0.00646237      0.966781   0.000133076       1.18177    0.00150610    0.00101063   0.000317174   8.21469e-05
+==========================================================================================
+ Variances and Principal Axes
+                 1       16       18       33       34       35       38       41       44  
+ 3.3347E-10| -0.0099  -0.0371   0.0001  -0.7240   0.0004  -0.6818  -0.0264  -0.0868  -0.0358  
+ 1.1617E-09|  0.0121   0.0410  -0.0002   0.5738   0.0013  -0.6732   0.0798   0.4575   0.0047  
+ 1.0121E-09|  0.0005  -0.0195  -0.0001   0.3750   0.0003  -0.2715  -0.2431  -0.8234  -0.2195  
+ 1.4974E-09|  0.0004  -0.0742   0.0000  -0.0590  -0.0003   0.0904  -0.3524   0.2842  -0.8820  
+ 7.8413E-09| -0.0061  -0.0922   0.0000   0.0087  -0.0001   0.0015   0.8985  -0.1528  -0.4009  
+ 5.3786E-08|  0.0412   0.9903  -0.0007  -0.0476   0.0006   0.0039   0.0483  -0.0316  -0.1092  
+ 2.5189E-06| -0.9989   0.0423   0.0118   0.0123  -0.0030  -0.0013  -0.0025   0.0057  -0.0021  
+ 2.1937E-02| -0.0120  -0.0002  -0.9968  -0.0000   0.0790   0.0001  -0.0000   0.0000   0.0000  
+ 1.9471E-03|  0.0021   0.0006  -0.0790   0.0005  -0.9969  -0.0013   0.0001   0.0002   0.0002  
+------------------------------------------------------------------------------------------
+
+============================================================================================================
+  Covariance Matrix
+        1           2           3           4           5           6           7           8           9   
+   5.687e-06  -4.406e-08   2.623e-04  -1.872e-08  -2.490e-05  -3.968e-08   1.663e-08  -2.356e-08  -1.259e-09
+  -4.406e-08   5.899e-08   4.712e-06  -4.426e-10  -1.464e-06  -2.059e-09   1.970e-09  -9.368e-10  -5.606e-09
+   2.623e-04   4.712e-06   2.181e-02   7.684e-07  -1.574e-03  -2.925e-06   8.143e-07  -8.597e-07  -6.033e-07
+  -1.872e-08  -4.426e-10   7.684e-07   1.768e-09  -1.076e-06  -1.882e-09  -3.275e-11   3.939e-10   3.278e-10
+  -2.490e-05  -1.464e-06  -1.574e-03  -1.076e-06   2.072e-03   2.769e-06  -2.125e-07  -3.020e-07  -2.557e-07
+  -3.968e-08  -2.059e-09  -2.925e-06  -1.882e-09   2.769e-06   4.508e-09  -3.183e-10  -4.609e-10  -3.856e-10
+   1.663e-08   1.970e-09   8.143e-07  -3.275e-11  -2.125e-07  -3.183e-10   6.768e-09  -1.102e-09  -2.574e-09
+  -2.356e-08  -9.368e-10  -8.597e-07   3.939e-10  -3.020e-07  -4.609e-10  -1.102e-09   1.472e-09   5.261e-10
+  -1.259e-09  -5.606e-09  -6.033e-07   3.278e-10  -2.557e-07  -3.856e-10  -2.574e-09   5.261e-10   3.189e-09
+------------------------------------------------------------------------------------------------------------
+
+========================================================================
+Model vapec<1> + wabs<2>(vapec<3> + powerlaw<4>) + gaussian<5> + gaussian<6> + gaussian<7> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   vapec      kT         keV      0.175221     +/-  2.38481E-03  
+   2    1   vapec      He                  1.00000      frozen
+   3    1   vapec      C                   1.00000      frozen
+   4    1   vapec      N                   1.00000      frozen
+   5    1   vapec      O                   0.0          frozen
+   6    1   vapec      Ne                  1.00000      frozen
+   7    1   vapec      Mg                  1.00000      frozen
+   8    1   vapec      Al                  1.00000      frozen
+   9    1   vapec      Si                  1.00000      frozen
+  10    1   vapec      S                   1.00000      frozen
+  11    1   vapec      Ar                  1.00000      frozen
+  12    1   vapec      Ca                  1.00000      frozen
+  13    1   vapec      Fe                  1.00000      frozen
+  14    1   vapec      Ni                  1.00000      frozen
+  15    1   vapec      Redshift            0.0          frozen
+  16    1   vapec      norm                6.46237E-03  +/-  2.42883E-04  
+  17    2   wabs       nH         10^22    5.90000E-02  frozen
+  18    3   vapec      kT         keV      0.966781     +/-  0.147677     
+  19    3   vapec      He                  1.00000      frozen
+  20    3   vapec      C                   1.00000      frozen
+  21    3   vapec      N                   1.00000      frozen
+  22    3   vapec      O                   0.0          frozen
+  23    3   vapec      Ne                  1.00000      frozen
+  24    3   vapec      Mg                  1.00000      frozen
+  25    3   vapec      Al                  1.00000      frozen
+  26    3   vapec      Si                  1.00000      frozen
+  27    3   vapec      S                   1.00000      frozen
+  28    3   vapec      Ar                  1.00000      frozen
+  29    3   vapec      Ca                  1.00000      frozen
+  30    3   vapec      Fe                  1.00000      frozen
+  31    3   vapec      Ni                  1.00000      frozen
+  32    3   vapec      Redshift            0.0          frozen
+  33    3   vapec      norm                1.33076E-04  +/-  4.20479E-05  
+  34    4   powerlaw   PhoIndex            1.18177      +/-  4.55184E-02  
+  35    4   powerlaw   norm                1.50610E-03  +/-  6.71414E-05  
+  36    5   gaussian   LineE      keV      0.575000     frozen
+  37    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  38    5   gaussian   norm                1.01063E-03  +/-  8.22666E-05  
+  39    6   gaussian   LineE      keV      0.653000     frozen
+  40    6   gaussian   Sigma      keV      1.00000E-03  frozen
+  41    6   gaussian   norm                3.17174E-04  +/-  3.83671E-05  
+  42    7   gaussian   LineE      keV      0.525000     frozen
+  43    7   gaussian   Sigma      keV      1.00000E-03  frozen
+  44    7   gaussian   norm                8.21469E-05  +/-  5.64701E-05  
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =         465.17 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         465.17 using 443 PHA bins.
+ Reduced chi-squared =         1.0718 for    434 degrees of freedom 
+ Null hypothesis probability =   1.454493e-01
+
+XSPEC12>ipl data resid
+PLT> exit
+
+XSPEC12>setplot add
+XSPEC12>ipl data resid
+PLT> exit
+
+XSPEC12>newpar 1 0.1
+
+Fit statistic : Chi-Squared =         909.09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         909.09 using 443 PHA bins.
+ Reduced chi-squared =         2.0947 for    434 degrees of freedom 
+ Null hypothesis probability =   8.090782e-36
+ Current data and model not fit yet.
+
+XSPEC12>newpar 18 0.2
+
+Fit statistic : Chi-Squared =        1063.08 using 443 PHA bins.
+
+Test statistic : Chi-Squared =        1063.08 using 443 PHA bins.
+ Reduced chi-squared =        2.44950 for    434 degrees of freedom 
+ Null hypothesis probability =   1.245510e-54
+ Current data and model not fit yet.
+
+XSPEC12>addcomp 8 gauss
+
+Input parameter value, delta, min, bot, top, and max values for ...
+
+45:gaussian:LineE>0.9
+
+46:gaussian:Sigma>0.001
+
+47:gaussian:norm>1
+
+Fit statistic : Chi-Squared =   4.396792e+09 using 443 PHA bins.
+
+Test statistic : Chi-Squared =   4.396792e+09 using 443 PHA bins.
+ Reduced chi-squared =   1.020137e+07 for    431 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+
+========================================================================
+Model vapec<1> + wabs<2>(vapec<3> + powerlaw<4>) + gaussian<5> + gaussian<6> + gaussian<7> + gaussian<8> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   vapec      kT         keV      0.100000     +/-  2.38481E-03  
+   2    1   vapec      He                  1.00000      frozen
+   3    1   vapec      C                   1.00000      frozen
+   4    1   vapec      N                   1.00000      frozen
+   5    1   vapec      O                   0.0          frozen
+   6    1   vapec      Ne                  1.00000      frozen
+   7    1   vapec      Mg                  1.00000      frozen
+   8    1   vapec      Al                  1.00000      frozen
+   9    1   vapec      Si                  1.00000      frozen
+  10    1   vapec      S                   1.00000      frozen
+  11    1   vapec      Ar                  1.00000      frozen
+  12    1   vapec      Ca                  1.00000      frozen
+  13    1   vapec      Fe                  1.00000      frozen
+  14    1   vapec      Ni                  1.00000      frozen
+  15    1   vapec      Redshift            0.0          frozen
+  16    1   vapec      norm                6.46237E-03  +/-  2.42883E-04  
+  17    2   wabs       nH         10^22    5.90000E-02  frozen
+  18    3   vapec      kT         keV      0.200000     +/-  0.147677     
+  19    3   vapec      He                  1.00000      frozen
+  20    3   vapec      C                   1.00000      frozen
+  21    3   vapec      N                   1.00000      frozen
+  22    3   vapec      O                   0.0          frozen
+  23    3   vapec      Ne                  1.00000      frozen
+  24    3   vapec      Mg                  1.00000      frozen
+  25    3   vapec      Al                  1.00000      frozen
+  26    3   vapec      Si                  1.00000      frozen
+  27    3   vapec      S                   1.00000      frozen
+  28    3   vapec      Ar                  1.00000      frozen
+  29    3   vapec      Ca                  1.00000      frozen
+  30    3   vapec      Fe                  1.00000      frozen
+  31    3   vapec      Ni                  1.00000      frozen
+  32    3   vapec      Redshift            0.0          frozen
+  33    3   vapec      norm                1.33076E-04  +/-  4.20479E-05  
+  34    4   powerlaw   PhoIndex            1.18177      +/-  4.55184E-02  
+  35    4   powerlaw   norm                1.50610E-03  +/-  6.71414E-05  
+  36    5   gaussian   LineE      keV      0.575000     frozen
+  37    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  38    5   gaussian   norm                1.01063E-03  +/-  8.22666E-05  
+  39    6   gaussian   LineE      keV      0.653000     frozen
+  40    6   gaussian   Sigma      keV      1.00000E-03  frozen
+  41    6   gaussian   norm                3.17174E-04  +/-  3.83671E-05  
+  42    7   gaussian   LineE      keV      0.525000     frozen
+  43    7   gaussian   Sigma      keV      1.00000E-03  frozen
+  44    7   gaussian   norm                8.21469E-05  +/-  5.64701E-05  
+  45    8   gaussian   LineE      keV      0.900000     +/-  0.0          
+  46    8   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  47    8   gaussian   norm                1.00000      +/-  0.0          
+
+________________________________________________________________________
+
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT       16:norm         18:kT       33:norm   34:PhoIndex       35:norm       38:norm       41:norm       44:norm      45:LineE      46:Sigma       47:norm
+6606.36      281515        1       2.36855   0.000137549       47.3256   8.01019e-05      -1.39845   1.70847e-05   2.04977e-05   9.29929e-06   1.23207e-05      0.900008     0.0131824   0.000430700
+4640.34      1.79483e+06   0      0.962529   0.000445257       20.4070   0.000748215      -1.46042   1.91451e-05   0.000182213   8.35163e-05   0.000113321      0.899853     0.0207471   0.000427287
+2168.37      1.38439e+06   0       1.00265   0.000418907       5.18489    0.00250828      -1.50377   2.26025e-05   0.000679059   0.000335540   0.000467298      0.893710     0.0418191   0.000281836
+1247.37      528876       -1      0.891623   0.000349142       9.44212    0.00548502      -1.27216   2.19592e-05   0.000805539   0.000469009   0.000698831      0.879447     0.0574630   5.53866e-05
+1232.47      52472.1      -2      0.588630   0.000428659       16.3316    0.00686148     -0.852792   2.26471e-05   0.000808161   0.000430447   0.000710994      0.905284     0.0458106   1.11488e-05
+1191.83      33861.3      -3      0.611280   0.000316476       17.7671    0.00721424     -0.268652   3.63285e-05   0.000817623   0.000414210   0.000708282       1.44411     0.0171386   1.37323e-05
+1191.61      36985.6      -2      0.696462   0.000274456       13.8330    0.00752898     -0.797527   4.29202e-06   0.000798844   0.000424403   0.000702706       1.49438    0.00841238   1.08294e-06
+1179.67      105897       -3      0.747616   0.000303939       25.1589    0.00846537      -2.12694   1.43505e-07   0.000797153   0.000435327   0.000710540       1.94908    0.00296654   2.27947e-07
+588.484      380360       -3      0.747348   0.000323573       18.9963    0.00732241       8.69629   1.17412e-05   0.000800051   0.000443158   0.000716502      0.172630       12.3153   9.98699e-06
+469.8        799941       -4      0.777121   0.000354846       33.4134    0.00663727       8.17291   2.31781e-05   0.000909530   0.000394886   0.000339688     0.0581521       3.26846    0.00132663
+Number of trials exceeded: continue fitting? y
+441.107      442439       -3      0.774929   0.000356888       45.6819    0.00694169       8.32056   2.52911e-05   0.000909822   0.000393869   0.000334473       1.52132       2.15360    0.00102303
+437.718      65046.8      -2      0.774903   0.000354086       38.9042    0.00680790       8.31012   2.49990e-05   0.000909279   0.000392213   0.000333864       1.54550       2.28168   0.000917858
+437.572      4204.37      -2      0.774845   0.000353022       37.0304    0.00674969       8.31114   2.49554e-05   0.000909131   0.000391556   0.000333309       1.70635       2.24272   0.000860468
+437.532      147.074      -2      0.774864   0.000352315       34.9163    0.00671544       8.31275   2.49074e-05   0.000909027   0.000391098   0.000332932       1.84338       2.16763   0.000806479
+437.523      148.249      -2      0.774863   0.000351465       32.8845    0.00669267       8.31468   2.48503e-05   0.000908889   0.000390581   0.000332534       1.96981       2.09662   0.000754629
+==========================================================================================
+ Variances and Principal Axes
+                 1       16       18       33       34       35       38       41       44       45       46       47  
+ 7.4600E-13| -0.0000   0.0046  -0.0000   0.0006   0.0000   1.0000   0.0023   0.0024   0.0067  -0.0000  -0.0000   0.0004  
+ 2.6386E-10|  0.0001  -0.9919   0.0000  -0.0625   0.0000   0.0049  -0.0097  -0.0769  -0.0045   0.0000   0.0000  -0.0781  
+ 1.0625E-09| -0.0002  -0.0785  -0.0000   0.0122  -0.0001  -0.0033   0.2341   0.9600   0.1315  -0.0000   0.0000   0.0043  
+ 1.6239E-09|  0.0001   0.0062  -0.0000   0.0170  -0.0001  -0.0064   0.3909  -0.2176   0.8939   0.0000  -0.0000   0.0217  
+ 3.0319E-09| -0.0003   0.0937   0.0000  -0.3301  -0.0000  -0.0001   0.0086   0.0102   0.0272  -0.0002   0.0002  -0.9388  
+ 8.0132E-09|  0.0002   0.0060   0.0000  -0.0021   0.0001   0.0012   0.8900  -0.1579  -0.4276  -0.0000  -0.0000  -0.0046  
+ 2.8334E-07| -0.0051   0.0321   0.0001  -0.9416   0.0001   0.0001   0.0057   0.0104   0.0096   0.0012   0.0007   0.3348  
+ 5.8250E-04|  0.9999   0.0003   0.0000  -0.0049   0.0103   0.0000  -0.0002   0.0003   0.0001   0.0007   0.0010   0.0014  
+ 6.2793E-02| -0.0098   0.0000  -0.0009  -0.0001   0.9775  -0.0000  -0.0000   0.0000   0.0001  -0.1232  -0.1711   0.0000  
+ 7.9910E-02|  0.0034   0.0000  -0.0052  -0.0012  -0.2104   0.0000   0.0000   0.0000  -0.0000  -0.5229  -0.8260   0.0004  
+ 2.2171E+01| -0.0002  -0.0000  -0.0204   0.0005   0.0123  -0.0000  -0.0000  -0.0000  -0.0000   0.8433  -0.5368  -0.0004  
+ 8.8728E+03| -0.0000   0.0000  -0.9998  -0.0001  -0.0000  -0.0000   0.0000  -0.0000  -0.0000  -0.0144   0.0154   0.0000  
+------------------------------------------------------------------------------------------
+
+================================================================================================================================================
+  Covariance Matrix
+        1           2           3           4           5           6           7           8           9          10          11          12   
+   5.900e-04   1.993e-07   1.976e-02  -3.782e-06  -6.961e-04   1.871e-08  -8.100e-08   1.770e-07  -1.444e-08  -2.725e-03   1.454e-03   2.168e-06
+   1.993e-07   1.306e-09  -2.270e-04  -8.681e-08  -9.943e-07   3.036e-11   1.635e-10   4.452e-10   3.795e-10  -1.023e-04   6.426e-05   5.906e-08
+   1.976e-02  -2.270e-04   8.870e+03   5.291e-01   5.834e-02   2.630e-06  -5.652e-05   6.445e-05   8.232e-05   1.306e+02  -1.389e+02  -1.320e-01
+  -3.782e-06  -8.681e-08   5.291e-01   3.817e-05   1.624e-04  -4.404e-09  -1.513e-08  -3.292e-08  -1.948e-08   1.775e-02  -1.451e-02  -1.326e-05
+  -6.961e-04  -9.943e-07   5.834e-02   1.624e-04   6.689e-02  -1.719e-06  -6.922e-07   1.470e-06   6.841e-06   2.323e-01  -1.441e-01  -1.276e-04
+   1.871e-08   3.036e-11   2.630e-06  -4.404e-09  -1.719e-06   4.503e-11   2.207e-11  -3.713e-11  -1.864e-10  -6.595e-06   4.061e-06   3.595e-09
+  -8.100e-08   1.635e-10  -5.652e-05  -1.513e-08  -6.922e-07   2.207e-11   6.699e-09  -9.963e-10  -2.455e-09  -1.714e-05   1.081e-05   9.929e-09
+   1.770e-07   4.452e-10   6.445e-05  -3.292e-08   1.470e-06  -3.713e-11  -9.963e-10   1.609e-09   7.902e-10  -5.106e-05   3.104e-05   2.781e-08
+  -1.444e-08   3.795e-10   8.232e-05  -1.948e-08   6.841e-06  -1.864e-10  -2.455e-09   7.902e-10   3.755e-09  -3.441e-05   2.080e-05   1.826e-08
+  -2.725e-03  -1.023e-04   1.306e+02   1.775e-02   2.323e-01  -6.595e-06  -1.714e-05  -5.106e-05  -3.441e-05   1.772e+01  -1.206e+01  -1.034e-02
+   1.454e-03   6.426e-05  -1.389e+02  -1.451e-02  -1.441e-01   4.061e-06   1.081e-05   3.104e-05   2.080e-05  -1.206e+01   8.628e+00   7.378e-03
+   2.168e-06   5.906e-08  -1.320e-01  -1.326e-05  -1.276e-04   3.595e-09   9.929e-09   2.781e-08   1.826e-08  -1.034e-02   7.378e-03   6.460e-06
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+========================================================================
+Model vapec<1> + wabs<2>(vapec<3> + powerlaw<4>) + gaussian<5> + gaussian<6> + gaussian<7> + gaussian<8> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+   1    1   vapec      kT         keV      0.774863     +/-  2.42894E-02  
+   2    1   vapec      He                  1.00000      frozen
+   3    1   vapec      C                   1.00000      frozen
+   4    1   vapec      N                   1.00000      frozen
+   5    1   vapec      O                   0.0          frozen
+   6    1   vapec      Ne                  1.00000      frozen
+   7    1   vapec      Mg                  1.00000      frozen
+   8    1   vapec      Al                  1.00000      frozen
+   9    1   vapec      Si                  1.00000      frozen
+  10    1   vapec      S                   1.00000      frozen
+  11    1   vapec      Ar                  1.00000      frozen
+  12    1   vapec      Ca                  1.00000      frozen
+  13    1   vapec      Fe                  1.00000      frozen
+  14    1   vapec      Ni                  1.00000      frozen
+  15    1   vapec      Redshift            0.0          frozen
+  16    1   vapec      norm                3.51465E-04  +/-  3.61419E-05  
+  17    2   wabs       nH         10^22    5.90000E-02  frozen
+  18    3   vapec      kT         keV      32.8845      +/-  94.1824      
+  19    3   vapec      He                  1.00000      frozen
+  20    3   vapec      C                   1.00000      frozen
+  21    3   vapec      N                   1.00000      frozen
+  22    3   vapec      O                   0.0          frozen
+  23    3   vapec      Ne                  1.00000      frozen
+  24    3   vapec      Mg                  1.00000      frozen
+  25    3   vapec      Al                  1.00000      frozen
+  26    3   vapec      Si                  1.00000      frozen
+  27    3   vapec      S                   1.00000      frozen
+  28    3   vapec      Ar                  1.00000      frozen
+  29    3   vapec      Ca                  1.00000      frozen
+  30    3   vapec      Fe                  1.00000      frozen
+  31    3   vapec      Ni                  1.00000      frozen
+  32    3   vapec      Redshift            0.0          frozen
+  33    3   vapec      norm                6.69267E-03  +/-  6.17834E-03  
+  34    4   powerlaw   PhoIndex            8.31468      +/-  0.258640     
+  35    4   powerlaw   norm                2.48503E-05  +/-  6.71047E-06  
+  36    5   gaussian   LineE      keV      0.575000     frozen
+  37    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  38    5   gaussian   norm                9.08889E-04  +/-  8.18481E-05  
+  39    6   gaussian   LineE      keV      0.653000     frozen
+  40    6   gaussian   Sigma      keV      1.00000E-03  frozen
+  41    6   gaussian   norm                3.90581E-04  +/-  4.01113E-05  
+  42    7   gaussian   LineE      keV      0.525000     frozen
+  43    7   gaussian   Sigma      keV      1.00000E-03  frozen
+  44    7   gaussian   norm                3.32534E-04  +/-  6.12811E-05  
+  45    8   gaussian   LineE      keV      1.96981      +/-  4.21003      
+  46    8   gaussian   Sigma      keV      2.09662      +/-  2.93737      
+  47    8   gaussian   norm                7.54629E-04  +/-  2.54157E-03  
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =         437.52 using 443 PHA bins.
+
+Test statistic : Chi-Squared =         437.52 using 443 PHA bins.
+ Reduced chi-squared =         1.0151 for    431 degrees of freedom 
+ Null hypothesis probability =   4.037126e-01
+
+XSPEC12>ipl data resid
+PLT> exit
+
+XSPEC12>exit
+ XSPEC: quit

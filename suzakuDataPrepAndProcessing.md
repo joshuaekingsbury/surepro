@@ -1,15 +1,16 @@
 When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
 
 
-1. Directory 50.../xis/event_cl
+1. Navigate to directory 50.../xis/event_cl
 2. `$ Gunzip *.*`
 	- gunzip everything in/to current working directory
 3. `cd 50.../`
-4. `mkdir analysis`
+4. `mkdir 20analysis`
 	- This will be the directory we use to analyze and process a single variation of the observation
-	- Within this observation ID we will also make 2 (analysis2 & analysis3) more dirs so we have a dir each for DYE\_ELV>60, DYE\_ELV>40, DYE\_ELV>20 respectively
-5. `cd analysis`
-6. cp xi1\_3x3 + xi1\_5x5 to analysis dir from event_cl  
+	- Within this observation ID we will also make 2 more dirs (40analysis & 60analysis) so we have a dir each for DYE\_ELV>20, DYE\_ELV>40, DYE\_ELV>60 respectively
+	- This naming convention allows for the terminal [TAB] auto-complete to be leveraged while remaining recognizable in the context of our recent notes and research
+5. `cd 20analysis`
+6. cp xi1\_3x3 + xi1\_5x5 to 20analysis dir from event_cl  
 	- `$ cp ../xis/event_cl/ae50...xi1_0_3x3no69b_ev.evt .`  
 	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5no69b_ev.evt .`  
 	- cp means "copy", then give file copying from and directory copying too
@@ -137,6 +138,17 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	`[input orbit file]: ../auxil/ae...orb`  
 	`[input att file]: ../auxil/ae...att`  
 	
-25. spectral anaylsis
+25. Before proceeding, check that the following files have been created and are located in your relative analysis dir:  
+	- PHA filename  
+`$ ls *hist*`  
+	- RESPFILE  
+`$ ls *rmf*`  
+	- ANCRFILE  
+`$ ls *arf*`  
+	- BACKFILE  
+`$ ls *nxb*`  
+
+
+
 
 
