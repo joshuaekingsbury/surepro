@@ -57,6 +57,7 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	`> Boolean expression for filter file selection > SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>20`  
 	- `select mkf` command creates a time filter of GTIs. To actually filter the events, we must use or issue the command `extract events`  
 	- Will do this step and save out a file each for DYE_ELV>20, 40, 60
+	- DYE_ELV: Earth Day-Time Elevation Angle
 
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > extract events`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > save events`  
