@@ -1,16 +1,17 @@
-When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
+When extracting an observation data set (`$ tar xvf downloadedObservationData.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
 
+(Ignore this: analysis dir, then copy all to 20,40,60 (adding '_dye20' to each) for next steps)
 
 1. Navigate to directory 50.../xis/event_cl
 2. `$ Gunzip *.*`
 	- gunzip everything in/to current working directory
 3. `cd 50.../`
-4. `mkdir 20analysis`
+4. `mkdir analysis`
 	- This will be the directory we use to analyze and process a single variation of the observation
-	- Within this observation ID we will also make 2 more dirs (40analysis & 60analysis) so we have a dir each for DYE\_ELV>20, DYE\_ELV>40, DYE\_ELV>60 respectively
+	- Within this observation ID we will also make 3 more dirs (20analysis, 40analysis & 60analysis) so we have a dir each for DYE\_ELV>20, DYE\_ELV>40, DYE\_ELV>60 respectively
 	- This naming convention allows for the terminal [TAB] auto-complete to be leveraged while remaining recognizable in the context of our recent notes and research
-5. `cd 20analysis`
-6. cp xi1\_3x3 + xi1\_5x5 to 20analysis dir from event_cl  
+5. `cd analysis`
+6. cp xi1\_3x3 + xi1\_5x5 to analysis dir from event_cl  
 	- `$ cp ../xis/event_cl/ae50...xi1_0_3x3no69b_ev.evt .`  
 	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5no69b_ev.evt .`  
 	- cp means "copy", then give file copying from and directory copying too
@@ -21,11 +22,14 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	- In original procedure, files are merged before cleaning using New Recipe
 8. `$ pset xisputpixelquality badcolumfile=~/YOUR/PATH/FROM/STEP/7`
 	- Input path to badcolum file found in previous step
+	- Make sure your working directory is the relative analysis folder
 9. `$ xisputpixelquality 3x3 file [Enter]`  
-	``output file: 3x3_badcolum.fits``
+	`output file: 3x3_badcolum.fits (badcolum_3x3_off3.fits)`
 	- Repeat this step for 5x5 file
-10. `ftcopy 3x3_badcolum.fits[EVENTS][STATUS=0:524287] 3x3_new.fits`
-	- Repeat this step for the 5x5 file output from the previous step
+10. `ftcopy 3x3_badcolum.fits[EVENTS][STATUS=0:524287] 3x3_new.fits`   (ftcopy\_3x3\_524288\_off2.fits) `
+	- Repeat this step for the 5x5 file output from the previous step  
+		+ ???(ftcopy\_5x5\_128_off2.fits)???
+		+ (128? Since is before making into a 3x3 file?)
 	- ftcopy applies filtering and transformations to the tables
 		+ [In this case, filtering EVENTS by their pixel STATUS](https://heasarc.nasa.gov/docs/suzaku/processing/criteria_xis.html)
 		+ [From xisputpixelquality doc](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/xisputpixelquality.txt)  
@@ -33,7 +37,7 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 
 11. 
 	`$ xis5x5to3x3`  
-	`input file: 5x5 fits file`  
+	`input file: 5x5_new.fits`  
 	`output file: 5x5to3x3.fits`  
 	`input hk file: ~/suzaku/off-field3/50.../xis/hk/ae509044010xi1_0.hk.gz`  
 	- [An hk file is a "housekeeping" file](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/heasarc.html)
@@ -43,8 +47,12 @@ When extracting an observation data set (`$ tar xvf w3-browse#####.tar`) it will
 	`output: xis1_events.fits`  
 13. `$ ftmerge`  
 	``xis1_events.fits[GTI], 5x5to3x3.fits[GTI]``  
-	`output: xis1_events_GTI.fits`  
-14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  
+	`output: xis1_events_GTI.fits`(merged\_merged\_w\_5to3\_GTI.fits)  
+	- (Copy output file, rename to xis1_events\_GTI.fits)
+14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  (mv xis1\_events\_GTI.fits)
+
+  14.5. `cd ../20analysis`  
+  change to analysis directory relative to DYE (20analysis in following steps; when repeating: 40analysis, 60analysis)
 
 15. `$ xselect`  
 	`> Enter session name > YYMMDD_#`  
