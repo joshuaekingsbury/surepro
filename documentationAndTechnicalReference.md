@@ -54,6 +54,11 @@ Aliases and Functions
 # <a id="PRED">Preparing Data</a>
 xselect
 
+(https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xselect.html)  
+(http://www.astro.isas.jaxa.jp/suzaku/research/pub/xselectnotes.html)  
+(http://homepage.physics.uiowa.edu/~pkaaret/2016f_a6880/data_reduction.html)  
+
+
 [^ Table of Contents ^](#TC)
 
 ---
@@ -165,6 +170,11 @@ xselect
 [^ Table of Contents ^](#TC)
 
 ---  
+
+# Fun
+(http://www.sjsu.edu/faculty/watkins/elevsun.htm)
+
+---
 
 [caldbinstallweblink]:https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/caldb_install.html
 
