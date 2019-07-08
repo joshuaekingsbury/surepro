@@ -147,8 +147,19 @@ xselect
 > [2014: OI fluorescent line contamination in soft X-ray diffuse background obtained with Suzaku/XIS][paper2014]  
 > [2016: The Interaction of the Fermi Bubbles with the Milky Way’s Hot Gas Halo][paper2016]  
 
+Vocab:  
+- COR: cut-off rigidity (2009:2.2)
+
+Additional:  
+(10.1093/pasj/60.sp1.S11)  
 
 
+(10.1093/mnrasl/slv084)  
+PHA: Also, Channel, PI, or ...  
+PI: These are usually called pulse-height invariant or PI channels,
+because they correspond to the pulse height of an event after
+it has been calibrated for temporal and spatial gain variations
+onto a standard energy scale
 ### 
 
 [^ Table of Contents ^](#TC)
