@@ -74,6 +74,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > save events`  
 	`> Give output file name > clean_events.fits`  
 	- In original procedure it lists following steps 1-2 of New Recipe here  
+	
 	`> Use filtered events as input data file ? >[yes] y????????`
 	`filter pha_cutoff 109 547`  
 	`extract image`  
