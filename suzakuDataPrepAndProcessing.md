@@ -48,8 +48,8 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 13. `$ ftmerge`  
 	``xis1_events.fits[GTI], 5x5to3x3.fits[GTI]``  
 	`output: xis1_events_GTI.fits`(merged\_merged\_w\_5to3\_GTI.fits)  
-	- (Copy output file, rename to xis1_events\_GTI.fits)
-14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  (mv xis1\_events\_GTI.fits)
+	- (Copy output file, rename to xis1_events\_GTI\_off2.fits)
+14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  (mv xis1\_events\_GTI\_off2.fits)
 
   14.5. `cd ../20analysis`  
   change to analysis directory relative to DYE (20analysis in following steps; when repeating: 40analysis, 60analysis)
@@ -62,7 +62,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- Must enter ENTIRE path from root dir (/home/USER/suzaku/etc...), cannot start with "~/"  
 
 	`YYMMDD_#:SUZAKU > read events`  
-	`> Enter Event file list > xis1_events_GTI.fits`  
+	`> Enter Event file list > xis1_events_GTI_off2.fits`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > select mkf`  
 	`> Boolean expression for filter file selection > SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>20`  
 	- `select mkf` command creates a time filter of GTIs. To actually filter the events, we must use or issue the command `extract events`  
