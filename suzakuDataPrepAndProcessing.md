@@ -56,9 +56,11 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 
 15. `$ xselect`  
 	`> Enter session name > YYMMDD_#`  
+	`YYMMDD_#:SUZAKU > set instr xis1`  
 	`YYMMDD_#:SUZAKU > set datadir`  
 	`> Enter the Event file dir > [path to event_cl dir]`  
-	`??set instr xis1??`  
+	- Must enter ENTIRE path from root dir (/home/USER/suzaku/etc...), cannot start with "~/"  
+
 	`YYMMDD_#:SUZAKU > read events`  
 	`> Enter Event file list > xis1_events_GTI.fits`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > select mkf`  
