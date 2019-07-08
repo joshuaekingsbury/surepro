@@ -165,7 +165,22 @@ xselect
 [A New Recipe for Generating XIS NXB Spectra][xisnxbnewrecipe]  
 
 [FTOOLS: The HEASARC Sub-package](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/heasarc.html)  
-- List of tasks applicable to multiple instruments
+- List of tasks applicable to multiple instruments  
+
+NASA X-ray Astronomy School  
+
+- 2005  
+>[Home][xrayschool2005] | [Seminars (with PDF links)][xrayschool2005schedule]  
+  
+- 2003  
+>[Home][xrayschool2003] | [Seminars (with PDF links)][xrayschool2003schedule]  
+  
+- 2002  
+>[Home][xrayschool2002] | [Seminars (with PDF links)][xrayschool2002schedule]  
+  
+- 2001  
+>[Home][xrayschool2001] | [Seminars (with PDF links)][xrayschool2001schedule]  
+
 
 [^ Table of Contents ^](#TC)
 
@@ -222,3 +237,15 @@ xselect
 [suzakuabcvi]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/abc/node9.html
 
 [xisnxbnewrecipe]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html
+
+[xrayschool2005]:https://heasarc.gsfc.nasa.gov/docs/xrayschool-2005
+[xrayschool2005schedule]:https://heasarc.gsfc.nasa.gov/docs/xrayschool-2005/schedule.html
+
+[xrayschool2003]:https://heasarc.gsfc.nasa.gov/docs/xrayschool-2003
+[xrayschool2003schedule]:https://heasarc.gsfc.nasa.gov/docs/xrayschool-2003/schedule.html
+
+[xrayschool2002]:https://heasarc.gsfc.nasa.gov/docs/xrayschool_2002
+[xrayschool2002schedule]:https://heasarc.gsfc.nasa.gov/docs/xrayschool_2002/schedule.html
+
+[xrayschool2001]:https://heasarc.gsfc.nasa.gov/docs/xrayschool_2001
+[xrayschool2001schedule]:https://heasarc.gsfc.nasa.gov/docs/xrayschool_2001/what2.html

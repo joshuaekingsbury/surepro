@@ -26,9 +26,9 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 9. `$ xisputpixelquality 3x3 file [Enter]`  
 	`output file: 3x3_badcolum.fits (badcolum_3x3_off3.fits)`
 	- Repeat this step for 5x5 file
-10. `ftcopy 3x3_badcolum.fits[EVENTS][STATUS=0:524287] 3x3_new.fits`   (ftcopy\_3x3\_524288\_off2.fits) `
+10. `ftcopy 3x3_badcolum.fits[EVENTS][STATUS=0:524287] 3x3_new.fits`   (ftcopy\_3x3\_524288\_off3.fits) `
 	- Repeat this step for the 5x5 file output from the previous step  
-		+ ???(ftcopy\_5x5\_128_off2.fits)???
+		+ ???(ftcopy\_5x5\_128_off3.fits)???
 		+ (128? Since is before making into a 3x3 file?)
 	- ftcopy applies filtering and transformations to the tables
 		+ [In this case, filtering EVENTS by their pixel STATUS](https://heasarc.nasa.gov/docs/suzaku/processing/criteria_xis.html)
@@ -48,8 +48,8 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 13. `$ ftmerge`  
 	``xis1_events.fits[GTI], 5x5to3x3.fits[GTI]``  
 	`output: xis1_events_GTI.fits`(merged\_merged\_w\_5to3\_GTI.fits)  
-	- (Copy output file, rename to xis1_events\_GTI\_off2.fits)
-14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  (mv xis1\_events\_GTI\_off2.fits)
+	- (Copy output file, rename to xis1_events\_GTI\_off3.fits)
+14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  (mv xis1\_events\_GTI\_off3.fits)
 
   14.5. `cd ../20analysis`  
   change to analysis directory relative to DYE (20analysis in following steps; when repeating: 40analysis, 60analysis)
@@ -63,7 +63,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 
 	`YYMMDD_#:SUZAKU > set instr xis1`  
 	`YYMMDD_#:SUZAKU > read events`  
-	`> Enter Event file list > xis1_events_GTI_off2.fits`  
+	`> Enter Event file list > xis1_events_GTI_off3.fits`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > select mkf`  
 	`> Boolean expression for filter file selection > SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>20`  
 	- `select mkf` command creates a time filter of GTIs. To actually filter the events, we must use or issue the command `extract events`  
@@ -72,17 +72,17 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > extract events`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > save events`  
-	`> Give output file name > clean_events.fits`  
+	`> Give output file name > clean_events_off2_dye20.fits`  
 	- In original procedure it lists following steps 1-2 of New Recipe here  
 	
-	`> Use filtered events as input data file ? >[yes] y????????`
-	`filter pha_cutoff 109 547`  
-	`extract image`  
-	`190617_1:SUZAKU-XIS1-STANDARD > save image`  
-	`0.4-2.0_image.fits`  
-	`exit`  
-	`> Save this session? >[y] y`  
-16. `ds9 0.4-2.0_image.fits`  
+	`> Use filtered events as input data file ? > y`
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > filter pha_cutoff 109 547`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > extract image`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > save image`  
+	`> Give output file name > 0_4-2_0_image_off3_dye20.fits`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > exit`  
+	`> Save this session? > y`  
+16. `ds9 0_4-2_0_image_off3_dye20.fits`  
 	- Change scale to Log  
 	- Analysis  
 		+ Smooth  
