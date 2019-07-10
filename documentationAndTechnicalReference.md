@@ -160,6 +160,8 @@ PI: These are usually called pulse-height invariant or PI channels,
 because they correspond to the pulse height of an event after
 it has been calibrated for temporal and spatial gain variations
 onto a standard energy scale
+
+
 ### 
 
 [^ Table of Contents ^](#TC)

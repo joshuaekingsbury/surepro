@@ -93,10 +93,10 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 		Double click regions to bring up info to edit like angle for rotation
 	+ Region  
 		* Select All  
-	+ Properties  
-		* Exclude  
-	+ Save regions  
-		* `ds9.reg`  
+		+ Properties  
+			* Exclude  
+		+ Save regions  
+			* `ds9.reg`  
 17. `$ xselect`  
 	`set instr xis1`  
 	`set datadir []`  
