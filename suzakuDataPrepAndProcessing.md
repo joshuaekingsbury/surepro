@@ -107,12 +107,14 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`> Enter the Event file dir > [path to event_cl dir]`  
 	- datadir used in step 15
 
-	`read events [clean_events.fits]` 
-	`??xis1_filtered_rmsrc??` 
-	`filter region ds9.reg`  
-	`extract all`  
-	`exit`  
-	`Save?: [y]`
+	`YYMMDD_#:SUZAKU > read events`  
+	`> Enter Event file list > xis1_events_GTI_off3.fits`  
+	~~`read events [clean_events.fits]`~~
+	~~`??xis1_filtered_rmsrc??`~~ 
+	`YYMMDD_#:SUZAKU > filter region ds9.reg`  
+	`YYMMDD_#:SUZAKU > extract all`  
+	`YYMMDD_#:SUZAKU > exit`  
+	`> Save this session? > y`
 18. `$ xisrmfgen`   
 	`[name of histogram file]`  
 	`[name of output file]: xis_rmf.fits`  
