@@ -92,14 +92,21 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 		Select regions with high count rate  
 		Double click regions to bring up info to edit like angle for rotation
 	+ Region  
-		* Select All  
-		+ Properties  
-			* Exclude  
-		+ Save regions  
-			* `ds9.reg`  
+		* Shape  
+			- Make Circle/Ellipse/Box/Polygon Selections  
+	+ When finished making selections:  
+		* Regions  
+			* Select All  
+			+ Properties  
+				* Exclude  
+			+ Save regions  
+				* `ds9.reg`  
 17. `$ xselect`  
-	`set instr xis1`  
-	`set datadir []`  
+	`> Enter session name > YYMMDD_#`  
+	`YYMMDD_#:SUZAKU > set datadir`  
+	`> Enter the Event file dir > [path to event_cl dir]`  
+	- datadir used in step 15
+
 	`read events [clean_events.fits]` 
 	`??xis1_filtered_rmsrc??` 
 	`filter region ds9.reg`  
