@@ -200,8 +200,9 @@ NASA X-ray Astronomy School
 ---  
 
 # Fun
-(http://www.sjsu.edu/faculty/watkins/elevsun.htm)
+(http://www.sjsu.edu/faculty/watkins/elevsun.htm)  
 
+(2019arXiv190303423K)
 ---
 
 [caldbinstallweblink]:https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/caldb_install.html
