@@ -119,9 +119,9 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`Name of input PI or IMAGE file or NONE[] YYMMDD_#_image.xsl`  
 	`Name of output RMF[]: rmf_3off_dye20.fits`  
 19. `$ xisexpmapgen`  
-	`[output file]: expmap_3off_dye20.fits`  
-	`[PHA file name]: histogram file`  
-	`[input att file]: ../auxil/ae...att`  
+	`output exposure map file[]: expmap_3off_dye20.fits`  
+	`input PHA or EVENT file to get observation mode[] YYMMDD_#_hist.xsl`  
+	`input attitude file[] ../auxil/ae509044010.att.gz`  
 20. `$ pset xissimarfgen badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
 -new recipe - view reference in step 7  
 	`$ xissimarfgen`
