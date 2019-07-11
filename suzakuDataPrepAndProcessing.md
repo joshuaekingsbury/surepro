@@ -111,15 +111,15 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`> Enter Event file list > xis1_events_GTI_off3.fits`  
 	~~`read events [clean_events.fits]`~~
 	~~`??xis1_filtered_rmsrc??`~~  
-	`YYMMDD_#:SUZAKU > filter region ds9.reg`  
-	`YYMMDD_#:SUZAKU > extract all`  
-	`YYMMDD_#:SUZAKU > exit`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > filter region ds9.reg`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > extract all`  
+	`YYMMDD_#:SUZAKU-XIS1-STANDARD > exit`  
 	`> Save this session? > y`
 18. `$ xisrmfgen`   
-	`[name of histogram file]`  
-	`[name of output file]: xis_rmf.fits`  
+	`Name of input PI or IMAGE file or NONE[] YYMMDD_#_image.xsl`  
+	`Name of output RMF[]: rmf_3off_dye20.fits`  
 19. `$ xisexpmapgen`  
-	`[output file]: xis1_expmap.fits`  
+	`[output file]: expmap_3off_dye20.fits`  
 	`[PHA file name]: histogram file`  
 	`[input att file]: ../auxil/ae...att`  
 20. `$ pset xissimarfgen badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
