@@ -16,7 +16,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5no69b_ev.evt .`  
 	- cp means "copy", then give file copying from and directory copying too
 	- "." is current working directory
-7. Look for bad colum file [*New Recipe! Steps 1-2](https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html) (Here steps 7-10)   
+7. Look for bad colum file [*New Recipe! Steps 1 & 2 for science observation data.][newrecipelink] (Here steps 7-10)   
 	- `~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
 	- Use 6KeV most recent for xis1 as newest 2KeV is older than and doesn't contain necessary GTIs for Night X-Ray Background  (NXB)  
 	- In original procedure, files are merged before cleaning using New Recipe
@@ -123,7 +123,6 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`input PHA or EVENT file to get observation mode[] YYMMDD_#_hist.xsl`  
 	`input attitude file[] ../auxil/ae509044010.att.gz`  
 20. `$ pset xissimarfgen badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
--new recipe - view reference in step 7  
 	`$ xissimarfgen`
 		`[instrument name]: xis1`  
 		`[source mode]: UNIFORM`  
@@ -132,28 +131,29 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 		`[# of ARF region]: 1`  
 		`[region mode]: SKYREG`  
 		`[region file]: ds9.reg`  
-		`[output arf file]: xis_arf.fits`  
+		`[output arf file]: arf_3off_dye20.fits`  
 		`[limit mode]: MIXED`  
 		`[# of photons]: 2000000`  
 		`[calculation accuracy]: 0.005`  
-		`[xis det-coordinates mask image]: expimage.fits`  
-		`[input GTI file]: histogram file`  
-		`[input attitude file]: ../auxil/ae..att`  
-		`[input rmf file]: xis_rmf.fits`  
+		`input PHA or Event file to get observation mode[] YYMMDD_#_hist.xsl`  
+		`[xis det-coordinates mask image]: expmap_3off_dye20.fits`  
+		- ?? ~~/home/joking/suzaku/caldb/data/suzaku/xis/bcf/ae\_xi1\_calmask\_20051105.fits~~
+		`[input GTI file]: YYMMDD_#_hist.xsl`  
+		`[input attitude file]: ../auxil/ae509044010.att.gz`  
+		`[input rmf file]: rmf_3off_dye20.fits`  
 		`[energy step file]: medium`  
-		
-	-This step takes a VERY long time - allow time for it.
-		
-21. `$ pset xisputpixelquality badcolumfile=ae_xi1_npmsci6_20160128.fits`  
-	`$ xisputpixelquality ae_xis1_nxbsci_`  
-	`>ftcopy 'ae_xis1_nxbsci_[EVENTS][STATUS=0:524287]' ae_xis1_nxbsci..rejectnpm.fits`
+	- This step takes a VERY long time - allow time for it.  
+	- As given in [*New Recipe! Step 3 for science observation data.][newrecipelink]  
+21. `$ pset xisputpixelquality badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
+	`$ xisputpixelquality ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits`  
+	`> ftcopy '~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits[EVENTS][STATUS=0:524287]' rejectnpm_ae_xis1_nxbsci6_3off_dye20.fits`
 
-22. `cp *rejectnpm.fits*` to current directory  
+22. `cp ~/suzaku/caldb/data/suzaku/xis/bcf/rejectnpm_ae_xis1_nxbsci6_3off_dye20.fits .` to current directory  
 
-23. `$ pset xisnxbgen nxbevent=*rejectnpm file*`  
+23. `$ pset xisnxbgen nxbevent=rejectnpm_ae_xis1_nxbsci6_3off_dye20.fits`  
 
 24. `$ xisnxbgen`  
-	`[outputfile]: en_nxb.fits`  
+	`[outputfile]: nxb_off3_dye20.fits`  
 	`[input PHA or event]: histogram file`  
 	`[region mode]: SKYREG`  
 	`[region file for output NXB]: ds9.reg`  
@@ -172,5 +172,4 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 
 
 
-
-
+[newrecipelink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html
