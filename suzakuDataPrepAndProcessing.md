@@ -117,9 +117,9 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`> Save this session? > y`
 18. `$ xisrmfgen`   
 	`Name of input PI or IMAGE file or NONE[] YYMMDD_#_image.xsl`  
-	`Name of output RMF[]: rmf_3off_dye20.fits`  
+	`Name of output RMF[]: rmf_off3_dye20.fits`  
 19. `$ xisexpmapgen`  
-	`output exposure map file[]: expmap_3off_dye20.fits`  
+	`output exposure map file[]: expmap_off3_dye20.fits`  
 	`input PHA or EVENT file to get observation mode[] YYMMDD_#_hist.xsl`  
 	`input attitude file[] ../auxil/ae509044010.att.gz`  
 20. `$ pset xissimarfgen badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
@@ -131,34 +131,39 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 		`[# of ARF region]: 1`  
 		`[region mode]: SKYREG`  
 		`[region file]: ds9.reg`  
-		`[output arf file]: arf_3off_dye20.fits`  
+		`[output arf file]: arf_off3_dye20.fits`  
 		`[limit mode]: MIXED`  
 		`[# of photons]: 2000000`  
 		`[calculation accuracy]: 0.005`  
 		`input PHA or Event file to get observation mode[] YYMMDD_#_hist.xsl`  
-		`[xis det-coordinates mask image]: expmap_3off_dye20.fits`  
+		`[xis det-coordinates mask image]: expmap_off3_dye20.fits`  
 		- ?? ~~/home/joking/suzaku/caldb/data/suzaku/xis/bcf/ae\_xi1\_calmask\_20051105.fits~~
 		`[input GTI file]: YYMMDD_#_hist.xsl`  
 		`[input attitude file]: ../auxil/ae509044010.att.gz`  
-		`[input rmf file]: rmf_3off_dye20.fits`  
+		`[input rmf file]: rmf_off3_dye20.fits`  
 		`[energy step file]: medium`  
 	- This step takes a VERY long time - allow time for it.  
 	- As given in [*New Recipe! Step 3 for science observation data.][newrecipelink]  
 21. `$ pset xisputpixelquality badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
-	`$ xisputpixelquality ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits`  
-	`> ftcopy '~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits[EVENTS][STATUS=0:524287]' rejectnpm_ae_xis1_nxbsci6_3off_dye20.fits`
+	`$ cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits .`  
+	`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`  
+	`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`  
+~~	`$ ftcopy 'ae_xi1_nxbsci6_20160128.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits` ~~ 
+	`$ ftcopy 'ae_xi1_nxbsci6_20160128_badcolum.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
+	- As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]  
 
-22. `cp ~/suzaku/caldb/data/suzaku/xis/bcf/rejectnpm_ae_xis1_nxbsci6_3off_dye20.fits .` to current directory  
+22. ~~`cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .`~~ to current directory 
 
-23. `$ pset xisnxbgen nxbevent=rejectnpm_ae_xis1_nxbsci6_3off_dye20.fits`  
+23. `$ pset xisnxbgen nxbevent=ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
+	- As given in [*New Recipe! Steps 3 for background data.][newrecipelink]  
 
 24. `$ xisnxbgen`  
 	`[outputfile]: nxb_off3_dye20.fits`  
-	`[input PHA or event]: histogram file`  
+	`[input PHA or event]: YYMMDD_#_hist.xsl`  
 	`[region mode]: SKYREG`  
 	`[region file for output NXB]: ds9.reg`  
-	`[input orbit file]: ../auxil/ae...orb`  
-	`[input att file]: ../auxil/ae...att`  
+	`[input orbit file]: ../auxil/ae509044010.orb.gz`  
+	`[input att file]: ../auxil/ae509044010.att.gz`  
 	
 25. Before proceeding, check that the following files have been created and are located in your relative analysis dir:  
 	- PHA filename  
