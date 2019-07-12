@@ -148,9 +148,10 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`$ cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits .`  
 	`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`  
 	`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`  
-~~	`$ ftcopy 'ae_xi1_nxbsci6_20160128.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits` ~~ 
 	`$ ftcopy 'ae_xi1_nxbsci6_20160128_badcolum.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
-	- As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]  
+	- (Roughly) As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]  
+	- There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate  
+	- Additionally, we copy the nxb file to work with in the current working directory
 
 22. ~~`cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .`~~ to current directory 
 
