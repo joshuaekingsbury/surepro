@@ -23,10 +23,10 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 8. `$ pset xisputpixelquality badcolumfile=~/YOUR/PATH/FROM/STEP/7`
 	- Input path to badcolum file found in previous step
 	- Make sure your working directory is the relative analysis folder
-9. `$ xisputpixelquality 3x3 file [Enter]`  
-	`output file: 3x3_badcolum.fits (badcolum_3x3_off3.fits)`
+9. `$ xisputpixelquality ae50...xi1_0_3x3no69b_ev.evt`  
+	`output file: badcolum_3x3_off3.fits`
 	- Repeat this step for 5x5 file
-10. `ftcopy 3x3_badcolum.fits[EVENTS][STATUS=0:524287] 3x3_new.fits`   (ftcopy\_3x3\_524288\_off3.fits) `
+10. `ftcopy badcolum_3x3_off3.fits[EVENTS][STATUS=0:524287] ftcopy_3x3_524288_off3.fits `
 	- Repeat this step for the 5x5 file output from the previous step  
 		+ ???(ftcopy\_5x5\_128_off3.fits)???
 		+ (128? Since is before making into a 3x3 file?)
@@ -37,20 +37,19 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 
 11. 
 	`$ xis5x5to3x3`  
-	`input file: 5x5_new.fits`  
-	`output file: 5x5to3x3.fits`  
+	`input file: ftcopy_5x5_524288_off3.fits`  
+	`output file: 5x5to3x3_off3.fits`  
 	`input hk file: ~/suzaku/off-field3/50.../xis/hk/ae509044010xi1_0.hk.gz`  
 	- [An hk file is a "housekeeping" file](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/heasarc.html)
 	- Converting 5x5 to a 3x3, according to Suzaku user guide ch 6?, extracting 3x3 from center of 5x5?
 12. `$ ftmerge`  
-	`3x3_new.fits, 5x5to3x3.fits`  
-	`output: xis1_events.fits`  
+	`ftcopy_3x3_524288_off3.fits, 5x5to3x3_off3.fits`  
+	`output: merged_5to3_w_3_off3.fits`  
 13. `$ ftmerge`  
-	``xis1_events.fits[GTI], 5x5to3x3.fits[GTI]``  
-	`output: xis1_events_GTI.fits`(merged\_merged\_w\_5to3\_GTI.fits)  
-	- (Copy output file, rename to xis1_events\_GTI\_off3.fits)
-14. `$ mv xis1_events_GTI.fits ../xis/event_cl`  (mv xis1\_events\_GTI\_off3.fits)
-
+	`xis1_events.fits[GTI], 5x5to3x3_off3.fits[GTI]`  
+	`output: merged_merged_w_5to3_GTI_off3.fits`  
+	`$ cp merged_merged_w_5to3_GTI_off3.fits xi1_events_GTI_off3.fits`  
+14. `$ mv xi1_events_GTI.fits ../xis/event_cl`  
   14.5. `cd ../20analysis`  
   change to analysis directory relative to DYE (20analysis in following steps; when repeating: 40analysis, 60analysis)
 
@@ -63,7 +62,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 
 	`YYMMDD_#:SUZAKU > set instr xis1`  
 	`YYMMDD_#:SUZAKU > read events`  
-	`> Enter Event file list > xis1_events_GTI_off3.fits`  
+	`> Enter Event file list > xi1_events_GTI_off3.fits`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > select mkf`  
 	`> Boolean expression for filter file selection > SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>20`  
 	- `select mkf` command creates a time filter of GTIs. To actually filter the events, we must use or issue the command `extract events`  
@@ -153,7 +152,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate  
 	- Additionally, we copy the nxb file to work with in the current working directory
 
-22. ~~`cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .`~~ to current directory 
+22. ~~`cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .` to current directory~~ 
 
 23. `$ pset xisnxbgen nxbevent=ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
 	- As given in [*New Recipe! Steps 3 for background data.][newrecipelink]  
