@@ -49,7 +49,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`Filename[extension] of tables to be merged[] merged_5to3_w_3_off3.fits[GTI], 5x5to3x3_off3.fits[GTI]`  
 	`output: merged_merged_w_5to3_GTI_off3.fits`  
 	`$ cp merged_merged_w_5to3_GTI_off3.fits xi1_events_GTI_off3.fits`  
-14. `$ cp xi1_events_GTI.fits ../xis/event_cl`  
+14. `$ cp xi1_events_GTI_off3.fits ../xis/event_cl`  
   14.5. `cd ../20analysis`  
   change to analysis directory relative to DYE (20analysis in following steps; when repeating: 40analysis, 60analysis)
 
