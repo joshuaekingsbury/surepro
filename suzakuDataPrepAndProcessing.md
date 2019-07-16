@@ -107,7 +107,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- datadir used in step 15
 
 	`YYMMDD_#:SUZAKU > read events`  
-	`> Enter Event file list > xis1_events_GTI_off3.fits`  
+	`> Enter Event file list > xi1_events_GTI_off3.fits`  
 	~~`read events [clean_events.fits]`~~
 	~~`??xis1_filtered_rmsrc??`~~  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > filter region ds9.reg`  
