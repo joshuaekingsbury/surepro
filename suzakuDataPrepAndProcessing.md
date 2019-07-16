@@ -26,7 +26,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 9. `$ xisputpixelquality ae50...xi1_0_3x3no69b_ev.evt`  
 	`output file: badcolum_3x3_off3.fits`
 	- Repeat this step for 5x5 file
-10. `ftcopy badcolum_3x3_off3.fits[EVENTS][STATUS=0:524287] ftcopy_3x3_524288_off3.fits `
+10. `ftcopy badcolum_3x3_off3.fits[EVENTS][STATUS=0:524287] ftcopy_3x3_524287_off3.fits `
 	- Repeat this step for the 5x5 file output from the previous step  
 		+ ???(ftcopy\_5x5\_128_off3.fits)???
 		+ (128? Since is before making into a 3x3 file?)
