@@ -1,6 +1,17 @@
 When extracting an observation data set (`$ tar xvf downloadedObservationData.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
 
-(Ignore this: analysis dir, then copy all to 20,40,60 (adding '_dye20' to each) for next steps)
+only need to do this .5 step once. Check to see if necessary reject file has been created prior before continuing
+
+\_.5. `cd ~/suzaku/caldb/data/suzaku/xis/bcf`  
+	`$ pset xisputpixelquality badcolumfile=ae_xi1_npmsci6_20160128.fits`    
+	`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`  
+	`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`  
+	`$ ftcopy 'ae_xi1_nxbsci6_20160128_badcolum.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
+	`$ rm ae_xi1_nxbsci6_20160128_badcolum.fits`  
+	- (Roughly) As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]  
+	- There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate  
+	- Instead of doing this much, much later, and repeatedly for each analysis, taking care of it now removes a few steps that don't need repeated every time later
+	- Just copy this nxb reject file into the current working directory as a later step  
 
 1. Navigate to directory 50.../xis/event_cl
 2. `$ Gunzip *.*`
@@ -113,16 +124,18 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > filter region ds9.reg`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > extract all`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > exit`  
-	`> Save this session? > y`
+	`> Save this session? > y`  
+	
+	18.5 `cp YYMMDD_#_hist.xsl hist_off3_dye20.fits`  
 18. `$ xisrmfgen`   
-	`Name of input PI or IMAGE file or NONE[] YYMMDD_#_image.xsl`  
+	`Name of input PI or IMAGE file or NONE[] hist_off3_dye20.fits`  
 	`Name of output RMF[]: rmf_off3_dye20.fits`  
 19. `$ xisexpmapgen`  
 	`output exposure map file[]: expmap_off3_dye20.fits`  
-	`input PHA or EVENT file to get observation mode[] YYMMDD_#_hist.xsl`  
+	`input PHA or EVENT file to get observation mode[] hist_off3_dye20.fits`  
 	`input attitude file[] ../auxil/ae509044010.att.gz`  
 20. `$ pset xissimarfgen badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
-	`$ xissimarfgen`
+	`$ xissimarfgen`  
 		`[instrument name]: xis1`  
 		`[source mode]: UNIFORM`  
 		`[minimum source radius]: 0.0`  
@@ -134,32 +147,32 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 		`[limit mode]: MIXED`  
 		`[# of photons]: 2000000`  
 		`[calculation accuracy]: 0.005`  
-		`input PHA or Event file to get observation mode[] YYMMDD_#_hist.xsl`  
+		`input PHA or Event file to get observation mode[] hist_off3_dye20.fits`  
 		`[xis det-coordinates mask image]: expmap_off3_dye20.fits`  
 		- ?? ~~/home/joking/suzaku/caldb/data/suzaku/xis/bcf/ae\_xi1\_calmask\_20051105.fits~~
-		`[input GTI file]: YYMMDD_#_hist.xsl`  
+		`[input GTI file]: hist_off3_dye20.fits`  
 		`[input attitude file]: ../auxil/ae509044010.att.gz`  
 		`[input rmf file]: rmf_off3_dye20.fits`  
 		`[energy step file]: medium`  
 	- This step takes a VERY long time - allow time for it.  
 	- As given in [*New Recipe! Step 3 for science observation data.][newrecipelink]  
-21. `$ pset xisputpixelquality badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
-	`$ cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits .`  
-	`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`  
-	`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`  
-	`$ ftcopy 'ae_xi1_nxbsci6_20160128_badcolum.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
-	- (Roughly) As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]  
-	- There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate  
-	- Additionally, we copy the nxb file to work with in the current working directory
+21. ~~`$ pset xisputpixelquality badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`~~  
+	~~`$ cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits .`~~  
+	~~`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`~~  
+	~~`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`~~  
+	~~`$ ftcopy 'ae_xi1_nxbsci6_20160128_badcolum.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits`~~  
+	- ~~(Roughly) As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]~~  
+	- ~~There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate~~  
+	- ~~Additionally, we copy the nxb file to work with in the current working directory~~
 
-22. ~~`cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .` to current directory~~ 
+22. `cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .` to current directory 
 
 23. `$ pset xisnxbgen nxbevent=ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
 	- As given in [*New Recipe! Steps 3 for background data.][newrecipelink]  
 
 24. `$ xisnxbgen`  
 	`[outputfile]: nxb_off3_dye20.fits`  
-	`[input PHA or event]: YYMMDD_#_hist.xsl`  
+	`[input PHA or event]: hist_off3_dye20.fits`  
 	`[region mode]: SKYREG`  
 	`[region file for output NXB]: ds9.reg`  
 	`[input orbit file]: ../auxil/ae509044010.orb.gz`  
@@ -175,6 +188,11 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- BACKFILE  
 `$ ls *nxb*`  
 
+cp hist file to hist\_off2\_dye20.fits (in earlier step when done with creating hist file)
+
+inside 20analysis dir mkdir spec
+
+copy the above files into this directory
 
 
 [newrecipelink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html
