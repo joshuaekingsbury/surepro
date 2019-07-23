@@ -1,0 +1,1619 @@
+joking@JoKing-Space:~$ cd suzaku/3off/509044010/
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls
+20analysis  40analysis  60analysis  analysis  auxil  log  xis
+joking@JoKing-Space:~/suzaku/3off/509044010$ cd 20analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ ls
+0_4-2_0_image_off3_dye20.fits  190715_4_image.xsl
+190715_1_ascii_out.xsl         190715_4_obscat.tmp
+190715_1_display.def           190715_4_obslist.def
+190715_1_files.tmp             190715_4_read_cat.xsl
+190715_1_fits_in.xsl           190715_4_region.xsl
+190715_1_image.xsl             190715_4_session.xsl
+190715_1_mkf_out.xsl           190715_4_xronos_out.xsl
+190715_1_obscat.tmp            ae_xi1_nxbsci6_20160128.fits
+190715_1_obslist.def           ae_xi1_nxbsci6_20160128_rejectnpm.fits
+190715_1_out_event.xsl         arf_off3_dye20.fits
+190715_1_read_cat.xsl          clean_events_off3_dye20.fits
+190715_1_session.xsl           ds9_contours_L0_1_S1_take3.reg
+190715_2_ascii_out.xsl         ds9_contours_L1_S1.ctr
+190715_2_display.def           ds9_contours_L1_S1.reg
+190715_2_files.tmp             ds9_contours_L1_S1_take2.reg
+190715_2_fits_curve.xsl        ds9.reg
+190715_2_hist.xsl              ds9_test2.reg
+190715_2_image.xsl             ds9_test3.reg
+190715_2_obscat.tmp            ds9_test4.reg
+190715_2_obslist.def           ds9_test5.reg
+190715_2_read_cat.xsl          ds9_test6.reg
+190715_2_region.xsl            ds9_test7.fits
+190715_2_session.xsl           ds9_test.reg
+190715_2_xronos_out.xsl        expmap_off3_dye20.fits
+190715_4_ascii_out.xsl         nxb_off3_dye20.fits
+190715_4_display.def           rmf_off3_dye20.fits
+190715_4_files.tmp             spec
+190715_4_fits_curve.xsl        xselect.log
+190715_4_hist.xsl              xsel_timefile.asc
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ ds9 0_4-2_0_image_off3_dye20.fits 
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ detach ds9 0_4-2_0_image_off3_dye20.fits 
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ cd ../40analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ detach ds9
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ cd ../60analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ detach ds9
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ cd ../20analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ ls
+0_4-2_0_image_off3_dye20.fits  190715_4_image.xsl
+190715_1_ascii_out.xsl         190715_4_obscat.tmp
+190715_1_display.def           190715_4_obslist.def
+190715_1_files.tmp             190715_4_read_cat.xsl
+190715_1_fits_in.xsl           190715_4_region.xsl
+190715_1_image.xsl             190715_4_session.xsl
+190715_1_mkf_out.xsl           190715_4_xronos_out.xsl
+190715_1_obscat.tmp            ae_xi1_nxbsci6_20160128.fits
+190715_1_obslist.def           ae_xi1_nxbsci6_20160128_rejectnpm.fits
+190715_1_out_event.xsl         arf_off3_dye20.fits
+190715_1_read_cat.xsl          clean_events_off3_dye20.fits
+190715_1_session.xsl           ds9_contours_L0_1_S1_take3.reg
+190715_2_ascii_out.xsl         ds9_contours_L1_S1.ctr
+190715_2_display.def           ds9_contours_L1_S1.reg
+190715_2_files.tmp             ds9_contours_L1_S1_take2.reg
+190715_2_fits_curve.xsl        ds9.reg
+190715_2_hist.xsl              ds9_test2.reg
+190715_2_image.xsl             ds9_test3.reg
+190715_2_obscat.tmp            ds9_test4.reg
+190715_2_obslist.def           ds9_test5.reg
+190715_2_read_cat.xsl          ds9_test6.reg
+190715_2_region.xsl            ds9_test7.fits
+190715_2_session.xsl           ds9_test.reg
+190715_2_xronos_out.xsl        expmap_off3_dye20.fits
+190715_4_ascii_out.xsl         nxb_off3_dye20.fits
+190715_4_display.def           rmf_off3_dye20.fits
+190715_4_files.tmp             spec
+190715_4_fits_curve.xsl        xselect.log
+190715_4_hist.xsl              xsel_timefile.asc
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ ls *curve*
+190715_2_fits_curve.xsl  190715_4_fits_curve.xsl
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ fv 190715_4_fits_curve.xsl 
+
+Command 'fv' not found, but can be installed with:
+
+sudo apt install ftools-fv
+
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ heainit
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ caldbinit
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ fv 190715_4_fits_curve.xsl 
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ t-rec
+t-rec: command not found
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ rec-t
+asciinema: recording asciicast to /home/joking/Documents/t_hist/t_hist_190723_113830.session
+asciinema: press <ctrl-d> or type "exit" when you're done
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ ls
+0_4-2_0_image_off3_dye20.fits  190715_4_image.xsl
+190715_1_ascii_out.xsl         190715_4_obscat.tmp
+190715_1_display.def           190715_4_obslist.def
+190715_1_files.tmp             190715_4_read_cat.xsl
+190715_1_fits_in.xsl           190715_4_region.xsl
+190715_1_image.xsl             190715_4_session.xsl
+190715_1_mkf_out.xsl           190715_4_xronos_out.xsl
+190715_1_obscat.tmp            ae_xi1_nxbsci6_20160128.fits
+190715_1_obslist.def           ae_xi1_nxbsci6_20160128_rejectnpm.fits
+190715_1_out_event.xsl         arf_off3_dye20.fits
+190715_1_read_cat.xsl          clean_events_off3_dye20.fits
+190715_1_session.xsl           ds9_contours_L0_1_S1_take3.reg
+190715_2_ascii_out.xsl         ds9_contours_L1_S1.ctr
+190715_2_display.def           ds9_contours_L1_S1.reg
+190715_2_files.tmp             ds9_contours_L1_S1_take2.reg
+190715_2_fits_curve.xsl        ds9.reg
+190715_2_hist.xsl              ds9_test2.reg
+190715_2_image.xsl             ds9_test3.reg
+190715_2_obscat.tmp            ds9_test4.reg
+190715_2_obslist.def           ds9_test5.reg
+190715_2_read_cat.xsl          ds9_test6.reg
+190715_2_region.xsl            ds9_test7.fits
+190715_2_session.xsl           ds9_test.reg
+190715_2_xronos_out.xsl        expmap_off3_dye20.fits
+190715_4_ascii_out.xsl         nxb_off3_dye20.fits
+190715_4_display.def           rmf_off3_dye20.fits
+190715_4_files.tmp             spec
+190715_4_fits_curve.xsl        xselect.log
+190715_4_hist.xsl              xsel_timefile.asc
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ cd spec/
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis/spec$ ls
+190715_4_hist.xsl         nxb_off3_dye20.fits  rmf_off3_dye20.fits
+arf_off3_dye20.fits       plot2.cps            savexspec.xcm
+grp_spec_off3_dye20.fits  plot2.cps.pdf
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis/spec$ cd ../
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ cd ../
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls
+20analysis  40analysis  60analysis  analysis  auxil  log  xis
+joking@JoKing-Space:~/suzaku/3off/509044010$ mkdir spec_analysis
+joking@JoKing-Space:~/suzaku/3off/509044010$ cd spec/
+bash: cd: spec/: No such file or directory
+joking@JoKing-Space:~/suzaku/3off/509044010$ cs spec_analysis/
+
+Command 'cs' not found, but can be installed with:
+
+sudo apt install csound
+
+joking@JoKing-Space:~/suzaku/3off/509044010$ cd spec_analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ rm *
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ cp ../20analysis/spec/*.fits
+cp: target '../20analysis/spec/rmf_off3_dye20.fits' is not a directory
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ cp ../20analysis/spec/*.fits .
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ cp ../40analysis/spec/*.fits .
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ cp ../60analysis/spec/*.fits .
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ ls
+arf_off3_dye20.fits       hist_off3_dye20.fits  nxb_off3_dye60.fits
+arf_off3_dye40.fits       hist_off3_dye40.fits  rmf_off3_dye20.fits
+arf_off3_dye60.fits       hist_off3_dye60.fits  rmf_off3_dye40.fits
+grp_spec_off3_dye20.fits  nxb_off3_dye20.fits   rmf_off3_dye60.fits
+grp_spec_off3_dye40.fits  nxb_off3_dye40.fits
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ grppha
+Please enter PHA filename[hist_off4_dye40.fits] hist_off3_dye60.fits 
+Please enter output filename[grp_spec_off4_dye40.fits] grp_spec_off3_dye60.fits
+ 
+  -------------------------
+  MANDATORY KEYWORDS/VALUES
+  -------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  EXTNAME   - SPECTRUM        Name of this BINTABLE
+  TELESCOP  - SUZAKU          Mission/Satellite name
+  INSTRUME  - XIS1            Instrument/Detector
+  FILTER    - NONE            Instrument filter in use
+  EXPOSURE  - 63324.          Integration time (in secs) of PHA data
+  AREASCAL  - 1.0000          Area scaling factor
+  BACKSCAL  - 0.98138         Background scaling factor
+  BACKFILE  - none            Associated background file
+  CORRSCAL  - 1.0000          Correlation scaling factor
+  CORRFILE  - none            Associated correlation file
+  RESPFILE  - none            Associated redistribution matrix file
+  ANCRFILE  - none            Associated ancillary response file
+  POISSERR  - TRUE            Whether Poissonian errors apply
+  CHANTYPE  - PI              Whether channels have been corrected
+  TLMIN1    - 109             First legal Detector channel
+  DETCHANS  - 439             No. of legal detector channels
+  NCHAN     - 439             No. of detector channels in dataset
+  PHAVERSN  - 1.2.0           OGIP FITS version number
+  STAT_ERR  - FALSE           Statistical Error
+  SYS_ERR   - FALSE           Fractional Systematic Error
+  QUALITY   - TRUE            Quality Flag
+  GROUPING  - FALSE           Grouping Flag
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+GRPPHA[chkey RESPFILE rmf_off4_dye40.fits] chkey RESPFILE rmf_off3_dye60.fits 
+GRPPHA[exit] chkey BACKFILE nxb_off3_dye60.fits 
+GRPPHA[chkey BACKFILE nxb_off3_dye60.fits] chkey ANCRFILE arf_off3_dye60.fits 
+GRPPHA[chkey ANCRFILE arf_off3_dye60.fits] group min 25
+GRPPHA[group min 25] exit
+ ... written the PHA data Extension
+ ...... exiting, changes written to file : grp_spec_off3_dye60.fits
+ ** grppha 3.0.1 completed successfully
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ ls
+arf_off3_dye20.fits       grp_spec_off3_dye60.fits  nxb_off3_dye40.fits
+arf_off3_dye40.fits       hist_off3_dye20.fits      nxb_off3_dye60.fits
+arf_off3_dye60.fits       hist_off3_dye40.fits      rmf_off3_dye20.fits
+grp_spec_off3_dye20.fits  hist_off3_dye60.fits      rmf_off3_dye40.fits
+grp_spec_off3_dye40.fits  nxb_off3_dye20.fits       rmf_off3_dye60.fits
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ xspec 
+
+		XSPEC version: 12.10.1
+	Build Date/Time: Tue May 21 15:51:45 2019
+
+XSPEC12>data 1:1 grp_spec_off3_dye20.fits 2:2 grp_spec_off3_dye40.fits 3:3 grp_spec_off3_dye60.fits 
+
+***XSPEC Error: Response DETCHANS: 4096, and data DETCHANS: 439
+   do not match.
+
+*** Error processing response data - file skipped
+
+***XSPEC Error: Background file nxb_off3_dye40.fits DETCHANS do not match data file.
+
+***XSPEC Error: Response DETCHANS: 4096, and data DETCHANS: 439
+   do not match.
+
+*** Error processing response data - file skipped
+
+***XSPEC Error: Background file nxb_off3_dye60.fits DETCHANS do not match data file.
+
+1 spectrum  in use
+ 
+Spectral Data File: grp_spec_off3_dye20.fits  Spectrum 1
+Net count rate (cts/s) for Spectrum:1  2.467e-01 +/- 2.885e-03 (32.9 % total)
+ Assigned to Data Group 1 and Plot Group 1
+  Noticed Channels:  1-1626
+  Telescope: SUZAKU Instrument: XIS1  Channel Type: PI
+  Exposure Time: 9.733e+04 sec
+ Using fit statistic: chi
+ Using test statistic: chi
+ Using Background File                nxb_off3_dye20.fits
+  Background Exposure Time: 8.046e+05 sec
+ Using Response (RMF) File            rmf_off3_dye20.fits for Source 1
+ Using Auxiliary Response (ARF) File  arf_off3_dye20.fits
+
+XSPEC12>data 1:1 grp_spec_off3_dye20.fits 
+
+Spectrum #: 1 replaced 
+
+1 spectrum  in use
+ 
+Spectral Data File: grp_spec_off3_dye20.fits  Spectrum 1
+Net count rate (cts/s) for Spectrum:1  2.467e-01 +/- 2.885e-03 (32.9 % total)
+ Assigned to Data Group 1 and Plot Group 1
+  Noticed Channels:  1-1626
+  Telescope: SUZAKU Instrument: XIS1  Channel Type: PI
+  Exposure Time: 9.733e+04 sec
+ Using fit statistic: chi
+ Using test statistic: chi
+ Using Background File                nxb_off3_dye20.fits
+  Background Exposure Time: 8.046e+05 sec
+ Using Response (RMF) File            rmf_off3_dye20.fits for Source 1
+ Using Auxiliary Response (ARF) File  arf_off3_dye20.fits
+
+XSPEC12>data 1:1 grp_spec_off3_dye40.fits 
+
+***XSPEC Error: Response DETCHANS: 4096, and data DETCHANS: 439
+   do not match.
+
+*** Error processing response data - file skipped
+
+***XSPEC Error: Background file nxb_off3_dye40.fits DETCHANS do not match data file.
+
+1 spectrum  in use
+ 
+XSPEC12>data 1:1 grp_spec_off3_dye60.fits 
+
+***XSPEC Error: Response DETCHANS: 4096, and data DETCHANS: 439
+   do not match.
+
+*** Error processing response data - file skipped
+
+***XSPEC Error: Background file nxb_off3_dye60.fits DETCHANS do not match data file.
+
+1 spectrum  in use
+ 
+XSPEC12>exit
+ XSPEC: quit
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ ls
+arf_off3_dye20.fits       grp_spec_off3_dye60.fits  nxb_off3_dye40.fits
+arf_off3_dye40.fits       hist_off3_dye20.fits      nxb_off3_dye60.fits
+arf_off3_dye60.fits       hist_off3_dye40.fits      rmf_off3_dye20.fits
+grp_spec_off3_dye20.fits  hist_off3_dye60.fits      rmf_off3_dye40.fits
+grp_spec_off3_dye40.fits  nxb_off3_dye20.fits       rmf_off3_dye60.fits
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ ls *40*
+arf_off3_dye40.fits       hist_off3_dye40.fits  rmf_off3_dye40.fits
+grp_spec_off3_dye40.fits  nxb_off3_dye40.fits
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ fv hist_off3_dye40.fits &
+[1] 21850
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ fv nxb_off3_dye40.fits &
+[2] 21863
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ fv rmf_off3_dye40.fits &
+[3] 21910
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ cd ../
+[1]   Done                    fv hist_off3_dye40.fits  (wd: ~/suzaku/3off/509044010/spec_analysis)
+(wd now: ~/suzaku/3off/509044010)
+[2]-  Done                    fv nxb_off3_dye40.fits  (wd: ~/suzaku/3off/509044010/spec_analysis)
+(wd now: ~/suzaku/3off/509044010)
+[3]+  Done                    fv rmf_off3_dye40.fits  (wd: ~/suzaku/3off/509044010/spec_analysis)
+(wd now: ~/suzaku/3off/509044010)
+joking@JoKing-Space:~/suzaku/3off/509044010$ &
+bash: syntax error near unexpected token `&'
+joking@JoKing-Space:~/suzaku/3off/509044010$ exit
+exit
+asciinema: recording finished
+asciinema: asciicast saved to /home/joking/Documents/t_hist/t_hist_190723_113830.session
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ ls
+0_4-2_0_image_off3_dye20.fits  190715_4_image.xsl
+190715_1_ascii_out.xsl         190715_4_obscat.tmp
+190715_1_display.def           190715_4_obslist.def
+190715_1_files.tmp             190715_4_read_cat.xsl
+190715_1_fits_in.xsl           190715_4_region.xsl
+190715_1_image.xsl             190715_4_session.xsl
+190715_1_mkf_out.xsl           190715_4_xronos_out.xsl
+190715_1_obscat.tmp            ae_xi1_nxbsci6_20160128.fits
+190715_1_obslist.def           ae_xi1_nxbsci6_20160128_rejectnpm.fits
+190715_1_out_event.xsl         arf_off3_dye20.fits
+190715_1_read_cat.xsl          clean_events_off3_dye20.fits
+190715_1_session.xsl           ds9_contours_L0_1_S1_take3.reg
+190715_2_ascii_out.xsl         ds9_contours_L1_S1.ctr
+190715_2_display.def           ds9_contours_L1_S1.reg
+190715_2_files.tmp             ds9_contours_L1_S1_take2.reg
+190715_2_fits_curve.xsl        ds9.reg
+190715_2_hist.xsl              ds9_test2.reg
+190715_2_image.xsl             ds9_test3.reg
+190715_2_obscat.tmp            ds9_test4.reg
+190715_2_obslist.def           ds9_test5.reg
+190715_2_read_cat.xsl          ds9_test6.reg
+190715_2_region.xsl            ds9_test7.fits
+190715_2_session.xsl           ds9_test.reg
+190715_2_xronos_out.xsl        expmap_off3_dye20.fits
+190715_4_ascii_out.xsl         nxb_off3_dye20.fits
+190715_4_display.def           rmf_off3_dye20.fits
+190715_4_files.tmp             spec
+190715_4_fits_curve.xsl        xselect.log
+190715_4_hist.xsl              xsel_timefile.asc
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ rec-t
+asciinema: recording asciicast to /home/joking/Documents/t_hist/t_hist_190723_115449.session
+asciinema: press <ctrl-d> or type "exit" when you're done
+joking@JoKing-Space:~/suzaku/3off/509044010/20analysis$ cd ../
+joking@JoKing-Space:~/suzaku/3off/509044010$ mkdir _20analysis
+joking@JoKing-Space:~/suzaku/3off/509044010$ mkdir _40analysis
+joking@JoKing-Space:~/suzaku/3off/509044010$ mv 40analysis/* _40analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls
+20analysis   40analysis   60analysis  auxil  spec_analysis
+_20analysis  _40analysis  analysis    log    xis
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls 40analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls _40analysis/
+0_4-2_0_image_off3_dye40.fits  190718_1_region.xsl
+190718_1_ascii_out.xsl         190718_1_session.xsl
+190718_1_display.def           190718_1_xronos_out.xsl
+190718_1_files.tmp             arf_off3_dye40.fits
+190718_1_fits_curve.xsl        clean_events_off3_dye40.fits
+190718_1_fits_in.xsl           ds9.reg
+190718_1_hist.xsl              expmap_off3_dye40.fits
+190718_1_image.xsl             hist_off3_dye40.fits
+190718_1_mkf_out.xsl           nxb_off3_dye40.fits
+190718_1_obscat.tmp            rmf_off3_dye40.fits
+190718_1_obslist.def           spec
+190718_1_out_event.xsl         xselect.log
+190718_1_read_cat.xsl          xsel_timefile.asc
+joking@JoKing-Space:~/suzaku/3off/509044010$ cd 40analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ ls
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ xselect
+ 
+                         **  XSELECT V2.4f  **
+ 
+> Enter session name >[190719_1] 190723_1
+190723_1:SUZAKU > set datadir
+> Enter the Event file dir >[/home/joking/suzaku/5off/509046010/xis/event_cl/] /home/joking/suzaku/3off/509044010/xis/event_cl/
+ 
+Setting data directory to /home/joking/suzaku/3off/509044010/xis/event_cl/
+Setting mkf directory to /home/joking/suzaku/3off/509044010/auxil/
+ 
+190723_1:SUZAKU > set instr xis1
+190723_1:SUZAKU-XIS1 > read events
+> Enter Event file list >[xi1_events_GTI_off5.fits] xi1_events_GTI_off3.fits
+ 
+ Notes: XSELECT set up for      SUZAKU
+ Time keyword is TIME       in units of s
+ Default timing binsize =   16.000
+ 
+Setting...
+ Image  keywords   = X          Y           with binning =    8
+ WMAP   keywords   = DETX       DETY        with binning =    8
+ Energy keyword   = PI                     with binning =    1
+ 
+Getting Min and Max for Energy Column...
+Got min and max for PI:     0   4095
+ 
+Got the minimum time resolution of the read data:   8.0000
+MJDREF =  5.1544000742870E+04 with TIMESYS = TT
+ Number of files read in:            1
+ 
+******************** Observation Catalogue ********************
+ 
+Data Directory is: /home/joking/suzaku/3off/509044010/xis/event_cl/
+HK Directory is: /home/joking/suzaku/3off/509044010/xis/event_cl/
+ 
+ 
+        OBJECT      DATE-OBS            DATE-END            EDITMODE
+      1 OFF-FIELD3  2014-06-11T02:40:39 2014-06-13T06:00:19 3x3
+ 
+190723_1:SUZAKU-XIS1-STANDARD > select mkf
+> Boolean expression for filter file selection >[SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>40] SSA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>40
+maketime2.12 : Failed to parse expression
+maketime2.12 : Error Status Returned :  202
+maketime2.12 : keyword not found in header
+
+maketime2.12 :  ***** FITSIO Error Stack Dump *****
+ffgcnn could not find column: SSA
+ffgkey could not find keyword: SSA
+Failed to get mkf_exp
+ XSL_SELECT: Status =   256
+190723_1:SUZAKU-XIS1-STANDARD > select mkf
+> Boolean expression for filter file selection >[SSA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>40] SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>40
+190723_1:SUZAKU-XIS1-STANDARD > extract events
+extractor v5.35     2 Aug 2018
+ Getting FITS WCS Keywords
+ Doing file: /home/joking/suzaku/3off/509044010/xis/event_cl/xi1_events_GTI_off3.fits
+100% completed
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          76789     52341        24445         0         0         3
+ Writing events file
+  52341 events written to the output file
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          76789     52341        24445         0         0         3
+   in  72271.     seconds
+190723_1:SUZAKU-XIS1-STANDARD > save events
+> Give output file name >[0_4-2_0_image_off5_dye40] clean_events_off3_dye40.fits
+Wrote events list to file clean_events_off3_dye40.fits
+> Use filtered events as input data file ? >[yes] 
+Changing Data directory from:
+    /home/joking/suzaku/3off/509044010/xis/event_cl/
+to the current working directory.
+190723_1:SUZAKU-XIS1-STANDARD > extract all
+extractor v5.35     2 Aug 2018
+ Getting FITS WCS Keywords
+ Doing file: /home/joking/suzaku/3off/509044010/40analysis/clean_events_off3_dye40.fits
+100% completed
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          52341     52341            0         0         0         0
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          52341     52341            0         0         0         0
+   in  72271.     seconds
+ Fits light curve has    52341 counts for 0.7242     counts/sec
+ Thresholding removed significant counts
+ Try exposure=0.0 on the extract command in xselect
+ or lcthresh=0.0 if running extractor stand-alone
+ Thresholding removed more than half the bins
+ Try exposure=0.0 on the extract command in xselect
+ or lcthresh=0.0 if running extractor stand-alone
+ Spectrum         has    52341 counts for 0.7242     counts/sec
+ ... written the PHA data Extension
+ Image            has    52341 counts for 0.7242     counts/sec
+190723_1:SUZAKU-XIS1-STANDARD > exit
+> Save this session? >[y] n
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ xselect
+ 
+                         **  XSELECT V2.4f  **
+ 
+> Enter session name >[190723_1] 
+190723_1:SUZAKU > set datadir
+> Enter the Event file dir >[/home/joking/suzaku/3off/509044010/xis/event_cl/] 
+ 
+Setting data directory to /home/joking/suzaku/3off/509044010/xis/event_cl/
+Setting mkf directory to /home/joking/suzaku/3off/509044010/auxil/
+ 
+190723_1:SUZAKU > set instr xis1
+190723_1:SUZAKU-XIS1 > read events
+> Enter Event file list >[xi1_events_GTI_off3.fits] 
+ 
+ Notes: XSELECT set up for      SUZAKU
+ Time keyword is TIME       in units of s
+ Default timing binsize =   16.000
+ 
+Setting...
+ Image  keywords   = X          Y           with binning =    8
+ WMAP   keywords   = DETX       DETY        with binning =    8
+ Energy keyword   = PI                     with binning =    1
+ 
+Getting Min and Max for Energy Column...
+Got min and max for PI:     0   4095
+ 
+Got the minimum time resolution of the read data:   8.0000
+MJDREF =  5.1544000742870E+04 with TIMESYS = TT
+ Number of files read in:            1
+ 
+******************** Observation Catalogue ********************
+ 
+Data Directory is: /home/joking/suzaku/3off/509044010/xis/event_cl/
+HK Directory is: /home/joking/suzaku/3off/509044010/xis/event_cl/
+ 
+ 
+        OBJECT      DATE-OBS            DATE-END            EDITMODE
+      1 OFF-FIELD3  2014-06-11T02:40:39 2014-06-13T06:00:19 3x3
+ 
+190723_1:SUZAKU-XIS1-STANDARD > extract all
+extractor v5.35     2 Aug 2018
+ Getting FITS WCS Keywords
+ Doing file: /home/joking/suzaku/3off/509044010/xis/event_cl/xi1_events_GTI_off3.fits
+100% completed
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          76789     76785            0         0         0         4
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          76789     76785            0         0         0         4
+   in  97334.     seconds
+ Fits light curve has    76785 counts for 0.7889     counts/sec
+ Thresholding removed significant counts
+ Try exposure=0.0 on the extract command in xselect
+ or lcthresh=0.0 if running extractor stand-alone
+ Spectrum         has    76785 counts for 0.7889     counts/sec
+ ... written the PHA data Extension
+ Image            has    76785 counts for 0.7889     counts/sec
+190723_1:SUZAKU-XIS1-STANDARD > select mkf
+> Boolean expression for filter file selection >[SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>40] 
+190723_1:SUZAKU-XIS1-STANDARD > $ cp ../_40analysis/ds9.reg .
+ Spawning...
+190723_1:SUZAKU-XIS1-STANDARD > 
+190723_1_ascii_out.xsl        190723_1_obslist.def
+190723_1_display.def          190723_1_read_cat.xsl
+190723_1_files.tmp            190723_1_xronos_out.xsl
+190723_1_fits_curve.xsl       190723_1_xsel.run
+190723_1_fits_in.xsl          clean_events_off3_dye40.fits
+190723_1_hist.xsl             ds9.reg
+190723_1_image.xsl            xsel_timefile.asc
+190723_1_mkf_out.xsl          xselect.log
+190723_1_obscat.tmp           
+190723_1:SUZAKU-XIS1-STANDARD > filter region ds9.reg 
+190723_1:SUZAKU-XIS1-STANDARD > extract events
+extractor v5.35     2 Aug 2018
+ Getting FITS WCS Keywords
+ Doing file: /home/joking/suzaku/3off/509044010/xis/event_cl/xi1_events_GTI_off3.fits[regfilter("190723_1_region.xsl",X,Y)]
+100% completed
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          71516     48594        22920         0         0         2
+ Writing events file
+  48594 events written to the output file
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          71516     48594        22920         0         0         2
+   in  72271.     seconds
+190723_1:SUZAKU-XIS1-STANDARD > extract all
+extractor v5.35     2 Aug 2018
+ Getting FITS WCS Keywords
+ Doing file: 190723_1_out_event.xsl[regfilter("190723_1_region.xsl",X,Y)]
+100% completed
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          48594     48594            0         0         0         0
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          48594     48594            0         0         0         0
+   in  72271.     seconds
+ Fits light curve has    48594 counts for 0.6724     counts/sec
+ Thresholding removed significant counts
+ Try exposure=0.0 on the extract command in xselect
+ or lcthresh=0.0 if running extractor stand-alone
+ Thresholding removed more than half the bins
+ Try exposure=0.0 on the extract command in xselect
+ or lcthresh=0.0 if running extractor stand-alone
+ Spectrum         has    48594 counts for 0.6724     counts/sec
+ ... written the PHA data Extension
+ Image            has    48594 counts for 0.6724     counts/sec
+190723_1:SUZAKU-XIS1-STANDARD > exit
+> Save this session? >[n] y
+Session saved, goodbye
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ fv 190723_1_hist.xsl &
+[1] 22251
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ cp 190723_1_hist.xsl hist_off3_dye40.fits
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ fv hist_off3_dye40.fits  &
+[2] 22266
+joking@JoKing-Space:~/suzaku/3off/509044010/40analysis$ cd ../
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls
+20analysis   40analysis   60analysis  auxil  spec_analysis
+_20analysis  _40analysis  analysis    log    xis
+joking@JoKing-Space:~/suzaku/3off/509044010$ mkdir _60analysis
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls
+20analysis   40analysis   60analysis   analysis  log            xis
+_20analysis  _40analysis  _60analysis  auxil     spec_analysis
+joking@JoKing-Space:~/suzaku/3off/509044010$ cp 60analysis/* _60analysis/
+cp: -r not specified; omitting directory '60analysis/spec'
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls _60analysis/
+0_4-2_0_image_off3_dye60.fits  190718_1_region.xsl
+190718_1_ascii_out.xsl         190718_1_session.xsl
+190718_1_display.def           190718_1_xronos_out.xsl
+190718_1_files.tmp             arf_off3_dye60.fits
+190718_1_fits_curve.xsl        clean_events_off3_dye60.fits
+190718_1_fits_in.xsl           ds9.reg
+190718_1_hist.xsl              expmap_off3_dye60.fits
+190718_1_image.xsl             hist_off3_dye60.fits
+190718_1_mkf_out.xsl           nxb_off3_dye60.fits
+190718_1_obscat.tmp            rmf_off3_dye60.fits
+190718_1_obslist.def           xselect.log
+190718_1_out_event.xsl         xsel_timefile.asc
+190718_1_read_cat.xsl
+joking@JoKing-Space:~/suzaku/3off/509044010$ rm _60analysis/*
+joking@JoKing-Space:~/suzaku/3off/509044010$ mv 60analysis/* _60analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010$ cp _60analysis/ds9.reg 60analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010$ ls
+20analysis   40analysis   60analysis   analysis  log            xis
+_20analysis  _40analysis  _60analysis  auxil     spec_analysis
+joking@JoKing-Space:~/suzaku/3off/509044010$ cd 60analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ ls
+ds9.reg
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ xselect
+ 
+                         **  XSELECT V2.4f  **
+ 
+> Enter session name >[190723_1] 
+190723_1:SUZAKU > set datadir
+> Enter the Event file dir >[/home/joking/suzaku/3off/509044010/xis/event_cl/] 
+ 
+Setting data directory to /home/joking/suzaku/3off/509044010/xis/event_cl/
+Setting mkf directory to /home/joking/suzaku/3off/509044010/auxil/
+ 
+190723_1:SUZAKU > set instr
+The available instruments are:
+XRS XIS0 XIS1 XIS2 XIS3 XISEM0 XISEM1 XISEM2 XISEM3 HXD
+> Which instrument? >[xis1] 
+190723_1:SUZAKU-XIS1 > read events
+> Enter Event file list >[xi1_events_GTI_off3.fits] 
+ 
+ Notes: XSELECT set up for      SUZAKU
+ Time keyword is TIME       in units of s
+ Default timing binsize =   16.000
+ 
+Setting...
+ Image  keywords   = X          Y           with binning =    8
+ WMAP   keywords   = DETX       DETY        with binning =    8
+ Energy keyword   = PI                     with binning =    1
+ 
+Getting Min and Max for Energy Column...
+Got min and max for PI:     0   4095
+ 
+Got the minimum time resolution of the read data:   8.0000
+MJDREF =  5.1544000742870E+04 with TIMESYS = TT
+ Number of files read in:            1
+ 
+******************** Observation Catalogue ********************
+ 
+Data Directory is: /home/joking/suzaku/3off/509044010/xis/event_cl/
+HK Directory is: /home/joking/suzaku/3off/509044010/xis/event_cl/
+ 
+ 
+        OBJECT      DATE-OBS            DATE-END            EDITMODE
+      1 OFF-FIELD3  2014-06-11T02:40:39 2014-06-13T06:00:19 3x3
+ 
+190723_1:SUZAKU-XIS1-STANDARD > select mkf
+> Boolean expression for filter file selection >[SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>40] SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>60
+190723_1:SUZAKU-XIS1-STANDARD > filter region ds9.reg 
+190723_1:SUZAKU-XIS1-STANDARD > extract events
+extractor v5.35     2 Aug 2018
+ Getting FITS WCS Keywords
+ Doing file: /home/joking/suzaku/3off/509044010/xis/event_cl/xi1_events_GTI_off3.fits[regfilter("190723_1_region.xsl",X,Y)]
+100% completed
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          72377     43329        29046         0         0         2
+ Writing events file
+  43329 events written to the output file
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          72377     43329        29046         0         0         2
+   in  63324.     seconds
+190723_1:SUZAKU-XIS1-STANDARD > extract all
+extractor v5.35     2 Aug 2018
+ Getting FITS WCS Keywords
+ Doing file: 190723_1_out_event.xsl[regfilter("190723_1_region.xsl",X,Y)]
+100% completed
+          Total      Good    Bad: Time     Phase     Grade       Cut
+          43329     43329            0         0         0         0
+===============================================================================
+    Grand Total      Good    Bad: Time     Phase     Grade       Cut
+          43329     43329            0         0         0         0
+   in  63324.     seconds
+ Fits light curve has    43329 counts for 0.6842     counts/sec
+ Thresholding removed significant counts
+ Try exposure=0.0 on the extract command in xselect
+ or lcthresh=0.0 if running extractor stand-alone
+ Thresholding removed more than half the bins
+ Try exposure=0.0 on the extract command in xselect
+ or lcthresh=0.0 if running extractor stand-alone
+ Spectrum         has    43329 counts for 0.6842     counts/sec
+ ... written the PHA data Extension
+ Image            has    43329 counts for 0.6842     counts/sec
+190723_1:SUZAKU-XIS1-STANDARD > ls
+ Command not found; type ? for a command listing
+190723_1:SUZAKU-XIS1-STANDARD > $ ls
+ Spawning...
+190723_1_ascii_out.xsl	 190723_1_image.xsl	 190723_1_region.xsl
+190723_1_display.def	 190723_1_mkf_out.xsl	 190723_1_xronos_out.xsl
+190723_1_files.tmp	 190723_1_obscat.tmp	 190723_1_xsel.run
+190723_1_fits_curve.xsl  190723_1_obslist.def	 ds9.reg
+190723_1_fits_in.xsl	 190723_1_out_event.xsl  xselect.log
+190723_1_hist.xsl	 190723_1_read_cat.xsl	 xsel_timefile.asc
+190723_1:SUZAKU-XIS1-STANDARD > exit
+> Save this session? >[y] 
+Session saved, goodbye
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ ls
+190723_1_ascii_out.xsl   190723_1_image.xsl      190723_1_region.xsl
+190723_1_display.def     190723_1_mkf_out.xsl    190723_1_session.xsl
+190723_1_files.tmp       190723_1_obscat.tmp     190723_1_xronos_out.xsl
+190723_1_fits_curve.xsl  190723_1_obslist.def    ds9.reg
+190723_1_fits_in.xsl     190723_1_out_event.xsl  xselect.log
+190723_1_hist.xsl        190723_1_read_cat.xsl   xsel_timefile.asc
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ cp 190723_1_hist.xsl hist_off3_dye60.fits
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ 
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ cp hist_off3_dye60.fits ../spec_analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ cp ../40analysis/hist_off3_dye40.fits ../spec_analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/60analysis$ cd ../spec_analysis/
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ grppha
+Please enter PHA filename[hist_off3_dye60.fits] hist_off3_dye40.fits 
+Please enter output filename[grp_spec_off3_dye60.fits] grp_spec_off3_dye40.fits
+ 
+  -------------------------
+  MANDATORY KEYWORDS/VALUES
+  -------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  EXTNAME   - SPECTRUM        Name of this BINTABLE
+  TELESCOP  - SUZAKU          Mission/Satellite name
+  INSTRUME  - XIS1            Instrument/Detector
+  FILTER    - NONE            Instrument filter in use
+  EXPOSURE  - 72271.          Integration time (in secs) of PHA data
+  AREASCAL  - 1.0000          Area scaling factor
+  BACKSCAL  - 0.97736         Background scaling factor
+  BACKFILE  - none            Associated background file
+  CORRSCAL  - 1.0000          Correlation scaling factor
+  CORRFILE  - none            Associated correlation file
+  RESPFILE  - none            Associated redistribution matrix file
+  ANCRFILE  - none            Associated ancillary response file
+  POISSERR  - TRUE            Whether Poissonian errors apply
+  CHANTYPE  - PI              Whether channels have been corrected
+  TLMIN1    - 0               First legal Detector channel
+  DETCHANS  - 4096            No. of legal detector channels
+  NCHAN     - 4096            No. of detector channels in dataset
+  PHAVERSN  - 1.2.0           OGIP FITS version number
+  STAT_ERR  - FALSE           Statistical Error
+  SYS_ERR   - FALSE           Fractional Systematic Error
+  QUALITY   - TRUE            Quality Flag
+  GROUPING  - FALSE           Grouping Flag
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+GRPPHA[chkey RESPFILE rmf_off3_dye60.fits] chkey ANCRFILE arf_off3_dye40.fits 
+GRPPHA[exit] chkey BACKFILE nxb_off3_dye40.fits 
+GRPPHA[chkey BACKFILE nxb_off3_dye40.fits] chkey RESPFILE rmf_off3_dye40.fits 
+GRPPHA[chkey RESPFILE rmf_off3_dye40.fits] group min 25
+GRPPHA[group min 25] exit
+ ... written the PHA data Extension
+ ...... exiting, changes written to file : grp_spec_off3_dye40.fits
+ ** grppha 3.0.1 completed successfully
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ grppha
+Please enter PHA filename[hist_off3_dye40.fits] hist_off3_dye60.fits 
+Please enter output filename[grp_spec_off3_dye40.fits] grp_spec_off3_dye60.fits
+ 
+  -------------------------
+  MANDATORY KEYWORDS/VALUES
+  -------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  EXTNAME   - SPECTRUM        Name of this BINTABLE
+  TELESCOP  - SUZAKU          Mission/Satellite name
+  INSTRUME  - XIS1            Instrument/Detector
+  FILTER    - NONE            Instrument filter in use
+  EXPOSURE  - 63324.          Integration time (in secs) of PHA data
+  AREASCAL  - 1.0000          Area scaling factor
+  BACKSCAL  - 0.98138         Background scaling factor
+  BACKFILE  - none            Associated background file
+  CORRSCAL  - 1.0000          Correlation scaling factor
+  CORRFILE  - none            Associated correlation file
+  RESPFILE  - none            Associated redistribution matrix file
+  ANCRFILE  - none            Associated ancillary response file
+  POISSERR  - TRUE            Whether Poissonian errors apply
+  CHANTYPE  - PI              Whether channels have been corrected
+  TLMIN1    - 0               First legal Detector channel
+  DETCHANS  - 4096            No. of legal detector channels
+  NCHAN     - 4096            No. of detector channels in dataset
+  PHAVERSN  - 1.2.0           OGIP FITS version number
+  STAT_ERR  - FALSE           Statistical Error
+  SYS_ERR   - FALSE           Fractional Systematic Error
+  QUALITY   - TRUE            Quality Flag
+  GROUPING  - FALSE           Grouping Flag
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+GRPPHA[chkey ANCRFILE arf_off3_dye40.fits] chkey ANCRFILE arf_off3_dye60.fits 
+GRPPHA[exit] chkey BACKFILE nxb_off3_dye60.fits 
+GRPPHA[chkey BACKFILE nxb_off3_dye60.fits] chkey RESPFILE rmf_off3_dye60.fits 
+GRPPHA[chkey RESPFILE rmf_off3_dye60.fits] group min 25
+GRPPHA[group min 25] exit
+ ... written the PHA data Extension
+ ...... exiting, changes written to file : grp_spec_off3_dye60.fits
+ ** grppha 3.0.1 completed successfully
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ ls
+arf_off3_dye20.fits       grp_spec_off3_dye60.fits  nxb_off3_dye40.fits
+arf_off3_dye40.fits       hist_off3_dye20.fits      nxb_off3_dye60.fits
+arf_off3_dye60.fits       hist_off3_dye40.fits      rmf_off3_dye20.fits
+grp_spec_off3_dye20.fits  hist_off3_dye60.fits      rmf_off3_dye40.fits
+grp_spec_off3_dye40.fits  nxb_off3_dye20.fits       rmf_off3_dye60.fits
+joking@JoKing-Space:~/suzaku/3off/509044010/spec_analysis$ xspec
+
+		XSPEC version: 12.10.1
+	Build Date/Time: Tue May 21 15:51:45 2019
+
+XSPEC12>data 1:1 grp_spec_off3_dye20.fits 2:2 grp_spec_off3_dye40.fits 3:3 grp_spec_off3_dye60.fits 
+
+3 spectra  in use
+ 
+Spectral Data File: grp_spec_off3_dye20.fits  Spectrum 1
+Net count rate (cts/s) for Spectrum:1  2.467e-01 +/- 2.885e-03 (32.9 % total)
+ Assigned to Data Group 1 and Plot Group 1
+  Noticed Channels:  1-1626
+  Telescope: SUZAKU Instrument: XIS1  Channel Type: PI
+  Exposure Time: 9.733e+04 sec
+ Using fit statistic: chi
+ Using test statistic: chi
+ Using Background File                nxb_off3_dye20.fits
+  Background Exposure Time: 8.046e+05 sec
+ Using Response (RMF) File            rmf_off3_dye20.fits for Source 1
+ Using Auxiliary Response (ARF) File  arf_off3_dye20.fits
+
+Spectral Data File: grp_spec_off3_dye40.fits  Spectrum 2
+Net count rate (cts/s) for Spectrum:2  2.260e-01 +/- 3.159e-03 (33.6 % total)
+ Assigned to Data Group 2 and Plot Group 2
+  Noticed Channels:  1-1225
+  Telescope: SUZAKU Instrument: XIS1  Channel Type: PI
+  Exposure Time: 7.227e+04 sec
+ Using fit statistic: chi
+ Using test statistic: chi
+ Using Background File                nxb_off3_dye40.fits
+  Background Exposure Time: 6.635e+05 sec
+ Using Response (RMF) File            rmf_off3_dye40.fits for Source 1
+ Using Auxiliary Response (ARF) File  arf_off3_dye40.fits
+
+Spectral Data File: grp_spec_off3_dye60.fits  Spectrum 3
+Net count rate (cts/s) for Spectrum:3  2.284e-01 +/- 3.396e-03 (33.4 % total)
+ Assigned to Data Group 3 and Plot Group 3
+  Noticed Channels:  1-1117
+  Telescope: SUZAKU Instrument: XIS1  Channel Type: PI
+  Exposure Time: 6.332e+04 sec
+ Using fit statistic: chi
+ Using test statistic: chi
+ Using Background File                nxb_off3_dye60.fits
+  Background Exposure Time: 6.287e+05 sec
+ Using Response (RMF) File            rmf_off3_dye60.fits for Source 1
+ Using Auxiliary Response (ARF) File  arf_off3_dye60.fits
+
+XSPEC12>ignore 1-3:0.0-0.3 5.0-**
+    57 channels (1-57) ignored in spectrum #     1
+    57 channels (1-57) ignored in spectrum #     2
+    55 channels (1-55) ignored in spectrum #     3
+  1080 channels (547-1626) ignored in spectrum #     1
+   805 channels (421-1225) ignored in spectrum #     2
+   734 channels (384-1117) ignored in spectrum #     3
+
+XSPEC12>cpd /xw
+XSPEC12>setplot energy
+XSPEC12>ipl data
+PLT> resize 0.3 1
+PLT> exit
+XSPEC12>mo apec+wabs*(apec+po)+gauss
+
+Input parameter value, delta, min, bot, top, and max values for ...
+              1       0.01(      0.01)      0.008      0.008         64         64
+1:data group 1::apec:kT>0.1
+              1     -0.001(      0.01)          0          0          5          5
+2:data group 1::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+3:data group 1::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+4:data group 1::apec:norm>1
+              1      0.001(      0.01)          0          0     100000      1e+06
+5:data group 1::wabs:nH>0.059
+              1       0.01(      0.01)      0.008      0.008         64         64
+6:data group 1::apec:kT>0.22
+              1     -0.001(      0.01)          0          0          5          5
+7:data group 1::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+8:data group 1::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+9:data group 1::apec:norm>1
+              1       0.01(      0.01)         -3         -2          9         10
+10:data group 1::powerlaw:PhoIndex>1.52
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+11:data group 1::powerlaw:norm>1
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+12:data group 1::gaussian:LineE>
+            0.1       0.05(     0.001)          0          0         10         20
+13:data group 1::gaussian:Sigma>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+14:data group 1::gaussian:norm>
+
+Input parameter value, delta, min, bot, top, and max values for ...
+            0.1       0.01(     0.001)      0.008      0.008         64         64
+15:data group 2::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+16:data group 2::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+17:data group 2::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+18:data group 2::apec:norm>
+          0.059      0.001(   0.00059)          0          0     100000      1e+06
+19:data group 2::wabs:nH>
+           0.22       0.01(    0.0022)      0.008      0.008         64         64
+20:data group 2::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+21:data group 2::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+22:data group 2::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+23:data group 2::apec:norm>
+           1.52       0.01(    0.0152)         -3         -2          9         10
+24:data group 2::powerlaw:PhoIndex>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+25:data group 2::powerlaw:norm>
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+26:data group 2::gaussian:LineE>
+            0.1       0.05(     0.001)          0          0         10         20
+27:data group 2::gaussian:Sigma>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+28:data group 2::gaussian:norm>
+
+Input parameter value, delta, min, bot, top, and max values for ...
+            0.1       0.01(     0.001)      0.008      0.008         64         64
+29:data group 3::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+30:data group 3::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+31:data group 3::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+32:data group 3::apec:norm>
+          0.059      0.001(   0.00059)          0          0     100000      1e+06
+33:data group 3::wabs:nH>
+           0.22       0.01(    0.0022)      0.008      0.008         64         64
+34:data group 3::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+35:data group 3::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+36:data group 3::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+37:data group 3::apec:norm>
+           1.52       0.01(    0.0152)         -3         -2          9         10
+38:data group 3::powerlaw:PhoIndex>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+39:data group 3::powerlaw:norm>
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+40:data group 3::gaussian:LineE>
+            0.1       0.05(     0.001)          0          0         10         20
+41:data group 3::gaussian:Sigma>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+42:data group 3::gaussian:norm>
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+                           Data group: 1
+   1    1   apec       kT         keV      0.100000     +/-  0.0          
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                1.00000      +/-  0.0          
+   5    2   wabs       nH         10^22    5.90000E-02  +/-  0.0          
+   6    3   apec       kT         keV      0.220000     +/-  0.0          
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.00000      +/-  0.0          
+  10    4   powerlaw   PhoIndex            1.52000      +/-  0.0          
+  11    4   powerlaw   norm                1.00000      +/-  0.0          
+  12    5   gaussian   LineE      keV      6.50000      +/-  0.0          
+  13    5   gaussian   Sigma      keV      0.100000     +/-  0.0          
+  14    5   gaussian   norm                1.00000      +/-  0.0          
+                           Data group: 2
+  15    1   apec       kT         keV      0.100000     = p1
+  16    1   apec       Abundanc            1.00000      = p2
+  17    1   apec       Redshift            0.0          = p3
+  18    1   apec       norm                1.00000      = p4
+  19    2   wabs       nH         10^22    5.90000E-02  = p5
+  20    3   apec       kT         keV      0.220000     = p6
+  21    3   apec       Abundanc            1.00000      = p7
+  22    3   apec       Redshift            0.0          = p8
+  23    3   apec       norm                1.00000      = p9
+  24    4   powerlaw   PhoIndex            1.52000      = p10
+  25    4   powerlaw   norm                1.00000      = p11
+  26    5   gaussian   LineE      keV      6.50000      = p12
+  27    5   gaussian   Sigma      keV      0.100000     = p13
+  28    5   gaussian   norm                1.00000      = p14
+                           Data group: 3
+  29    1   apec       kT         keV      0.100000     = p1
+  30    1   apec       Abundanc            1.00000      = p2
+  31    1   apec       Redshift            0.0          = p3
+  32    1   apec       norm                1.00000      = p4
+  33    2   wabs       nH         10^22    5.90000E-02  = p5
+  34    3   apec       kT         keV      0.220000     = p6
+  35    3   apec       Abundanc            1.00000      = p7
+  36    3   apec       Redshift            0.0          = p8
+  37    3   apec       norm                1.00000      = p9
+  38    4   powerlaw   PhoIndex            1.52000      = p10
+  39    4   powerlaw   norm                1.00000      = p11
+  40    5   gaussian   LineE      keV      6.50000      = p12
+  41    5   gaussian   Sigma      keV      0.100000     = p13
+  42    5   gaussian   norm                1.00000      = p14
+________________________________________________________________________
+
+Reading APEC data from 3.0.9
+
+
+
+
+
+
+
+
+**************************************************************
+The wabs model is obsolete and is only included for comparison
+with historical results. The tbabs model should be used for
+the ISM or phabs for general photoelectric absorption.
+**************************************************************
+
+
+
+
+
+Fit statistic : Chi-Squared =   8.003994e+09 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =   8.003994e+09 using 1180 PHA bins.
+ Reduced chi-squared =   6.841020e+06 for   1170 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>
+XSPEC12>mo apec+wabs*(apec+po)+gauss
+
+Input parameter value, delta, min, bot, top, and max values for ...
+              1       0.01(      0.01)      0.008      0.008         64         64
+1:data group 1::apec:kT>0.099
+              1     -0.001(      0.01)          0          0          5          5
+2:data group 1::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+3:data group 1::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+4:data group 1::apec:norm>1
+              1      0.001(      0.01)          0          0     100000      1e+06
+5:data group 1::wabs:nH>0.059
+              1       0.01(      0.01)      0.008      0.008         64         64
+6:data group 1::apec:kT>0.22
+              1     -0.001(      0.01)          0          0          5          5
+7:data group 1::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+8:data group 1::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+9:data group 1::apec:norm>1
+              1       0.01(      0.01)         -3         -2          9         10
+10:data group 1::powerlaw:PhoIndex>1.52
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+11:data group 1::powerlaw:norm>1
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+12:data group 1::gaussian:LineE>0.525
+            0.1       0.05(     0.001)          0          0         10         20
+13:data group 1::gaussian:Sigma>0.001
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+14:data group 1::gaussian:norm>1
+
+Input parameter value, delta, min, bot, top, and max values for ...
+          0.099       0.01(   0.00099)      0.008      0.008         64         64
+15:data group 2::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+16:data group 2::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+17:data group 2::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+18:data group 2::apec:norm>
+          0.059      0.001(   0.00059)          0          0     100000      1e+06
+19:data group 2::wabs:nH>
+           0.22       0.01(    0.0022)      0.008      0.008         64         64
+20:data group 2::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+21:data group 2::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+22:data group 2::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+23:data group 2::apec:norm>
+           1.52       0.01(    0.0152)         -3         -2          9         10
+24:data group 2::powerlaw:PhoIndex>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+25:data group 2::powerlaw:norm>
+          0.525       0.05(   0.00525)          0          0      1e+06      1e+06
+26:data group 2::gaussian:LineE>
+          0.001       0.05(     1e-05)          0          0         10         20
+27:data group 2::gaussian:Sigma>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+28:data group 2::gaussian:norm>1.01
+
+Input parameter value, delta, min, bot, top, and max values for ...
+          0.099       0.01(   0.00099)      0.008      0.008         64         64
+29:data group 3::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+30:data group 3::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+31:data group 3::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+32:data group 3::apec:norm>
+          0.059      0.001(   0.00059)          0          0     100000      1e+06
+33:data group 3::wabs:nH>
+           0.22       0.01(    0.0022)      0.008      0.008         64         64
+34:data group 3::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+35:data group 3::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+36:data group 3::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+37:data group 3::apec:norm>
+           1.52       0.01(    0.0152)         -3         -2          9         10
+38:data group 3::powerlaw:PhoIndex>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+39:data group 3::powerlaw:norm>
+          0.525       0.05(   0.00525)          0          0      1e+06      1e+06
+40:data group 3::gaussian:LineE>
+          0.001       0.05(     1e-05)          0          0         10         20
+41:data group 3::gaussian:Sigma>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+42:data group 3::gaussian:norm>
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+                           Data group: 1
+   1    1   apec       kT         keV      9.90000E-02  +/-  0.0          
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                1.00000      +/-  0.0          
+   5    2   wabs       nH         10^22    5.90000E-02  +/-  0.0          
+   6    3   apec       kT         keV      0.220000     +/-  0.0          
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.00000      +/-  0.0          
+  10    4   powerlaw   PhoIndex            1.52000      +/-  0.0          
+  11    4   powerlaw   norm                1.00000      +/-  0.0          
+  12    5   gaussian   LineE      keV      0.525000     +/-  0.0          
+  13    5   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  14    5   gaussian   norm                1.00000      +/-  0.0          
+                           Data group: 2
+  15    1   apec       kT         keV      9.90000E-02  = p1
+  16    1   apec       Abundanc            1.00000      = p2
+  17    1   apec       Redshift            0.0          = p3
+  18    1   apec       norm                1.00000      = p4
+  19    2   wabs       nH         10^22    5.90000E-02  = p5
+  20    3   apec       kT         keV      0.220000     = p6
+  21    3   apec       Abundanc            1.00000      = p7
+  22    3   apec       Redshift            0.0          = p8
+  23    3   apec       norm                1.00000      = p9
+  24    4   powerlaw   PhoIndex            1.52000      = p10
+  25    4   powerlaw   norm                1.00000      = p11
+  26    5   gaussian   LineE      keV      0.525000     = p12
+  27    5   gaussian   Sigma      keV      1.00000E-03  = p13
+  28    5   gaussian   norm                1.01000      +/-  0.0          
+                           Data group: 3
+  29    1   apec       kT         keV      9.90000E-02  = p1
+  30    1   apec       Abundanc            1.00000      = p2
+  31    1   apec       Redshift            0.0          = p3
+  32    1   apec       norm                1.00000      = p4
+  33    2   wabs       nH         10^22    5.90000E-02  = p5
+  34    3   apec       kT         keV      0.220000     = p6
+  35    3   apec       Abundanc            1.00000      = p7
+  36    3   apec       Redshift            0.0          = p8
+  37    3   apec       norm                1.00000      = p9
+  38    4   powerlaw   PhoIndex            1.52000      = p10
+  39    4   powerlaw   norm                1.00000      = p11
+  40    5   gaussian   LineE      keV      0.525000     = p12
+  41    5   gaussian   Sigma      keV      1.00000E-03  = p13
+  42    5   gaussian   norm                1.00000      = p14
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =   1.200746e+10 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =   1.200746e+10 using 1180 PHA bins.
+ Reduced chi-squared =   1.027157e+07 for   1169 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+XSPEC12>newpar 40 1.02
+
+Fit statistic : Chi-Squared =   2.017416e+10 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =   2.017416e+10 using 1180 PHA bins.
+ Reduced chi-squared =   1.727239e+07 for   1168 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+XSPEC12>freeze 5
+
+Fit statistic : Chi-Squared =   2.017416e+10 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =   2.017416e+10 using 1180 PHA bins.
+ Reduced chi-squared =   1.725762e+07 for   1169 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+XSPEC12>renorm
+
+Fit statistic : Chi-Squared =        7952.37 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =        7952.37 using 1180 PHA bins.
+ Reduced chi-squared =        6.80271 for   1169 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT        4:norm          6:kT        9:norm   10:PhoIndex       11:norm      12:LineE      13:Sigma       14:norm       28:norm      40:LineE
+2720.26      503014       -3      0.308053   0.000364559      0.238480   0.000662782       1.62050    0.00154232      0.519415   0.000282010   2.51261e-05   0.000354376       1.01820
+2088.54      61865.5      -1      0.202601   0.000473303      0.121876   0.000958639       1.69323    0.00168838      0.523521    0.00441110   6.80655e-05   0.000315135      0.967676
+2012.69      95865.8      -2      0.182305   0.000891671     0.0609112    0.00457872       1.63368    0.00162360      0.501083    0.00109609   5.31716e-05   3.20949e-05      0.953483
+1636.49      92621         0      0.183924   0.000948463     0.0715493    0.00911880       1.63873    0.00163144      0.520706   0.000319196   5.76929e-05   6.07840e-05      0.951906
+1375.52      65306.8       0      0.186348    0.00107760     0.0766903     0.0128462       1.64735    0.00164215      0.539407   0.000113745   7.11542e-05   0.000110618      0.945890
+1367.99      12475        -1      0.184180    0.00119745     0.0773733     0.0115662       1.63325    0.00162564      0.450753   5.12208e-05   6.02149e-05   3.13215e-05      0.941050
+***Warning: Zero alpha-matrix diagonal element for parameter 13
+ Parameter 13 is pegged at 5.12208e-05 due to zero or negative pivot element, likely
+ caused by the fit being insensitive to the parameter.
+1360.41      8336.23       0      0.183420    0.00122150     0.0779074     0.0116917       1.63310    0.00162585      0.566349   5.12208e-05   5.74977e-05   4.20332e-05      0.936178
+1350.77      4290.12       0      0.182981    0.00124211     0.0781865     0.0116407       1.63384    0.00162651      0.476823   5.12208e-05   6.14256e-05   3.86644e-05      0.930412
+1345.37      5558.52       0      0.182872    0.00124274     0.0781764     0.0116101       1.63373    0.00162636      0.491367   5.12208e-05   6.21430e-05   4.61944e-05      0.929536
+Number of trials exceeded: continue fitting? y
+1342.65      8032.48       0      0.182773    0.00124316     0.0781606     0.0115771       1.63361    0.00162622      0.499282   5.12208e-05   6.33392e-05   5.29991e-05      0.928848
+1337.54      8588.77       0      0.182319    0.00124550     0.0780070     0.0113070       1.63276    0.00162530      0.529184   5.12208e-05   7.08680e-05   8.28677e-05      0.924681
+1337.26      7120.89       0      0.182210    0.00124492     0.0777438     0.0110075       1.63164    0.00162415      0.511982   5.12208e-05   7.50142e-05   6.08198e-05      0.920299
+1333.3       7510.62      -1      0.180873    0.00127721     0.0782992     0.0102162       1.63163    0.00162414      0.526180   5.12208e-05   8.52048e-05   0.000103676      0.912036
+1332.22      2190.89       0      0.180700    0.00128220     0.0783633     0.0101347       1.63126    0.00162389      0.508963   5.12208e-05   8.67078e-05   9.19048e-05      0.908632
+1330.55      2223.25      -1      0.179890    0.00130093     0.0789046    0.00952074       1.63190    0.00162508      0.515959   5.12208e-05   8.91415e-05   0.000107865      0.902113
+1329.27      1109.84      -1      0.179208    0.00131671     0.0795260    0.00901114       1.63259    0.00162626      0.511617   5.12208e-05   9.17771e-05   0.000103094      0.896007
+1328.75      501.654      -1      0.178947    0.00132057     0.0801020    0.00863092       1.63342    0.00162747      0.513636   5.12208e-05   9.30248e-05   0.000105519      0.891312
+1328.41      528.999      -1      0.178750    0.00132263     0.0807317    0.00832740       1.63412    0.00162845      0.513330   5.12208e-05   9.42481e-05   0.000103852      0.888065
+1328.24      171.315      -2      0.178937    0.00130507     0.0862561    0.00623666       1.63459    0.00162912      0.512152   5.12208e-05   9.50494e-05   0.000101360      0.883401
+Number of trials exceeded: continue fitting? y
+1322.96      3116.99      -2      0.182680    0.00111290     0.0989824    0.00479173       1.62986    0.00162309      0.506702   5.12208e-05   9.32718e-05   8.81170e-05      0.882000
+1321.34      1200.55      -3      0.190028   0.000886614      0.102494    0.00579682       1.62350    0.00161471      0.512367   5.12208e-05   8.99149e-05   8.39271e-05      0.881248
+1320.47      1709.13      -4      0.192255   0.000872829      0.103283    0.00565842       1.62259    0.00161382      0.505923   5.12208e-05   9.06823e-05   7.60578e-05      0.881328
+1320.45      671.043       0      0.192328   0.000872526      0.103241    0.00565348       1.62260    0.00161386      0.510034   5.12208e-05   9.01747e-05   8.02770e-05      0.881426
+1320.44      195.766      -1      0.192293   0.000873560      0.103276    0.00565394       1.62237    0.00161359      0.504843   5.12208e-05   9.04414e-05   7.88719e-05      0.881590
+1320.43      488.201       0      0.192294   0.000873547      0.103275    0.00565370       1.62237    0.00161359      0.505710   5.12208e-05   9.03790e-05   7.94424e-05      0.881607
+1320.43      403.534       1      0.192294   0.000873549      0.103275    0.00565371       1.62237    0.00161359      0.505783   5.99217e-06   9.03735e-05   7.95028e-05      0.881609
+==========================================================================================
+ Variances and Principal Axes
+                 1        4        6        9       10       11       12       13       14       28       40  
+ 1.8354E-10| -0.0023  -0.2198  -0.0040  -0.0202   0.0003  -0.6230  -0.0001   0.0000  -0.7501  -0.0226  -0.0001  
+ 2.6510E-10|  0.0015   0.1234   0.0017   0.0086  -0.0006   0.7442  -0.0000   0.0000  -0.6556   0.0327  -0.0001  
+ 8.9313E-10| -0.0051  -0.9182  -0.0210  -0.1088  -0.0010   0.2386  -0.0005  -0.0000   0.0824  -0.2843   0.0001  
+ 1.8884E-09|  0.0043   0.2852   0.0010   0.0042   0.0002  -0.0310  -0.0001   0.0000  -0.0292  -0.9575  -0.0001  
+ 1.5283E-07| -0.0930  -0.1081   0.1483   0.9782  -0.0028   0.0074   0.0032   0.0000  -0.0004  -0.0284   0.0012  
+ 2.7247E-05|  0.6111  -0.0069  -0.7529   0.1722   0.0650  -0.0005  -0.1539  -0.0000  -0.0001   0.0007  -0.0455  
+ 9.3155E-05| -0.2559   0.0057  -0.2546   0.0138  -0.0224   0.0000  -0.0406  -0.0000  -0.0000   0.0003   0.9313  
+ 1.2317E-04|  0.7237  -0.0148   0.5688  -0.0191   0.1490  -0.0001   0.0270   0.0000  -0.0003  -0.0007   0.3595  
+ 3.4492E-04| -0.0665   0.0005   0.1436  -0.0248   0.0021   0.0000  -0.9869  -0.0000   0.0000   0.0000  -0.0216  
+ 6.8619E-04|  0.1555  -0.0017   0.0420   0.0054  -0.9864  -0.0009  -0.0073   0.0000   0.0001   0.0001   0.0301  
+ 1.2800E+07| -0.0000   0.0000  -0.0000   0.0000  -0.0000  -0.0000   0.0000  -1.0000  -0.0000  -0.0000   0.0000  
+------------------------------------------------------------------------------------------
+
+====================================================================================================================================
+  Covariance Matrix
+        1           2           3           4           5           6           7           8           9          10          11   
+   9.940e-05  -1.781e-06   4.654e-05   1.940e-06  -8.951e-05  -1.194e-07  -3.130e-05   2.504e+00  -1.704e-08  -1.965e-08   1.252e-05
+  -1.781e-06   3.690e-08  -1.102e-06  -1.598e-08   8.071e-07   1.100e-09   2.015e-06  -1.033e-01   2.249e-10   3.535e-10  -1.798e-07
+   4.654e-05  -1.102e-06   7.220e-05  -6.306e-06  -1.661e-05  -2.401e-08  -1.659e-04   5.698e+00  -4.817e-09  -1.235e-08   3.226e-06
+   1.940e-06  -1.598e-08  -6.306e-06   1.250e-06  -3.802e-06  -4.435e-09   1.025e-05  -1.246e-01  -1.633e-10   7.953e-11   4.499e-07
+  -8.951e-05   8.071e-07  -1.661e-05  -3.802e-06   6.723e-04   6.329e-07  -9.680e-05   4.701e+00  -3.237e-08  -3.955e-08  -1.629e-05
+  -1.194e-07   1.100e-09  -2.401e-08  -4.435e-09   6.329e-07   8.915e-10  -1.001e-07   4.562e-03  -4.440e-11  -5.143e-11  -2.405e-08
+  -3.130e-05   2.015e-06  -1.659e-04   1.025e-05  -9.680e-05  -1.001e-07   6.280e-03  -2.758e+02  -4.517e-07  -2.482e-06   3.434e-05
+   2.504e+00  -1.033e-01   5.698e+00  -1.246e-01   4.701e+00   4.562e-03  -2.758e+02   1.280e+07   2.042e-02   1.142e-01  -1.359e+00
+  -1.704e-08   2.249e-10  -4.817e-09  -1.633e-10  -3.237e-08  -4.440e-11  -4.517e-07   2.042e-02   2.699e-10   2.369e-10  -1.753e-08
+  -1.965e-08   3.535e-10  -1.235e-08   7.953e-11  -3.955e-08  -5.143e-11  -2.482e-06   1.142e-01   2.369e-10   3.028e-09  -1.528e-08
+   1.252e-05  -1.798e-07   3.226e-06   4.499e-07  -1.629e-05  -2.405e-08   3.434e-05  -1.359e+00  -1.753e-08  -1.528e-08   9.769e-05
+------------------------------------------------------------------------------------------------------------------------------------
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+                           Data group: 1
+   1    1   apec       kT         keV      0.192294     +/-  9.96993E-03  
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                8.73549E-04  +/-  1.92106E-04  
+   5    2   wabs       nH         10^22    5.90000E-02  frozen
+   6    3   apec       kT         keV      0.103275     +/-  8.49694E-03  
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                5.65371E-03  +/-  1.11820E-03  
+  10    4   powerlaw   PhoIndex            1.62237      +/-  2.59293E-02  
+  11    4   powerlaw   norm                1.61359E-03  +/-  2.98585E-05  
+  12    5   gaussian   LineE      keV      0.505783     +/-  7.92442E-02  
+  13    5   gaussian   Sigma      keV      5.99217E-06  +/-  3577.68      
+  14    5   gaussian   norm                9.03735E-05  +/-  1.64291E-05  
+                           Data group: 2
+  15    1   apec       kT         keV      0.192294     = p1
+  16    1   apec       Abundanc            1.00000      = p2
+  17    1   apec       Redshift            0.0          = p3
+  18    1   apec       norm                8.73549E-04  = p4
+  19    2   wabs       nH         10^22    5.90000E-02  = p5
+  20    3   apec       kT         keV      0.103275     = p6
+  21    3   apec       Abundanc            1.00000      = p7
+  22    3   apec       Redshift            0.0          = p8
+  23    3   apec       norm                5.65371E-03  = p9
+  24    4   powerlaw   PhoIndex            1.62237      = p10
+  25    4   powerlaw   norm                1.61359E-03  = p11
+  26    5   gaussian   LineE      keV      0.505783     = p12
+  27    5   gaussian   Sigma      keV      5.99217E-06  = p13
+  28    5   gaussian   norm                7.95028E-05  +/-  5.50269E-05  
+                           Data group: 3
+  29    1   apec       kT         keV      0.192294     = p1
+  30    1   apec       Abundanc            1.00000      = p2
+  31    1   apec       Redshift            0.0          = p3
+  32    1   apec       norm                8.73549E-04  = p4
+  33    2   wabs       nH         10^22    5.90000E-02  = p5
+  34    3   apec       kT         keV      0.103275     = p6
+  35    3   apec       Abundanc            1.00000      = p7
+  36    3   apec       Redshift            0.0          = p8
+  37    3   apec       norm                5.65371E-03  = p9
+  38    4   powerlaw   PhoIndex            1.62237      = p10
+  39    4   powerlaw   norm                1.61359E-03  = p11
+  40    5   gaussian   LineE      keV      0.881609     +/-  9.88405E-03  
+  41    5   gaussian   Sigma      keV      5.99217E-06  = p13
+  42    5   gaussian   norm                9.03735E-05  = p14
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =        1320.43 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =        1320.43 using 1180 PHA bins.
+ Reduced chi-squared =        1.12954 for   1169 degrees of freedom 
+ Null hypothesis probability =   1.265504e-03
+XSPEC12>ipl data resid
+PLT> resize 0.3 1
+PLT> exit
+XSPEC12>mo apec+wabs*(apec+po)+gauss
+
+Input parameter value, delta, min, bot, top, and max values for ...
+              1       0.01(      0.01)      0.008      0.008         64         64
+1:data group 1::apec:kT>0.099
+              1     -0.001(      0.01)          0          0          5          5
+2:data group 1::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+3:data group 1::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+4:data group 1::apec:norm>1
+              1      0.001(      0.01)          0          0     100000      1e+06
+5:data group 1::wabs:nH>0.059
+              1       0.01(      0.01)      0.008      0.008         64         64
+6:data group 1::apec:kT>0.22
+              1     -0.001(      0.01)          0          0          5          5
+7:data group 1::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+8:data group 1::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+9:data group 1::apec:norm>1
+              1       0.01(      0.01)         -3         -2          9         10
+10:data group 1::powerlaw:PhoIndex>1.52
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+11:data group 1::powerlaw:norm>1
+            6.5       0.05(     0.065)          0          0      1e+06      1e+06
+12:data group 1::gaussian:LineE>0.525
+            0.1       0.05(     0.001)          0          0         10         20
+13:data group 1::gaussian:Sigma>0.001
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+14:data group 1::gaussian:norm>1
+
+Input parameter value, delta, min, bot, top, and max values for ...
+          0.099       0.01(   0.00099)      0.008      0.008         64         64
+15:data group 2::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+16:data group 2::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+17:data group 2::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+18:data group 2::apec:norm>1.01
+          0.059      0.001(   0.00059)          0          0     100000      1e+06
+19:data group 2::wabs:nH>
+           0.22       0.01(    0.0022)      0.008      0.008         64         64
+20:data group 2::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+21:data group 2::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+22:data group 2::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+23:data group 2::apec:norm>1.01
+           1.52       0.01(    0.0152)         -3         -2          9         10
+24:data group 2::powerlaw:PhoIndex>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+25:data group 2::powerlaw:norm>1.01
+          0.525       0.05(   0.00525)          0          0      1e+06      1e+06
+26:data group 2::gaussian:LineE>
+          0.001       0.05(     1e-05)          0          0         10         20
+27:data group 2::gaussian:Sigma>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+28:data group 2::gaussian:norm>1.01
+
+Input parameter value, delta, min, bot, top, and max values for ...
+          0.099       0.01(   0.00099)      0.008      0.008         64         64
+29:data group 3::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+30:data group 3::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+31:data group 3::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+32:data group 3::apec:norm>1.03
+          0.059      0.001(   0.00059)          0          0     100000      1e+06
+33:data group 3::wabs:nH>
+           0.22       0.01(    0.0022)      0.008      0.008         64         64
+34:data group 3::apec:kT>
+              1     -0.001(      0.01)          0          0          5          5
+35:data group 3::apec:Abundanc>
+              0      -0.01(      0.01)     -0.999     -0.999         10         10
+36:data group 3::apec:Redshift>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+37:data group 3::apec:norm>1.03
+           1.52       0.01(    0.0152)         -3         -2          9         10
+38:data group 3::powerlaw:PhoIndex>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+39:data group 3::powerlaw:norm>1.03
+          0.525       0.05(   0.00525)          0          0      1e+06      1e+06
+40:data group 3::gaussian:LineE>
+          0.001       0.05(     1e-05)          0          0         10         20
+41:data group 3::gaussian:Sigma>
+              1       0.01(      0.01)          0          0      1e+20      1e+24
+42:data group 3::gaussian:norm>1.03
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+                           Data group: 1
+   1    1   apec       kT         keV      9.90000E-02  +/-  0.0          
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                1.00000      +/-  0.0          
+   5    2   wabs       nH         10^22    5.90000E-02  +/-  0.0          
+   6    3   apec       kT         keV      0.220000     +/-  0.0          
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.00000      +/-  0.0          
+  10    4   powerlaw   PhoIndex            1.52000      +/-  0.0          
+  11    4   powerlaw   norm                1.00000      +/-  0.0          
+  12    5   gaussian   LineE      keV      0.525000     +/-  0.0          
+  13    5   gaussian   Sigma      keV      1.00000E-03  +/-  0.0          
+  14    5   gaussian   norm                1.00000      +/-  0.0          
+                           Data group: 2
+  15    1   apec       kT         keV      9.90000E-02  = p1
+  16    1   apec       Abundanc            1.00000      = p2
+  17    1   apec       Redshift            0.0          = p3
+  18    1   apec       norm                1.01000      +/-  0.0          
+  19    2   wabs       nH         10^22    5.90000E-02  = p5
+  20    3   apec       kT         keV      0.220000     = p6
+  21    3   apec       Abundanc            1.00000      = p7
+  22    3   apec       Redshift            0.0          = p8
+  23    3   apec       norm                1.01000      +/-  0.0          
+  24    4   powerlaw   PhoIndex            1.52000      = p10
+  25    4   powerlaw   norm                1.01000      +/-  0.0          
+  26    5   gaussian   LineE      keV      0.525000     = p12
+  27    5   gaussian   Sigma      keV      1.00000E-03  = p13
+  28    5   gaussian   norm                1.01000      +/-  0.0          
+                           Data group: 3
+  29    1   apec       kT         keV      9.90000E-02  = p1
+  30    1   apec       Abundanc            1.00000      = p2
+  31    1   apec       Redshift            0.0          = p3
+  32    1   apec       norm                1.03000      +/-  0.0          
+  33    2   wabs       nH         10^22    5.90000E-02  = p5
+  34    3   apec       kT         keV      0.220000     = p6
+  35    3   apec       Abundanc            1.00000      = p7
+  36    3   apec       Redshift            0.0          = p8
+  37    3   apec       norm                1.03000      +/-  0.0          
+  38    4   powerlaw   PhoIndex            1.52000      = p10
+  39    4   powerlaw   norm                1.03000      +/-  0.0          
+  40    5   gaussian   LineE      keV      0.525000     = p12
+  41    5   gaussian   Sigma      keV      1.00000E-03  = p13
+  42    5   gaussian   norm                1.03000      +/-  0.0          
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =   1.227029e+10 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =   1.227029e+10 using 1180 PHA bins.
+ Reduced chi-squared =   1.055963e+07 for   1162 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+XSPEC12>freeze 5 12 13
+
+Fit statistic : Chi-Squared =   1.227029e+10 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =   1.227029e+10 using 1180 PHA bins.
+ Reduced chi-squared =   1.053244e+07 for   1165 degrees of freedom 
+ Null hypothesis probability =   0.000000e+00
+ Current data and model not fit yet.
+XSPEC12>freeze 19 26 27
+  parameter 19 is linked and cannot be frozen.
+  parameter 26 is linked and cannot be frozen.
+  parameter 27 is linked and cannot be frozen.
+XSPEC12>renorm
+
+Fit statistic : Chi-Squared =        2985.28 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =        2985.28 using 1180 PHA bins.
+ Reduced chi-squared =        2.56247 for   1165 degrees of freedom 
+ Null hypothesis probability =  6.294131e-160
+ Current data and model not fit yet.
+XSPEC12>fit
+                                   Parameters
+Chi-Squared  |beta|/N    Lvl          1:kT        4:norm          6:kT        9:norm   10:PhoIndex       11:norm       14:norm       18:norm       23:norm       25:norm       28:norm       32:norm       37:norm       39:norm       42:norm
+1729.34      76378        -3      0.167435    0.00164245      0.226911   0.000823081       1.59354    0.00158131   0.000280798    0.00160656   0.000813436    0.00152106   0.000142074    0.00158196   0.000800760    0.00154450   0.000105693
+1568.48      35588        -4     0.0638824    0.00190878      0.174962    0.00217617       1.58852    0.00159681   0.000220503    0.00188715    0.00213921    0.00153393   8.55764e-05    0.00191366    0.00208053    0.00155975   4.58611e-05
+1385.39      19676.2      -5     0.0556206     0.0148621      0.180538    0.00197721       1.60981    0.00162823   0.000344676     0.0152199    0.00196218    0.00156430   0.000204601     0.0150854    0.00197187    0.00158753   0.000167555
+1295.83      7687.47      -6     0.0627106     0.0148023      0.180898    0.00198271       1.61110    0.00162990   0.000343956     0.0157310    0.00196486    0.00156559   0.000203488     0.0155315    0.00196661    0.00158885   0.000168267
+1295.74      174.548      -7     0.0624349     0.0152500      0.180876    0.00198171       1.61122    0.00163007   0.000343777     0.0156826    0.00196752    0.00156565   0.000203638     0.0155549    0.00196839    0.00158897   0.000168353
+1295.74      5.76262      -8     0.0625801     0.0150914      0.180895    0.00198086       1.61118    0.00163002   0.000343773     0.0155126    0.00196655    0.00156560   0.000203615     0.0153869    0.00196745    0.00158892   0.000168334
+==========================================================================================
+ Variances and Principal Axes
+                 1        4        6        9       10       11       14       18       23       25       28       32       37       39       42  
+ 5.5301E-10| -0.0035  -0.0026  -0.0046  -0.1404   0.0006  -0.9769  -0.1609  -0.0000  -0.0000  -0.0001  -0.0000  -0.0000  -0.0000  -0.0001  -0.0000  
+ 7.1091E-10|  0.0038   0.0000   0.0044   0.0000  -0.0006  -0.0002   0.0000   0.0028   0.1433   0.9720   0.1863   0.0000   0.0001   0.0002   0.0001  
+ 8.1128E-10| -0.0039  -0.0000  -0.0044  -0.0000   0.0006   0.0001  -0.0000  -0.0000   0.0000   0.0003   0.0000  -0.0029  -0.1467  -0.9689  -0.1991  
+ 1.2088E-09|  0.0097   0.0070  -0.0011   0.2204   0.0005  -0.1893   0.9568   0.0000   0.0001  -0.0002   0.0005   0.0000   0.0001  -0.0002   0.0003  
+ 1.4344E-09| -0.0096  -0.0000   0.0013   0.0001  -0.0004  -0.0001   0.0006  -0.0067  -0.2111   0.2140  -0.9537  -0.0000  -0.0002   0.0003  -0.0008  
+ 1.5838E-09|  0.0093   0.0000  -0.0014  -0.0001   0.0005   0.0000  -0.0004  -0.0000  -0.0002   0.0002  -0.0009   0.0066   0.2061  -0.2268   0.9518  
+ 8.6119E-09| -0.0239  -0.0180  -0.0273  -0.9643  -0.0016   0.0990   0.2421  -0.0001  -0.0040   0.0006   0.0013  -0.0001  -0.0025   0.0004   0.0009  
+ 1.1300E-08|  0.0251   0.0000   0.0267  -0.0055   0.0015   0.0004   0.0011   0.0184   0.9659  -0.0975  -0.2360   0.0003   0.0096  -0.0012  -0.0026  
+ 1.2788E-08| -0.0246  -0.0001  -0.0263   0.0039  -0.0015  -0.0002  -0.0007   0.0001   0.0111  -0.0009  -0.0024  -0.0185  -0.9665   0.0987   0.2331  
+ 5.7057E-07|  0.8884   0.3183  -0.1207  -0.0257   0.0005   0.0011  -0.0053   0.2310  -0.0252   0.0011  -0.0049   0.1990  -0.0245   0.0011  -0.0047  
+ 2.7556E-06| -0.0755   0.7877   0.0145  -0.0136   0.0004   0.0003  -0.0018  -0.5386   0.0122  -0.0004   0.0018  -0.2882   0.0073  -0.0002   0.0011  
+ 3.4524E-06|  0.0323  -0.1333  -0.0113   0.0021  -0.0003  -0.0000   0.0002  -0.6151   0.0115  -0.0003   0.0014   0.7761  -0.0158   0.0005  -0.0022  
+ 7.6509E-06| -0.0865  -0.0495  -0.9888   0.0296  -0.0536   0.0018  -0.0063  -0.0536   0.0293   0.0018  -0.0062  -0.0617   0.0296   0.0018  -0.0061  
+ 4.3443E-04|  0.4275  -0.4942   0.0338  -0.0026   0.2333   0.0002  -0.0002  -0.5105  -0.0026   0.0002  -0.0002  -0.5067  -0.0025   0.0002  -0.0002  
+ 6.9492E-04|  0.1081  -0.1155   0.0627  -0.0007  -0.9709  -0.0009   0.0003  -0.1196  -0.0007  -0.0009   0.0003  -0.1185  -0.0007  -0.0009   0.0003  
+------------------------------------------------------------------------------------------
+
+====================================================================================================================================================================================
+  Covariance Matrix
+        1           2           3           4           5           6           7           8           9          10          11          12          13          14          15   
+   8.806e-05  -1.004e-04   1.157e-05  -5.569e-07  -2.955e-05  -3.642e-08  -8.943e-09  -1.036e-04  -5.631e-07  -3.479e-08  -9.544e-09  -1.027e-04  -5.612e-07  -3.551e-08  -8.526e-09
+  -1.004e-04   1.172e-04  -1.190e-05   5.590e-07   2.785e-05   3.525e-08   1.171e-08   1.184e-04   6.132e-07   3.237e-08   1.895e-08   1.174e-04   6.110e-07   3.307e-08   1.776e-08
+   1.157e-05  -1.190e-05   1.072e-05  -2.902e-07  -3.850e-05  -5.206e-08   5.727e-08  -1.231e-05  -2.888e-07  -5.062e-08   5.580e-08  -1.219e-05  -2.889e-07  -5.142e-08   5.576e-08
+  -5.569e-07   5.590e-07  -2.902e-07   1.886e-08   1.969e-07  -1.701e-10  -2.976e-09   6.258e-07   9.789e-09   6.403e-10  -1.321e-09   6.201e-07   9.809e-09   6.469e-10  -1.324e-09
+  -2.955e-05   2.785e-05  -3.850e-05   1.969e-07   6.788e-04   6.538e-07  -1.925e-07   2.897e-05   2.233e-07   6.297e-07  -1.879e-07   2.863e-05   2.074e-07   6.424e-07  -1.868e-07
+  -3.642e-08   3.525e-08  -5.206e-08  -1.701e-10   6.538e-07   1.313e-09  -2.048e-10   3.538e-08   6.706e-10   6.339e-10  -2.690e-10   3.496e-08   6.573e-10   6.464e-10  -2.679e-10
+  -8.943e-09   1.171e-08   5.727e-08  -2.976e-09  -1.925e-07  -2.048e-10   2.018e-09   1.878e-08  -1.343e-09  -2.688e-10   3.645e-10   1.873e-08  -1.346e-09  -2.728e-10   3.633e-10
+  -1.036e-04   1.184e-04  -1.231e-05   6.258e-07   2.897e-05   3.538e-08   1.878e-08   1.253e-04   5.705e-07   3.534e-08   1.091e-08   1.211e-04   6.311e-07   3.440e-08   1.806e-08
+  -5.631e-07   6.132e-07  -2.888e-07   9.789e-09   2.233e-07   6.706e-10  -1.343e-09   5.705e-07   2.161e-08  -4.053e-10  -3.415e-09   6.276e-07   9.749e-09   6.656e-10  -1.309e-09
+  -3.479e-08   3.237e-08  -5.062e-08   6.403e-10   6.297e-07   6.339e-10  -2.688e-10   3.534e-08  -4.053e-10   1.457e-09  -1.707e-10   3.328e-08   6.459e-10   6.234e-10  -2.612e-10
+  -9.544e-09   1.895e-08   5.580e-08  -1.321e-09  -1.879e-07  -2.690e-10   3.645e-10   1.091e-08  -3.415e-09  -1.707e-10   2.337e-09   1.923e-08  -1.308e-09  -2.662e-10   3.547e-10
+  -1.027e-04   1.174e-04  -1.219e-05   6.201e-07   2.863e-05   3.496e-08   1.873e-08   1.211e-04   6.276e-07   3.328e-08   1.923e-08   1.237e-04   5.545e-07   3.588e-08   8.775e-09
+  -5.612e-07   6.110e-07  -2.889e-07   9.809e-09   2.074e-07   6.573e-10  -1.346e-09   6.311e-07   9.749e-09   6.459e-10  -1.308e-09   5.545e-07   2.323e-08  -5.645e-10  -3.683e-09
+  -3.551e-08   3.307e-08  -5.142e-08   6.469e-10   6.424e-07   6.464e-10  -2.728e-10   3.440e-08   6.656e-10   6.234e-10  -2.662e-10   3.588e-08  -5.645e-10   1.604e-09  -1.612e-10
+  -8.526e-09   1.776e-08   5.576e-08  -1.324e-09  -1.868e-07  -2.679e-10   3.633e-10   1.806e-08  -1.309e-09  -2.612e-10   3.547e-10   8.775e-09  -3.683e-09  -1.612e-10   2.539e-09
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+========================================================================
+Model apec<1> + wabs<2>(apec<3> + powerlaw<4>) + gaussian<5> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+                           Data group: 1
+   1    1   apec       kT         keV      6.25801E-02  +/-  9.38380E-03  
+   2    1   apec       Abundanc            1.00000      frozen
+   3    1   apec       Redshift            0.0          frozen
+   4    1   apec       norm                1.50914E-02  +/-  1.08265E-02  
+   5    2   wabs       nH         10^22    5.90000E-02  frozen
+   6    3   apec       kT         keV      0.180895     +/-  3.27420E-03  
+   7    3   apec       Abundanc            1.00000      frozen
+   8    3   apec       Redshift            0.0          frozen
+   9    3   apec       norm                1.98086E-03  +/-  1.37325E-04  
+  10    4   powerlaw   PhoIndex            1.61118      +/-  2.60532E-02  
+  11    4   powerlaw   norm                1.63002E-03  +/-  3.62394E-05  
+  12    5   gaussian   LineE      keV      0.525000     frozen
+  13    5   gaussian   Sigma      keV      1.00000E-03  frozen
+  14    5   gaussian   norm                3.43773E-04  +/-  4.49220E-05  
+                           Data group: 2
+  15    1   apec       kT         keV      6.25801E-02  = p1
+  16    1   apec       Abundanc            1.00000      = p2
+  17    1   apec       Redshift            0.0          = p3
+  18    1   apec       norm                1.55126E-02  +/-  1.11945E-02  
+  19    2   wabs       nH         10^22    5.90000E-02  = p5
+  20    3   apec       kT         keV      0.180895     = p6
+  21    3   apec       Abundanc            1.00000      = p7
+  22    3   apec       Redshift            0.0          = p8
+  23    3   apec       norm                1.96655E-03  +/-  1.47020E-04  
+  24    4   powerlaw   PhoIndex            1.61118      = p10
+  25    4   powerlaw   norm                1.56560E-03  +/-  3.81702E-05  
+  26    5   gaussian   LineE      keV      0.525000     = p12
+  27    5   gaussian   Sigma      keV      1.00000E-03  = p13
+  28    5   gaussian   norm                2.03615E-04  +/-  4.83412E-05  
+                           Data group: 3
+  29    1   apec       kT         keV      6.25801E-02  = p1
+  30    1   apec       Abundanc            1.00000      = p2
+  31    1   apec       Redshift            0.0          = p3
+  32    1   apec       norm                1.53869E-02  +/-  1.11208E-02  
+  33    2   wabs       nH         10^22    5.90000E-02  = p5
+  34    3   apec       kT         keV      0.180895     = p6
+  35    3   apec       Abundanc            1.00000      = p7
+  36    3   apec       Redshift            0.0          = p8
+  37    3   apec       norm                1.96745E-03  +/-  1.52401E-04  
+  38    4   powerlaw   PhoIndex            1.61118      = p10
+  39    4   powerlaw   norm                1.58892E-03  +/-  4.00530E-05  
+  40    5   gaussian   LineE      keV      0.525000     = p12
+  41    5   gaussian   Sigma      keV      1.00000E-03  = p13
+  42    5   gaussian   norm                1.68334E-04  +/-  5.03923E-05  
+________________________________________________________________________
+
+
+Fit statistic : Chi-Squared =        1295.74 using 1180 PHA bins.
+
+Test statistic : Chi-Squared =        1295.74 using 1180 PHA bins.
+ Reduced chi-squared =        1.11223 for   1165 degrees of freedom 
+ Null hypothesis probability =   4.305910e-03
+XSPEC12>ipl data resid
+PLT> resize
+PLT> resize 0.3 1
+PLT> 
+

@@ -2,7 +2,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 
 only need to do this .5 step once. Check to see if necessary reject file has been created prior before continuing
 
-\_.5. `cd ~/suzaku/caldb/data/suzaku/xis/bcf`  
+\_0.5. `cd ~/suzaku/caldb/data/suzaku/xis/bcf`  
 	`$ pset xisputpixelquality badcolumfile=ae_xi1_npmsci6_20160128.fits`    
 	`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`  
 	`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`  
@@ -10,8 +10,7 @@ only need to do this .5 step once. Check to see if necessary reject file has bee
 	`$ rm ae_xi1_nxbsci6_20160128_badcolum.fits`  
 	- (Roughly) As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]  
 	- There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate  
-	- Instead of doing this much, much later, and repeatedly for each analysis, taking care of it now removes a few steps that don't need repeated every time later
-	- Just copy this nxb reject file into the current working directory as a later step  
+	- Instead of doing this much, much later, and repeatedly for each analysis, taking care of it now removes a few steps that don't need repeated every time later    
 
 1. Navigate to directory 50.../xis/event_cl
 2. `$ Gunzip *.*`
@@ -165,10 +164,11 @@ only need to do this .5 step once. Check to see if necessary reject file has bee
 	- ~~There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate~~  
 	- ~~Additionally, we copy the nxb file to work with in the current working directory~~
 
-22. `cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .` to current directory 
+22. ~~`cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .` to current directory~~ 
 
-23. `$ pset xisnxbgen nxbevent=ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
+23. `$ pset xisnxbgen nxbevent=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
 	- As given in [*New Recipe! Steps 3 for background data.][newrecipelink]  
+	- This file was generated in a procedure pre-req for this part of the process. Currently step 0.5
 
 24. `$ xisnxbgen`  
 	`[outputfile]: nxb_off3_dye20.fits`  
