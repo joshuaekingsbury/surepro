@@ -48,6 +48,8 @@ Aliases and Functions
 - XIS > Retrieve TAR file part 2 bcf  
 - XIS > Retrieve TAR file part 3 index  
 
+[HEASARC Data Access][HEASARCarch]
+
 [^ Table of Contents ^](#TC)
 
 ---
@@ -146,6 +148,10 @@ xselect
 > [2012: A Huge Reservoir of Ionized Gas around the Milky Way: Accounting for the Missing Mass?][paper2012]  
 > [2014: OI fluorescent line contamination in soft X-ray diffuse background obtained with Suzaku/XIS][paper2014]  
 > [2016: The Interaction of the Fermi Bubbles with the Milky Way’s Hot Gas Halo][paper2016]  
+  
+> [2017: Probing the Anisotropy of the Milky Way Gaseous Halo-II: Sightline toward Mrk 509][paper2017]  
+> [2018: Discovery of massive warm-hot circumgalactic medium around NGC 3221][paper2018]  
+
 
 Vocab:  
 - COR: cut-off rigidity (2009:2.2)
@@ -182,6 +188,9 @@ http://atomdb.org/
 ---
 # <a id="RES">Additional Resources</a>  
   
+[HEASARC Data Access][HEASARCarch]  
+- Links to interfaces for retrieving archived data
+
 [NASA Astrophysics Data System][nasaads]  
 - For locating research papers  
 
@@ -259,6 +268,10 @@ NASA X-ray Astronomy School
 
 [paper2016]:https://iopscience.iop.org/article/10.3847/0004-637X/829/1/9
 
+[paper2017]:https://doi.org/10.3847/1538-4357/836/2/243
+
+[paper2018]:https://ui.adsabs.harvard.edu/link_gateway/2018arXiv181012454D/arxiv:1810.12454
+
 [suzakuabc]:http://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/abc/
 
 [suzakuabcvi]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/abc/node9.html
@@ -276,3 +289,5 @@ NASA X-ray Astronomy School
 
 [xrayschool2001]:https://heasarc.gsfc.nasa.gov/docs/xrayschool_2001
 [xrayschool2001schedule]:https://heasarc.gsfc.nasa.gov/docs/xrayschool_2001/what2.html
+
+[HEASARCarch]:https://heasarc.gsfc.nasa.gov/docs/archive.html
