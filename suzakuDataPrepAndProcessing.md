@@ -119,7 +119,7 @@ only need to do this .5 step once. Check to see if necessary reject file has bee
 	`YYMMDD_#:SUZAKU > read events`  
 	`> Enter Event file list > xi1_events_GTI_off3.fits`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > select mkf`  
-	`> Boolean expression for filter file selection > SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>20` 
+	`> Boolean expression for filter file selection > SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>20`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > filter region ds9.reg`    
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > extract all`  
 	`YYMMDD_#:SUZAKU-XIS1-STANDARD > exit`  
