@@ -1,13 +1,13 @@
 # Suzaku Data Reduction Index  
 
 
-(Instrument file prep)[instr.md]   
+[Instrument file prep](instr.md)   
   - Once per instrument  
   
-(Observation Preparation)[observation.md]  
+[Observation Preparation](observation.md)  
   - Once per observation  
   
-(Data reduction)[reduction.md]  
+[Data reduction](reduction.md)  
   - 
   
-(Spectral Fitting)[spec.md]  
+[Spectral Fitting](spec.md)  
