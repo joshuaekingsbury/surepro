@@ -75,6 +75,8 @@ xselect
 > [XSPEC: Error](https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node80.html)  
 > [XSPEC: Model](https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node105.html)
 
+https://www.chem.uci.edu/~unicorn/M3LC/handouts/SpectroscopyHandout.pdf
+
 [^ Table of Contents ^](#TC)
 
 ---
