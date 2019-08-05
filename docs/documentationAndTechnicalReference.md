@@ -179,6 +179,8 @@ off3_dye20 nH weighted avg = 5.92E+20 (0.059E+22)
 
 off4\_dye20_ 9.01E+20
 
+off5_dye20_ 5.23E+20 (0.0523E+22)
+
 "mrk509" Weighted average nH (cm**-2)  3.93E+20
 
 rmf = response matrix file
