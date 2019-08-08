@@ -1,8 +1,9 @@
 # Suzaku Research Index  
+###### 
 
-[Project References and Resources](../docs/documentationAndTechnicalReference.md)  
-  
-  
+[Project References and Resources](../docs/documentationAndTechnicalReference.md)
+
+
 [Instrument file prep](instr.md)   
   - Once per instrument  
   
