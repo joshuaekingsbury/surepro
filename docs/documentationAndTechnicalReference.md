@@ -53,7 +53,7 @@ Aliases and Functions
 [^ Table of Contents ^](#TC)
 
 ---
-# <a id="PRED">Preparing Data</a>
+# <a id="PRED">Data Reduction</a>
 xselect
 
 (https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xselect.html)  
@@ -75,7 +75,26 @@ xselect
 > [XSPEC: Error](https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node80.html)  
 > [XSPEC: Model](https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node105.html)
 
-https://www.chem.uci.edu/~unicorn/M3LC/handouts/SpectroscopyHandout.pdf
+https://www.chem.uci.edu/~unicorn/M3LC/handouts/SpectroscopyHandout.pdf  
+
+
+Calculate the Total Galactic H(I) Column Density (nH)
+https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/w3nh/w3nh.pl
+
+off2_dye20 nH weighted avg = 4.90E+20 (0.049E+22)
+
+off3_dye20 nH weighted avg = 5.92E+20 (0.059E+22)
+
+off4\_dye20_ 9.01E+20
+
+off5_dye20_ 5.23E+20 (0.0523E+22)
+
+"mrk509" Weighted average nH (cm**-2)  3.93E+20
+
+rmf = response matrix file
+
+http://atomdb.org/
+
 
 [^ Table of Contents ^](#TC)
 
@@ -170,22 +189,6 @@ it has been calibrated for temporal and spatial gain variations
 onto a standard energy scale
 
 
-Calculate the Total Galactic H(I) Column Density (nH)
-https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/w3nh/w3nh.pl
-
-off2_dye20 nH weighted avg = 4.90E+20 (0.049E+22)
-
-off3_dye20 nH weighted avg = 5.92E+20 (0.059E+22)
-
-off4\_dye20_ 9.01E+20
-
-off5_dye20_ 5.23E+20 (0.0523E+22)
-
-"mrk509" Weighted average nH (cm**-2)  3.93E+20
-
-rmf = response matrix file
-
-http://atomdb.org/
 
 ### 
 

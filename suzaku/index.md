@@ -1,6 +1,8 @@
-# Suzaku Data Reduction Index  
+# Suzaku Research Index  
 
-
+[Project References and Resources](../docs/documentationAndTechnicalReference.md)  
+  
+  
 [Instrument file prep](instr.md)   
   - Once per instrument  
   
@@ -11,3 +13,9 @@
   - 
   
 [Spectral Fitting](spec.md)  
+  -  
+
+[Data Tables using LaTeX][Under Construction]
+
+[Automating Data Reduction][Next Step]
+  

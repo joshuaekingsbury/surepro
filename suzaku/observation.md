@@ -1,3 +1,7 @@
+[Previous Step: Instrument Prep](instr.md) | [Next Step: Data Reduction](reduction.md)
+
+# Preparing Observation
+
 When extracting an observation data set (`$ tar xvf downloadedObservationData.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
 
 1. Navigate to directory 50.../xis/event_cl
@@ -50,3 +54,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 14. `$ cp xi1_events_GTI_off3.fits ../xis/event_cl`  
   14.5. `cd ../20analysis`  
   change to analysis directory relative to DYE (20analysis in following steps; when repeating: 40analysis, 60analysis)
+  
+[Previous Step: Instrument Prep](instr.md) | [Next Step: Data Reduction](reduction.md)
+  
+[newrecipelink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html

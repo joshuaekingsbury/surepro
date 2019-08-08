@@ -1,69 +1,8 @@
-When extracting an observation data set (`$ tar xvf downloadedObservationData.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
+[Previous Step: Observation Preparation](observation.md) | [Next Step: Spectral Analysis](spec.md)
 
-only need to do this .5 step once. Check to see if necessary reject file has been created prior before continuing
+# Data Reduction
 
-\_0.5. `cd ~/suzaku/caldb/data/suzaku/xis/bcf`  
-	`$ pset xisputpixelquality badcolumfile=ae_xi1_npmsci6_20160128.fits`    
-	`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`  
-	`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`  
-	`$ ftcopy 'ae_xi1_nxbsci6_20160128_badcolum.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
-	`$ rm ae_xi1_nxbsci6_20160128_badcolum.fits`  
-	- (Roughly) As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]  
-	- There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate  
-	- Instead of doing this much, much later, and repeatedly for each analysis, taking care of it now removes a few steps that don't need repeated every time later    
-
-1. Navigate to directory 50.../xis/event_cl
-2. `$ Gunzip *.*`
-	- gunzip everything in/to current working directory
-3. `cd 50.../`
-4. `mkdir analysis`
-	- This will be the directory we use to analyze and process a single variation of the observation
-	- Within this observation ID we will also make 3 more dirs (20analysis, 40analysis & 60analysis) so we have a dir each for DYE\_ELV>20, DYE\_ELV>40, DYE\_ELV>60 respectively
-	- This naming convention allows for the terminal [TAB] auto-complete to be leveraged while remaining recognizable in the context of our recent notes and research
-5. `cd analysis`
-6. cp xi1\_3x3 + xi1\_5x5 to analysis dir from event_cl  
-	- `$ cp ../xis/event_cl/ae50...xi1_0_3x3no69b_ev.evt .`  
-	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5no69b_ev.evt .`  
-	- cp means "copy", then give file copying from and directory copying too
-	- "." is current working directory
-7. Look for bad colum file [*New Recipe! Steps 1 & 2 for science observation data.][newrecipelink] (Here steps 7-10)   
-	- `~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
-	- Use 6KeV most recent for xis1 as newest 2KeV is older than and doesn't contain necessary GTIs for Night X-Ray Background  (NXB)  
-	- In original procedure, files are merged before cleaning using New Recipe
-8. `$ pset xisputpixelquality badcolumfile=~/YOUR/PATH/FROM/STEP/7`
-	- Input path to badcolum file found in previous step
-	- Make sure your working directory is the relative analysis folder
-9. `$ xisputpixelquality ae50...xi1_0_3x3no69b_ev.evt`  
-	`output file: badcolum_3x3_off3.fits`
-	- Repeat this step for 5x5 file
-10. `ftcopy badcolum_3x3_off3.fits[EVENTS][STATUS=0:524287] ftcopy_3x3_524287_off3.fits `
-	- Repeat this step for the 5x5 file output from the previous step  
-		+ ???(ftcopy\_5x5\_128_off3.fits)???
-		+ (128? Since is before making into a 3x3 file?)
-	- ftcopy applies filtering and transformations to the tables
-		+ [In this case, filtering EVENTS by their pixel STATUS](https://heasarc.nasa.gov/docs/suzaku/processing/criteria_xis.html)
-		+ [From xisputpixelquality doc](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/xisputpixelquality.txt)  
-			`B19 | 524288 | one pixel apart from the frame/window boundary`
-
-11. 
-	`$ xis5x5to3x3`  
-	`input file: ftcopy_5x5_524288_off3.fits`  
-	`output file: 5x5to3x3_off3.fits`  
-	`input hk file: ~/suzaku/off-field3/50.../xis/hk/ae509044010xi1_0.hk.gz`  
-	- [An hk file is a "housekeeping" file](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/heasarc.html)
-	- Converting 5x5 to a 3x3, according to Suzaku user guide ch 6?, extracting 3x3 from center of 5x5?
-12. `$ ftmerge`  
-	`Filename[extension] of tables to be merged[] ftcopy_3x3_524288_off3.fits, 5x5to3x3_off3.fits`  
-	`output: merged_5to3_w_3_off3.fits`  
-13. `$ ftmerge`  
-	`Filename[extension] of tables to be merged[] merged_5to3_w_3_off3.fits[GTI], 5x5to3x3_off3.fits[GTI]`  
-	`output: merged_merged_w_5to3_GTI_off3.fits`  
-	`$ cp merged_merged_w_5to3_GTI_off3.fits xi1_events_GTI_off3.fits`  
-14. `$ cp xi1_events_GTI_off3.fits ../xis/event_cl`  
-  14.5. `cd ../20analysis`  
-  change to analysis directory relative to DYE (20analysis in following steps; when repeating: 40analysis, 60analysis)
-
-15. `$ xselect`  
+1. `$ xselect`  
 	`> Enter session name > YYMMDD_#`  
 	`YYMMDD_#:SUZAKU > set datadir`  
 	`> Enter the Event file dir > [path to event_cl dir]`  
