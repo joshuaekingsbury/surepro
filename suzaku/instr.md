@@ -1,4 +1,4 @@
-[Project Index](index.md) | [Next Step: Observation Preparation](observation.md)
+[Research Index](index.md) | [Next Step: Observation Preparation](observation.md)
 
 # Night X-Ray Background Cleanup
 
@@ -14,4 +14,4 @@ Only need to do this step once per instrument. Check to see if necessary reject 
 	- There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate  
 	- Instead of doing this much, much later, and repeatedly for each analysis, taking care of it now removes a few steps that don't need repeated every time later    
 	
-[Project Index](index.md) | [Next Step: Observation Preparation](observation.md)
+[Research Index](index.md) | [Next Step: Observation Preparation](observation.md)

@@ -1,4 +1,6 @@
-# Suzaku Research Index  
+[Project Index](../README.md)
+
+# Suzaku Procedures Index  
 ###### 
 
 [Project References and Resources](../docs/documentationAndTechnicalReference.md)
