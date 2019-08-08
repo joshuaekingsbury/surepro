@@ -134,4 +134,6 @@ inside 20analysis dir mkdir spec
 copy the above files into this directory
 
 
+[Previous Step: Observation Preparation](observation.md) | [Next Step: Spectral Analysis](spec.md)
+
 [newrecipelink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html
