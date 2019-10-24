@@ -19,6 +19,14 @@
 ### Heasoft Pre-Requisites  
 >A) [For Specific Dependencies Click Here] (https://heasarc.gsfc.nasa.gov/lheasoft/ubuntu.html)  
 >B) General additional dependencies covered by running:  `$ sudo apt-get install build-essential`    
+>  
+>C)  Vital to export these commands prior to running .configure  
+>$ export CC=/usr/bin/gcc  
+$ export CXX=/usr/bin/g++  
+$ export FC=/usr/bin/gfortran  
+$ export PERL=/usr/bin/perl  
+$ export PYTHON=/usr/bin/python  
+>
 
 ### Heasoft Installation
 
@@ -227,6 +235,9 @@ NASA X-ray Astronomy School
 
 
 [^ Table of Contents ^](#TC)
+
+# Extend  
+https://www.tcl.tk/about/language.html
 
 ---  
 
