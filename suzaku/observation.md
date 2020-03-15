@@ -5,7 +5,7 @@
 When extracting an observation data set (`$ tar xvf downloadedObservationData.tar`) it will create and extract to a directory titled according to the observation ID being extracted.
 
 1. Navigate to directory 50.../xis/event_cl
-2. `$ Gunzip *.*`
+2. `$ gunzip *.*`
 	- gunzip everything in/to current working directory
 3. `cd 50.../`
 4. `mkdir analysis`
