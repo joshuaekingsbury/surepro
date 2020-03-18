@@ -25,7 +25,7 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 8. `$ pset xisputpixelquality badcolumfile=~/YOUR/PATH/FROM/STEP/7`
 	- Input path to badcolum file found in previous step
 	- Make sure your working directory is the relative analysis folder
-9. `$ xisputpixelquality ae50...xi1_0_3x3n069b_ev.evt`  
+9. `$ xisputpixelquality ae50...xi1_0_3x3n069b_cl.evt`  
 	`output file: badcolum_3x3_off3.fits`
 	- Repeat this step for 5x5 file
 10. `ftcopy badcolum_3x3_off3.fits[EVENTS][STATUS=0:524287] ftcopy_3x3_524287_off3.fits `
