@@ -14,8 +14,8 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- This naming convention allows for the terminal [TAB] auto-complete to be leveraged while remaining recognizable in the context of our recent notes and research
 5. `cd analysis`
 6. cp xi1\_3x3 + xi1\_5x5 to analysis dir from event_cl  
-	- `$ cp ../xis/event_cl/ae50...xi1_0_3x3no69b_ev.evt .`  
-	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5no69b_ev.evt .`  
+	- `$ cp ../xis/event_cl/ae50...xi1_0_3x3n069b_cl.evt .`  
+	- `$ cp ../xis/event_cl/ae50...xi1_0_5x5n069b_cl.evt .`  
 	- cp means "copy", then give file copying from and directory copying too
 	- "." is current working directory
 7. Look for bad colum file [*New Recipe! Steps 1 & 2 for science observation data.][newrecipelink] (Here steps 7-10)   
