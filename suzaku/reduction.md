@@ -94,16 +94,9 @@
 		`[energy step file]: medium`  
 	- This step takes a VERY long time - allow time for it.  
 	- As given in [*New Recipe! Step 3 for science observation data.][newrecipelink]  
-21. ~~`$ pset xisputpixelquality badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`~~  
-	~~`$ cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits .`~~  
-	~~`$ xisputpixelquality ae_xi1_nxbsci6_20160128.fits`~~  
-	~~`Name of output event fits file[] ae_xi1_nxbsci6_20160128_badcolum.fits`~~  
-	~~`$ ftcopy 'ae_xi1_nxbsci6_20160128_badcolum.fits[EVENTS][STATUS=0:524287]' ae_xi1_nxbsci6_20160128_rejectnpm.fits`~~  
-	- ~~(Roughly) As given in [*New Recipe! Steps 1 & 2 for background data.][newrecipelink]~~  
-	- ~~There are typos in the New Recipe; when referencing the NXB files it uses "xis?" where "xi?" is appropriate~~  
-	- ~~Additionally, we copy the nxb file to work with in the current working directory~~
+21. `$ pset xisputpixelquality badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
+	$ cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits .`  
 
-22. ~~`cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits .` to current directory~~ 
 
 23. `$ pset xisnxbgen nxbevent=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
 	- As given in [*New Recipe! Steps 3 for background data.][newrecipelink]  
