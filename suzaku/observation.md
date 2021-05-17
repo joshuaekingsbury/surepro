@@ -20,7 +20,9 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- "." is current working directory
 7. Look for bad colum file [*New Recipe! Steps 1 & 2 for science observation data.][newrecipelink] (Here steps 7-10)   
 	- `~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
-	- Use 6KeV most recent for xis1 as newest 2KeV is older than and doesn't contain necessary GTIs for Night X-Ray Background  (NXB)  
+	- Use 6KeV most recent for xis1 as newest 2KeV is older than and doesn't contain necessary GTIs for Night X-Ray Background  (NXB)
+	- [Use npm and nxb files related to observation date as given in this table][newrecipeperiodslink]  
+	- ["sci" stand for "spaced-row charge injection"][sciinfolink]
 	- In original procedure, files are merged before cleaning using New Recipe
 8. `$ pset xisputpixelquality badcolumfile=~/YOUR/PATH/FROM/STEP/7`
 	- Input path to badcolum file found in previous step
@@ -58,3 +60,5 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 [Previous Step: Instrument Prep](instr.md) | [Next Step: Data Reduction](reduction.md)
   
 [newrecipelink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html
+[newrecipeperiodslink]:https://darts.isas.jaxa.jp/astro/suzaku/analysis/xis/nxb_new/
+[sciinfolink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/sci.html
