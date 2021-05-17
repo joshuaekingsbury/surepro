@@ -94,6 +94,8 @@
 		`[energy step file]: medium`  
 	- This step takes a VERY long time - allow time for it.  
 	- As given in [*New Recipe! Step 3 for science observation data.][newrecipelink]  
+	- [Use npm and nxb files related to observation date as given in this table][newrecipeperiodslink]  
+	- ["sci" stand for "spaced-row charge injection"][sciinfolink]
 21. `$ pset xisputpixelquality badcolumfile=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_npmsci6_20160128.fits`  
 	$ cp ~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128.fits .`  
 
@@ -130,3 +132,5 @@ copy the above files into this directory
 [Previous Step: Observation Preparation](observation.md) | [Next Step: Spectral Analysis](spec.md)
 
 [newrecipelink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/xisnxbnew.html
+[newrecipeperiodslink]:https://darts.isas.jaxa.jp/astro/suzaku/analysis/xis/nxb_new/
+[sciinfolink]:https://heasarc.gsfc.nasa.gov/docs/suzaku/analysis/sci.html
