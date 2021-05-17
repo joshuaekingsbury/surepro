@@ -101,8 +101,10 @@
 
 
 23. `$ pset xisnxbgen nxbevent=~/suzaku/caldb/data/suzaku/xis/bcf/ae_xi1_nxbsci6_20160128_rejectnpm.fits`  
-	- As given in [*New Recipe! Steps 3 for background data.][newrecipelink]  
+	- As given in [*New Recipe! Step 3 for background data.][newrecipelink]  
 	- This file was generated in a procedure pre-req for this part of the process. Currently step 0.5
+	- [Use npm and nxb files related to observation date as given in this table][newrecipeperiodslink]  
+	- ["sci" stand for "spaced-row charge injection"][sciinfolink]
 
 24. `$ xisnxbgen`  
 	`[outputfile]: nxb_off3_dye20.fits`  
