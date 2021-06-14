@@ -47,10 +47,10 @@ When extracting an observation data set (`$ tar xvf downloadedObservationData.ta
 	- [An hk file is a "housekeeping" file](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/heasarc.html)
 	- Converting 5x5 to a 3x3, according to Suzaku user guide ch 6?, extracting 3x3 from center of 5x5?
 12. `$ ftmerge`  
-	`Filename[extension] of tables to be merged[] ftcopy_3x3_524288_off3.fits, 5x5to3x3_off3.fits`  
+	`Filename[extension] of tables to be merged[] "ftcopy_3x3_524288_off3.fits, 5x5to3x3_off3.fits"`  
 	`output: merged_5to3_w_3_off3.fits`  
 13. `$ ftmerge`  
-	`Filename[extension] of tables to be merged[] merged_5to3_w_3_off3.fits[GTI], 5x5to3x3_off3.fits[GTI]`  
+	`Filename[extension] of tables to be merged[] "merged_5to3_w_3_off3.fits[GTI], 5x5to3x3_off3.fits[GTI]"`  
 	`output: merged_merged_w_5to3_GTI_off3.fits`  
 	`$ cp merged_merged_w_5to3_GTI_off3.fits xi1_events_GTI_off3.fits`  
 14. `$ cp xi1_events_GTI_off3.fits ../xis/event_cl`  
