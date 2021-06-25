@@ -1,5 +1,5 @@
 # surepro
-Suzaku Research Procedures
+Suzaku Reduction Procedures
 
 Documentation of procedures and technical reference materials for our team.
 
