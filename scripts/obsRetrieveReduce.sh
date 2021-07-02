@@ -45,6 +45,17 @@ processedOn=$(date +'%y%m%d')
 
 echo "Given this/these observations: ${obs[*]}"
 
+
+####
+#   Download the ql images for the observation
+####
+obsqlimgURL="https://data.darts.isas.jaxa.jp/pub/Astro_Browse/quick_look/suzaku/image/${obs}.png"
+obsqlxisimgURL="https://data.darts.isas.jaxa.jp/pub/suzaku/ver2/${obs}/xis/products/ae${obs}xis_0_im.gif"
+
+wget -c -P ${obsPath}/${obs} $obsqlimgURL
+wget -c -P ${obsPath}/${obs} $obsqlxisimgURL
+
+
 ####
 #   If the observation directory doesn't exist, download it via FTP
 #   (Works)
