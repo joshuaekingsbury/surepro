@@ -68,7 +68,7 @@ esac
 #####
 echo "Loading region file and saving image for reference."
 
-ds9 ${preRegImg} -scale log -cmap rainbow -smooth yes -regions load ${regFile} -zoom to fit -saveimage png ${obsDS9/.EXT./png} -exit &
+ds9 ${preRegImg} -scale log -cmap rainbow -smooth yes -regions load ${regFile} -zoom to fit -saveimage png ${obsDS9/.EXT./png} -scale histequ -saveimage jpeg ${obsDS9/.EXT./jpeg} -exit &
 
 PID=$!
 

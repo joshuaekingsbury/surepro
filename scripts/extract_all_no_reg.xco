@@ -1,0 +1,11 @@
+%1%_%2%_%5%
+set datadir
+%3%
+set instr xis1
+read events
+xi1_events_GTI_%1%.fits
+select mkf
+SAA==0 && T_SAA>436 && COR>8 && ELV>10 && DYE_ELV>%2%
+extract "SPECTRUM"
+exit
+y

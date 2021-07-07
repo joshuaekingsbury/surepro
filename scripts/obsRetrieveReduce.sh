@@ -98,7 +98,7 @@ echo
 #   
 ####
 chmod 777 getnxbDate.sh
-nxbDate=$( ./getnxbDate.sh ${obsDate} )
+nxbDate=$( ./getnxbDate.sh ${sci} )
 wait $!
 
 nxbID=${sci}_${nxbDate}
