@@ -7,3 +7,5 @@ cpd /xw
 setplot energy
 
 setplot add
+
+syscall ./getnh.sh
