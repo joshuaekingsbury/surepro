@@ -7,6 +7,9 @@ preRegImg=$4
 obsDS9=$5
 autoRegBool=${6:-false}
 
+datedRegFile=${obsDS9/.EXT./reg}
+dateSuffix=${obsDS9##*'_'}
+
 pushd ${dyeDir}
 
 shopt -s nullglob
@@ -14,15 +17,25 @@ shopt -s nullglob
 xdim=$(gethead NAXIS1 ${preRegImg})
 ydim=$(gethead NAXIS2 ${preRegImg})
 
-regFile=(*.reg)
+#check for dated today file first, then expand to all regs
+
+regFile=(*$dateSuffix)
+
+if [[ -z "$regFile" ]] && [ ! -f "$regFile" ]; then
+
+	regFile=(*.reg)
+
+fi
 
 if [[ ! -z "$regFile" ]] && [ -f "$regFile" ]; then
 	
 	echo "Region file found. Using existing region file: $regFile"
+	cp $regFile $datedRegFile
+	regFile=${datedRegFile}
 
 else
 
-regFile=${obsDS9/.EXT./reg}
+regFile=${datedRegFile}
 
 ds9 ${preRegImg} \
     -scale log -cmap rainbow -smooth yes -contour yes -contour method smooth -contour scale histequ -contour mode zscale -contour smooth 5 -contour nlevels 1 -contour color black -contour generate -contour save ${obsDS9/.EXT./ctr} -contour convert -regions select all -regions exclude -regions group excluded new -regions select none -regions include -regions command "image;polygon(0,0,$xdim,0,$xdim,$ydim,0,$ydim)" -regions group excluded moveback -regions save ${regFile} -exit &
