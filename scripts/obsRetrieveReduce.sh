@@ -68,12 +68,13 @@ wait $!
 #   Script echos if no xis1 data file found; echo is assigned to xis1DataCheck and triggers exit of this script
 ####
 chmod 777 instrMissing.sh
-xis1DataCheck=$( ./instrMissing.sh ${obs} )
+./instrMissing.sh ${obs}
+xis1DataCheck=$?
 wait $!
 
-if [ ! -z "$xis1DataCheck" ];
+if [ $xis1DataCheck != 0 ];
 then
-	echo "$xis1DataCheck"
+	echo "No XIS1 data found in relative working directory."
 	echo "Exiting reduction procedures."
 	exit
 fi
