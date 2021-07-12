@@ -63,6 +63,22 @@ wget -c -P ${obsPath}/${obs} $obsqlxisimgURL
 ./getObs.sh ${obs} &
 wait $!
 
+
+####
+#   Script echos if no xis1 data file found; echo is assigned to xis1DataCheck and triggers exit of this script
+####
+chmod 777 instrMissing.sh
+xis1DataCheck=$( ./instrMissing.sh ${obs} )
+wait $!
+
+if [ ! -z "$xis1DataCheck" ];
+then
+	echo "$xis1DataCheck"
+	echo "Exiting reduction procedures."
+	exit
+fi
+
+
 ####
 #   Extract (gunzip) event files from gz files
 ####
