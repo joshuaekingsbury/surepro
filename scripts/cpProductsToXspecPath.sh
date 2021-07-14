@@ -3,6 +3,7 @@
 
 fromPath=$1
 toPath=$2
+productPrefix=$3
 #toCopy=$3
 #histFile=
 #arfFile=
@@ -10,15 +11,16 @@ toPath=$2
 #nxbFile=
 #regImgFile=
 
-for sourceFile in "${@:3}"
+for sourceFile in "${@:4}"
 do
 	echo "from $fromPath/$sourceFile"
 
-	echo "to $toPath/$sourceFile"
+	echo "to $toPath/$productPrefix$sourceFile"
 
-	cp "$fromPath/$sourceFile" "$toPath/$sourceFile"
+	cp "$fromPath/$sourceFile" "$toPath/$productPrefix$sourceFile"
 
 done
+
 
 # Slice array of all input arguments
 # https://unix.stackexchange.com/questions/82060/bash-slice-of-positional-parameters
