@@ -34,9 +34,6 @@ sed -i 's/%1%/'"$inFile"'/' $initFile
 
 xspec - xspecinit.xcm
 
-$initFile
-$nhFile
-
 ./$nhFile
 
 popd
