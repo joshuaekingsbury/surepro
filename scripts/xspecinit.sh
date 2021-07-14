@@ -12,6 +12,7 @@ cp ./$nhFile ./$fittingPath
 
 pushd $fittingPath
 
+chmod 777 $nhFile
 
 echo
 echo "GRPPHA Files:"
@@ -33,8 +34,10 @@ sed -i 's/%1%/'"$inFile"'/' $initFile
 
 xspec - xspecinit.xcm
 
-rm $initFile
-rm $nhFile
+$initFile
+$nhFile
+
+./$nhFile
 
 popd
 
